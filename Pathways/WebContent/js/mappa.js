@@ -104,6 +104,7 @@ function initMap() {
 
 					"</div>" +
 					"</div>";
+					
 				const infowindow = new google.maps.InfoWindow({
 					content: contentString,
 					ariaLabel: nome,
