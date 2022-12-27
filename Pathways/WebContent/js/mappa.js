@@ -74,6 +74,16 @@ function initMap() {
 		}
 	}
 
+  //Funzione che stampa sulla console la posizione del marker (Uso window. perché devo dichiararlo come variabile globale)
+  window.getMarkerPosition = function (counter) {
+    var posizione = {
+      lat: marker[counter].latitudine,
+      lng: marker[counter].longitudine,
+    }
+    console.log(posizione);
+    console.log(marker[counter]);
+  }
+
 	// Eseguiamo il fetch
 	fetch('./json/Attrazioni.json')
 		.then((response) => response.json())
@@ -99,12 +109,12 @@ function initMap() {
 					'<div id="bodyContent">' +
 					'<p>lorem ipsum dolores </p>' +
 					//bottone info marker
-					`<button type="button" id="${marker[i].id}" value="${marker[i].id}"  class="bottoneMarker btn btn-primary" >Aggiungi al tuo percorso</button>`
+				     `<button type="button" class="btn btn-primary" onclick="getMarkerPosition(${marker[i].id})">Aggiungi al tuo percorso</button>` //Richiamo la funzione getMarkerPosition
 					+
 
 					"</div>" +
 					"</div>";
-					
+
 				const infowindow = new google.maps.InfoWindow({
 					content: contentString,
 					ariaLabel: nome,
