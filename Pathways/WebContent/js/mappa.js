@@ -98,9 +98,8 @@ function initMap() {
 					'<h1 id="firstHeading" class="firstHeading">' + nome + '</h1>' +
 					'<div id="bodyContent">' +
 					'<p>lorem ipsum dolores </p>' +
-
 					//bottone info marker
-					`<button type="button" id="${marker[i].id}"  value="${marker[i].id}"  class="bottoneMarker btn btn-primary" >Aggiungi al tuo percorso</button>`
+					`<button type="button" id="${marker[i].id}" value="${marker[i].id}"  class="bottoneMarker btn btn-primary" >Aggiungi al tuo percorso</button>`
 					+
 
 					"</div>" +
@@ -111,21 +110,15 @@ function initMap() {
 				});
 
 
-
-
-
 				markerAttrazione.addListener("click", () => {
 					infowindow.open({
 						position: posizione,
 						anchor: markerAttrazione,
 						map,
 					});
-
 				});
 
 
-				let btnMarker = document.getElementById(marker[i].id);
-				console.log(btnMarker.id);
 
 			}
 
@@ -139,7 +132,11 @@ function initMap() {
 
 
 }
+function aggiungiPercorso() {
+	if (isNull(percorso)) {
 
+	}
+}
 function handleLocationError(browserHasGeolocation, infoWindow, pos) {
 	infoWindow.setPosition(pos);
 	infoWindow.setContent(
