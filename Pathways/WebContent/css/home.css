@@ -111,10 +111,16 @@ header p {
 }
 
 .row-attrazioni {
+  text-align: center;
   margin: 1em;
   padding: 1em;
   position: relative;
   top: 15vh;
+}
+
+.div-attrazione {
+  text-align: center;
+  padding: 1em;
 }
 
 .link-attrazione img {
