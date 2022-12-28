@@ -7,7 +7,7 @@
 
 
 /*----------------------------------------------------------------------------------------------------------------------------------------------------------------*/
-/* HTML FILE STYLING */
+/* GENERAL STYLING */
 /*----------------------------------------------------------------------------------------------------------------------------------------------------------------*/
 
 html,
@@ -19,6 +19,16 @@ body {
   overflow-x: hidden;
   font-family: 'Roboto', sans-serif;
   font-weight: 300;
+}
+
+.btn:hover {
+  background-color: #ffcf90;
+  color: white;
+}
+
+.btn:active {
+  background-color: #f5b665;
+  color: white;
 }
 
 /*----------------------------------------------------------------------------------------------------------------------------------------------------------------*/
@@ -108,6 +118,12 @@ header p {
   background-color: white;
   border-radius: 20px;
   padding: 10px 25px;
+}
+
+.slider-btn a>button:hover,
+.slider-btn a>button:active {
+  background-color: #ffcf90;
+  border-color: #ffcf90;
 }
 
 .row-attrazioni {
