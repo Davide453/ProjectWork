@@ -1,100 +1,187 @@
+/*----------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+/* USEFUL */
+/*----------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+/* MAIN COLOR */
+/* #ffcf90 */
+
+
+/*----------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+/* HTML FILE STYLING */
+/*----------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+
 body {
-    font-family: 'Roboto', sans-serif;
-    font-weight: 300;
-  }
-  
-  header {
-    padding: 20px 0;
-  }
-  
-  header .row,
-  footer .row {
-    display: flex;
-    align-items: center;
-  }
-  
-  header h1 {
-    font-weight: 700;
-    margin: 0;
-  }
-  
-  header nav {
-    display: flex;
-    justify-content: flex-end;
-  }
-  
-  header p {
-    padding: 0 20px;
-    margin: 0;
-  }
-  
-  .jumbotron {
-    display: flex;
-    align-items: center;
-    background-image: url('../img/1600x900_px_forest_landscape_Montana_mountain_nature_river_summer-1076218.jpg');
-    background-size: cover;
-    color: #ffffff;
-    height: 500px;
-    text-shadow: 0.25px 0.25px 0.25px #000000;
-  }
-  
-  .jumbotron h2 {
-    font-size: 60px;
-    font-weight: 700;
-    margin: 0;
-    color: #fff;
-  }
-  
-  .jumbotron h3 {
-    margin: 0 0 50px;
-    color: #fff;
-  }
-  
-  section .row img {
-    
-    width: 75%;
-  }
-  
-  .col-sm-2 {
-    margin-top: 90px;
-    margin-bottom: 90px;
-    display: flex;
-  }
-  
-  .btn.btn-primary {
-    border-radius: 2px;
-    border: 0px;
-    color: #fbd1d5;
-    text-shadow: none;
-    background-color: #ffffff;
-  }
-  
-  .btn.btn-primary:hover {
-    color: #ffffff;
-    background-color: #fbd1d5;
-  }
-  
-  .btn-secondary {
-    background-color: #E8DFE0;
-    color: #ffffff;
-    margin: 0 0 30px;
-  }
-  
-  footer {
-    font-size: 12px;
-    padding: 20px 0;
-  }
-  
-  footer .col-sm-8 {
-    display: flex;
-    justify-content: flex-end;
-  }
-  
-  footer ul {
-    list-style: none;
-  }
-  
-  footer li img {
-    width: 32px;
-    height: 32px;
-  }
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+}
+
+/*----------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+/* HEADER */
+/*----------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+header {
+  padding: 20px 0;
+  position: fixed;
+  margin-top: 0;
+  padding: 0;
+  width: 100%;
+}
+
+header .row,
+footer .row {
+  display: flex;
+  align-items: center;
+}
+
+header h1 {
+  font-weight: 700;
+  margin: 0;
+}
+
+header nav {
+  display: flex;
+  justify-content: flex-end;
+}
+
+header p {
+  padding: 0 20px;
+  margin: 0;
+}
+
+.nav-link {
+  margin: 0 15px;
+  border-right: 2px solid white;
+  color: white;
+  font-size: 1.5em;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+.nav-link:hover {
+  color: #ffcf90;
+}
+
+/*----------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+/* SLIDER SECTION */
+/*----------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+.slider {
+  display: flex;
+  align-items: center;
+  background-image: url('../img/Slider2.jpg');
+  background-size: cover;
+  color: #ffffff;
+  height: 100vh;
+  text-shadow: 0.25px 0.25px 0.25px #000000;
+}
+
+.slider h1 {
+  font-size: 7em;
+  font-weight: 700;
+  margin: 0;
+  color: #ffcf90;
+}
+
+.slider h2 {
+  font-size: 3em;
+  font-weight: 500;
+  margin: 0;
+  color: #fff;
+}
+
+.slider h3 {
+  margin: 0 0 50px;
+  color: #fff;
+}
+
+.slider-btn a {
+  margin: 0 2vw;
+}
+
+.slider-btn a > button {
+  background-color: white;
+  border-radius: 20px;
+  padding: 10px 25px;
+}
+
+.row-attrazioni {
+  margin: 1em;
+  padding: 1em;
+  position: relative;
+  top: 15vh;
+}
+
+.link-attrazione img {
+  width: 30vw;
+  height: 20vh;
+  border: 3px solid white;
+  border-bottom: 0;
+  border-radius: 50%;
+  opacity: 1;
+}
+
+.link-attrazione img:hover {
+  opacity: 0.5;
+}
+
+section .row img {
+
+  width: 75%;
+}
+
+
+.col-sm-2 {
+  margin-top: 90px;
+  margin-bottom: 90px;
+  display: flex;
+}
+
+.btn.btn-primary {
+  border-radius: 2px;
+  border: 0px;
+  color: #fbd1d5;
+  text-shadow: none;
+  background-color: #ffffff;
+}
+
+.btn.btn-primary:hover {
+  color: #ffffff;
+  background-color: #fbd1d5;
+}
+
+.btn-secondary {
+  background-color: #E8DFE0;
+  color: #ffffff;
+  margin: 0 0 30px;
+}
+
+/*----------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+/* ATTRAZIONI SECTION */
+/*----------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+.attrazioni {
+  background-color: rgb(15, 12, 43);
+}
+
+/*----------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+/* FOOTER */
+/*----------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+footer {
+  font-size: 12px;
+  padding: 20px 0;
+}
+
+footer .col-sm-8 {
+  display: flex;
+  justify-content: flex-end;
+}
+
+footer ul {
+  list-style: none;
+}
+
+footer li img {
+  width: 32px;
+  height: 32px;
+}
