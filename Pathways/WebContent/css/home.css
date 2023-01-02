@@ -5,6 +5,9 @@
 /* MAIN COLOR */
 /* #ffcf90 */
 
+/* SECONDARY COLOR */
+/* #0f0c2b */
+
 
 /*----------------------------------------------------------------------------------------------------------------------------------------------------------------*/
 /* GENERAL STYLING */
@@ -75,8 +78,9 @@ header p {
   text-transform: uppercase;
 }
 
-.nav-link:hover {
-  color: #ffcf90;
+.nav-link:hover,
+.nav-link:active {
+  color: #ffcf90; 
 }
 
 /*----------------------------------------------------------------------------------------------------------------------------------------------------------------*/
@@ -120,12 +124,6 @@ header p {
   background-color: white;
   border-radius: 20px;
   padding: 10px 25px;
-}
-
-.slider-btn a>button:hover,
-.slider-btn a>button:active {
-  background-color: #ffcf90;
-  border-color: #ffcf90;
 }
 
 .row-attrazioni {
@@ -218,7 +216,7 @@ footer li img {
 
 #footer {
   margin-top: 50px;
-  border-top: 10px solid rgb(84, 196, 196);
+  border-top: 5px solid  #ffcf90;
   padding: 20px 0;
 }
 
