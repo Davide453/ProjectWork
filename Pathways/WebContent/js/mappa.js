@@ -56,7 +56,7 @@ function initMap() {
 						map,
 					});
 					posizioneAttuale = new google.maps.LatLng(-33.8665433, 151.1956316);
-					console.log(posizioneAttuale);
+					//console.log(posizioneAttuale);
 					//aggiungere geocodifica di google per convertire coordinate in via per la propria posizione
 
 					let divPercorso = document.getElementById("percorso");
@@ -66,7 +66,7 @@ function initMap() {
 					row.className = "row mt-3 px-4";
 					row.appendChild(label);
 
-					console.log(percorso);
+					//console.log(percorso);
 					divPercorso.appendChild(row);
 
 					infoWindow = new google.maps.InfoWindow();
@@ -128,20 +128,27 @@ function initMap() {
 
 	//Funzione che stampa sulla console la posizione del marker (Uso window. perché devo dichiararlo come variabile globale)
 
-	window.addNodo = function(counter) {
+	window.addNodo = function (nodoID) {
 
-		console.log(marker[counter]);
-		percorso.push(marker[counter]); //aggiunge il marker selezionato a percorso[]
+		//console.log(marker[counter]);
+		//percorso.push(marker[counter]); //aggiunge il marker selezionato a percorso[]
 
-		let divPercorso = document.getElementById("percorso");
-		let row = document.createElement("div");
-		let label = document.createElement("label");
-		label.innerText = marker[counter].nome;
-		row.className = "row mt-3 px-4";
-		row.appendChild(label);
+		for (let i = 0; i < tuttiMarker.length; i++) {
+			console.log(tuttiMarker[i].place_id);
+			console.log(nodoID);
+			if (tuttiMarker[i].place_id == nodoID) {
+				//console.log("TRUE");
+				let divPercorso = document.getElementById("percorso");
+				let row = document.createElement("div");
+				let label = document.createElement("label");
+				label.innerText = tuttiMarker[i].name;
+				row.className = "row mt-3 px-4";
+				row.appendChild(label);
 
-		console.log(percorso);
-		divPercorso.appendChild(row);
+				//console.log(percorso);
+				divPercorso.appendChild(row);
+			}
+		}
 
 	}
 
@@ -150,10 +157,10 @@ function initMap() {
 		.then((response) => response.json())
 		.then((json) => {
 			marker = json.attrazioni;
-			console.log(marker);
+			//console.log(marker);
 
 			for (let i = 0; i < marker.length; i++) {
-				console.log(marker[i]);
+				//console.log(marker[i]);
 				let posizione = { lat: marker[i].latitudine, lng: marker[i].longitudine };
 				let nome = marker[i].nome;
 				let markerAttrazione = new google.maps.Marker({
@@ -200,7 +207,7 @@ function initMap() {
 
 	// Usiamo useMarkerData per accedere a markerData in modo sicuro
 	useMarkerData((data) => {
-		console.log(data);
+		//console.log(data);
 	});
 
 
@@ -230,7 +237,6 @@ function nearbySearch(pos) {
 		location: posizioneAttuale,
 		radius: '5000',
 		type: ['tourist_attraction'],
-
 		fields: ['formatted_address', 'geometry', 'place_id']
 	};
 
@@ -244,21 +250,26 @@ function nearbySearch(pos) {
 			for (let i = 0; i < results.length; i++) {
 
 				creaMarker(results[i]);
-				console.log(results[i]);
+				//console.log(results[i].place_id);
 			}
 		}
 	}
 }
+
+// FUNZIONE CREA MARKER CHE PRENDE COME PARAMETRO D'INPUT UN NODO
 function creaMarker(nodo) {
 
-	tuttiMarker.push();
+	tuttiMarker.push(nodo); // AGGIUNGE ALL'ARRAY tuttiMarker IL nodo PRESO DA INPUT
 
 	let markerAttrazione = new google.maps.Marker({
 		position: nodo.geometry.location,
 		map,
 		title: nodo.name,
 	})
-	console.log(nodo.place_id)
+
+	//console.log(tuttiMarker);
+	//console.log(nodo.place_id);
+
 	const contentString =
 		'<div id="content">' +
 		'<div id="siteNotice">' +
@@ -288,4 +299,5 @@ function creaMarker(nodo) {
 		});
 	});
 }
+
 window.initMap = initMap;
