@@ -249,6 +249,8 @@ function nearbySearch(pos) {
 		}
 	}
 }
+
+// FUNZIONE CREA MARKER
 function creaMarker(nodo) {
 
 	tuttiMarker.push();
