@@ -24,7 +24,6 @@ function initMap() {
 		mapId: "ecdb3dce61875a18",
 	});
 
-
 	// ==========================================================================================================
 	/* BOTTONE PER TROVARE LA TUA POSIZIONE */
 	// ==========================================================================================================
@@ -69,7 +68,6 @@ function initMap() {
 		}
 	}); */
 
-
 	// ==========================================================================================================
 	/* TROVA LA TUA POSIZIONE AL CARICAMENTO DELLA PAGINA */
 	// ==========================================================================================================
@@ -84,8 +82,19 @@ function initMap() {
 					};
 
 					let nome = "La tua posizione";
-					let markerPosizione = new google.maps.Marker({
+
+					// PERSONALIZZAZIONE MARKER AVANZATO
+					const pinViewBackground = new google.maps.marker.PinView({
+						background: '#6899C7',
+						borderColor: '#5D89B3',
+						glyphColor: '#415F7D',
+						scale: 1.2,
+					});
+
+					// AGGIUNTA MARKER AVANZATO CON PERSONALIZZAZIONE COLORI
+					let markerPosizione = new google.maps.marker.AdvancedMarkerView({
 						position: pos,
+						content: pinViewBackground.element,
 						map,
 					});
 
@@ -157,7 +166,7 @@ function initMap() {
 
 	//Funzione che stampa sulla console la posizione del marker (Uso window. perché devo dichiararlo come variabile globale)
 
-	window.addNodo = function(counter) {
+	window.addNodo = function (counter) {
 
 		console.log(marker[counter]);
 		percorso.push(marker[counter]); //aggiunge il marker selezionato a percorso[]
