@@ -78,30 +78,7 @@ function initMap() {
 						title: nome,
 					});
 
-					// GOOGLE PLACES API
-
-					var pyrmont = new google.maps.LatLng(pos.lat, pos.lng); //VARIABILE PER TENERE TRACCIA DELLA POSIZIONE LAT E LNG
-
-					// VARIABILE RICHIESTA
-					var request = {
-						location: pyrmont,
-						radius: '500',
-						type: ['restaurant']
-					};
-
-					// RICHIESTA DI SERVIZIO NEARBYSEARCH
-					var service = new google.maps.places.PlacesService(map);
-					service.nearbySearch(request, callback);
-
-					// FUNZIONE PER CONTROLLARE SE IL SERVIZIO E' AGIBILE
-					function callback(results, status) {
-						if (status == google.maps.places.PlacesServiceStatus.OK) {
-							for (var i = 0; i < results.length; i++) {
-								//createMarker(results[i]);
-								console.log(results[i]);
-							}
-						}
-					}
+					nearbySearch(pos);
 
 					map.setCenter(pos);
 
@@ -228,6 +205,7 @@ function initMap() {
 
 }
 
+// FUNZIONE PER GESTIRE L'ERRORE DI GEOLOCALIZZAZIONE
 function handleLocationError(browserHasGeolocation, infoWindow, pos) {
 	infoWindow.setPosition(pos);
 	infoWindow.setContent(
@@ -239,24 +217,31 @@ function handleLocationError(browserHasGeolocation, infoWindow, pos) {
 }
 
 
-function ricercaVicinanze() {
 
+// FUNZIONE PER RICERCARE NEI DINTORNI DI RAGGIO "radius" GLI PLACES DI TIPO "type"
+function nearbySearch(pos) {
+	// GOOGLE PLACES API
 
+	let posizioneAttuale = new google.maps.LatLng(pos.lat, pos.lng); //VARIABILE PER TENERE TRACCIA DELLA POSIZIONE LAT E LNG
+
+	// VARIABILE RICHIESTA
 	let request = {
 		location: posizioneAttuale,
-		radius: '50000',
-
+		radius: '500',
+		type: ['restaurant']
 	};
-	service = new google.maps.places.PlacesService(map);
+
+	// RICHIESTA DI SERVIZIO NEARBYSEARCH
+	let service = new google.maps.places.PlacesService(map);
 	service.nearbySearch(request, callback);
 
-}
-function callback(results, status) {
-	console.log(results);
-	console.log(status);
-	if (status == google.maps.places.PlacesServiceStatus.OK) {
-		for (var i = 0; i < results.length; i++) {
-			createMarker(results[i]);
+	// FUNZIONE PER CONTROLLARE SE IL SERVIZIO E' AGIBILE
+	function callback(results, status) {
+		if (status == google.maps.places.PlacesServiceStatus.OK) {
+			for (let i = 0; i < results.length; i++) {
+				//createMarker(results[i]);
+				console.log(results[i]);
+			}
 		}
 	}
 }
