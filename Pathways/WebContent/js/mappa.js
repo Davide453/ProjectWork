@@ -23,11 +23,11 @@ function initMap() {
 		},
 		mapId: "ecdb3dce61875a18",
 	});
-	
 
 	// ==========================================================================================================
 	/* BOTTONE PER TROVARE LA TUA POSIZIONE */
 	// ==========================================================================================================
+	/*
 	const locationButton = document.createElement("button");
 
 	locationButton.textContent = "Trova la tua posizione";
@@ -42,10 +42,20 @@ function initMap() {
 						lat: position.coords.latitude,
 						lng: position.coords.longitude,
 					};
+
+					let markerPosizione = new google.maps.Marker({
+						position: pos,
+						map,
+					});
+
 					infoWindow = new google.maps.InfoWindow();
 					infoWindow.setPosition(pos);
 					infoWindow.setContent("Posizione trovata");
-					infoWindow.open(map);
+					infoWindow.open({
+						shouldFocus: false,
+						anchor: markerPosizione,
+						map,
+					});
 					map.setCenter(pos);
 				},
 				() => {
@@ -56,8 +66,7 @@ function initMap() {
 			// Browser doesn't support Geolocation
 			handleLocationError(false, infoWindow, map.getCenter());
 		}
-	});
-
+	}); */
 
 	// ==========================================================================================================
 	/* TROVA LA TUA POSIZIONE AL CARICAMENTO DELLA PAGINA */
@@ -71,15 +80,56 @@ function initMap() {
 						lat: position.coords.latitude,
 						lng: position.coords.longitude,
 					};
-					infoWindow = new google.maps.InfoWindow();
-					infoWindow.setPosition(pos);
-					infoWindow.setContent("Posizione trovata");
-					infoWindow.open({
-						shouldFocus: false,
+
+					let nome = "La tua posizione";
+
+					// PERSONALIZZAZIONE MARKER AVANZATO
+					const pinViewBackground = new google.maps.marker.PinView({
+						background: '#6899C7',
+						borderColor: '#5D89B3',
+						glyphColor: '#415F7D',
+						scale: 1.2,
+					});
+
+					// AGGIUNTA MARKER AVANZATO CON PERSONALIZZAZIONE COLORI
+					let markerPosizione = new google.maps.marker.AdvancedMarkerView({
+						position: pos,
+						content: pinViewBackground.element,
 						map,
 					});
-					
+
+					//aggiungere geocodifica di google per convertire coordinate in via per la propria posizione
+
+					let divPercorso = document.getElementById("percorso");
+					let row = document.createElement("div");
+					let label = document.createElement("label");
+					label.innerText = nome;
+					row.className = "row mt-3 px-4";
+					row.appendChild(label);
+
+					console.log(percorso);
+					divPercorso.appendChild(row);
+
+					infoWindow = new google.maps.InfoWindow();
+					infoWindow.setPosition(pos);
+					infoWindow.setContent("La tua posizione");
+					infoWindow.open({
+						shouldFocus: false,
+						anchor: markerPosizione,
+						map,
+						title: nome,
+					});
+
 					map.setCenter(pos);
+
+					markerPosizione.addListener("click", () => {
+						infoWindow.open({
+							position: pos,
+							anchor: markerPosizione,
+							title: nome,
+							map,
+						});
+					});
 				},
 				() => {
 					handleLocationError(true, infoWindow, map.getCenter());
@@ -116,7 +166,7 @@ function initMap() {
 
 	//Funzione che stampa sulla console la posizione del marker (Uso window. perché devo dichiararlo come variabile globale)
 
-	window.addNodo = function(counter) {
+	window.addNodo = function (counter) {
 
 		console.log(marker[counter]);
 		percorso.push(marker[counter]); //aggiunge il marker selezionato a percorso[]
@@ -204,5 +254,12 @@ function handleLocationError(browserHasGeolocation, infoWindow, pos) {
 	infoWindow.open(map);
 }
 
+function ricercaVicinanze() {
 
+	service = new google.maps.places.PlacesService(map);
+
+
+	service.nearbySearch(request, callback);
+
+}
 window.initMap = initMap;
