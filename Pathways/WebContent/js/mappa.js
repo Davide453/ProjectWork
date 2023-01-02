@@ -98,6 +98,18 @@ function initMap() {
 						map,
 					});
 
+					//aggiungere geocodifica di google per convertire coordinate in via per la propria posizione
+
+					let divPercorso = document.getElementById("percorso");
+					let row = document.createElement("div");
+					let label = document.createElement("label");
+					label.innerText = nome;
+					row.className = "row mt-3 px-4";
+					row.appendChild(label);
+
+					console.log(percorso);
+					divPercorso.appendChild(row);
+
 					infoWindow = new google.maps.InfoWindow();
 					infoWindow.setPosition(pos);
 					infoWindow.setContent("La tua posizione");
@@ -262,7 +274,6 @@ function handleLocationError(browserHasGeolocation, infoWindow, pos) {
 	);
 	infoWindow.open(map);
 }
-
 
 
 window.initMap = initMap;
