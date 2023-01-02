@@ -3,7 +3,7 @@
 // failed.", it means you probably did not give permission for the browser to
 // locate you.
 let map, infoWindow;
-
+let percorso = [];
 function initMap() {
 	// The location of start
 
@@ -115,13 +115,22 @@ function initMap() {
 	}
 
 	//Funzione che stampa sulla console la posizione del marker (Uso window. perché devo dichiararlo come variabile globale)
-	window.getMarkerPosition = function (counter) {
-		var posizione = {
-			lat: marker[counter].latitudine,
-			lng: marker[counter].longitudine,
-		}
-		console.log(posizione);
+
+	window.addNodo = function(counter) {
+
 		console.log(marker[counter]);
+		percorso.push(marker[counter]); //aggiunge il marker selezionato a percorso[]
+
+		let divPercorso = document.getElementById("percorso");
+		let row = document.createElement("div");
+		let label = document.createElement("label");
+		label.innerText = marker[counter].nome;
+		row.className = "row mt-3 px-4";
+		row.appendChild(label);
+
+		console.log(percorso);
+		divPercorso.appendChild(row);
+
 	}
 
 	// Eseguiamo il fetch
@@ -149,7 +158,8 @@ function initMap() {
 					'<div id="bodyContent">' +
 					'<p>lorem ipsum dolores </p>' +
 					//bottone info marker
-					`<button type="button" class="btn btn-primary" onclick="getMarkerPosition(${marker[i].id})">Aggiungi al tuo percorso</button>` //Richiamo la funzione getMarkerPosition
+
+					`<button type="button" class="btn btn-primary" onclick="addNodo(${marker[i].id})">Aggiungi al tuo percorso</button>` //Richiamo la funzione getMarkerPosition
 					+
 
 					"</div>" +
@@ -183,11 +193,7 @@ function initMap() {
 
 
 }
-function aggiungiPercorso() {
-	if (isNull(percorso)) {
 
-	}
-}
 function handleLocationError(browserHasGeolocation, infoWindow, pos) {
 	infoWindow.setPosition(pos);
 	infoWindow.setContent(
