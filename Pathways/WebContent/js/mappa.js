@@ -23,7 +23,7 @@ function initMap() {
 		},
 		mapId: "ecdb3dce61875a18",
 	});
-	
+
 
 	// ==========================================================================================================
 	/* BOTTONE PER TROVARE LA TUA POSIZIONE */
@@ -89,6 +89,18 @@ function initMap() {
 						map,
 					});
 
+					//aggiungere geocodifica di google per convertire coordinate in via per la propria posizione
+
+					let divPercorso = document.getElementById("percorso");
+					let row = document.createElement("div");
+					let label = document.createElement("label");
+					label.innerText = nome;
+					row.className = "row mt-3 px-4";
+					row.appendChild(label);
+
+					console.log(percorso);
+					divPercorso.appendChild(row);
+
 					infoWindow = new google.maps.InfoWindow();
 					infoWindow.setPosition(pos);
 					infoWindow.setContent("La tua posizione");
@@ -98,7 +110,7 @@ function initMap() {
 						map,
 						title: nome,
 					});
-					
+
 					map.setCenter(pos);
 
 					markerPosizione.addListener("click", () => {
@@ -233,5 +245,12 @@ function handleLocationError(browserHasGeolocation, infoWindow, pos) {
 	infoWindow.open(map);
 }
 
+function ricercaVicinanze() {
 
+	service = new google.maps.places.PlacesService(map);
+
+
+	service.nearbySearch(request, callback);
+
+}
 window.initMap = initMap;
