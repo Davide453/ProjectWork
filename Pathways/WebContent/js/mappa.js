@@ -203,6 +203,7 @@ function initMap() {
 
 }
 
+// FUNZIONE PER GESTIRE L'ERRORE DI GEOLOCALIZZAZIONE
 function handleLocationError(browserHasGeolocation, infoWindow, pos) {
 	infoWindow.setPosition(pos);
 	infoWindow.setContent(
@@ -214,6 +215,7 @@ function handleLocationError(browserHasGeolocation, infoWindow, pos) {
 }
 
 
+// FUNZIONE PER RICERCARE NEI DINTORNI DI RAGGIO "radius" GLI PLACES DI TIPO "type"
 function nearbySearch(pos) {
 	// GOOGLE PLACES API
 
