@@ -28,6 +28,7 @@ function initMap() {
 	// ==========================================================================================================
 	/* BOTTONE PER TROVARE LA TUA POSIZIONE */
 	// ==========================================================================================================
+	/*
 	const locationButton = document.createElement("button");
 
 	locationButton.textContent = "Trova la tua posizione";
@@ -42,10 +43,20 @@ function initMap() {
 						lat: position.coords.latitude,
 						lng: position.coords.longitude,
 					};
+
+					let markerPosizione = new google.maps.Marker({
+						position: pos,
+						map,
+					});
+
 					infoWindow = new google.maps.InfoWindow();
 					infoWindow.setPosition(pos);
 					infoWindow.setContent("Posizione trovata");
-					infoWindow.open(map);
+					infoWindow.open({
+						shouldFocus: false,
+						anchor: markerPosizione,
+						map,
+					});
 					map.setCenter(pos);
 				},
 				() => {
@@ -56,7 +67,7 @@ function initMap() {
 			// Browser doesn't support Geolocation
 			handleLocationError(false, infoWindow, map.getCenter());
 		}
-	});
+	}); */
 
 
 	// ==========================================================================================================
@@ -71,15 +82,33 @@ function initMap() {
 						lat: position.coords.latitude,
 						lng: position.coords.longitude,
 					};
+
+					let nome = "La tua posizione";
+					let markerPosizione = new google.maps.Marker({
+						position: pos,
+						map,
+					});
+
 					infoWindow = new google.maps.InfoWindow();
 					infoWindow.setPosition(pos);
-					infoWindow.setContent("Posizione trovata");
+					infoWindow.setContent("La tua posizione");
 					infoWindow.open({
 						shouldFocus: false,
+						anchor: markerPosizione,
 						map,
+						title: nome,
 					});
 					
 					map.setCenter(pos);
+
+					markerPosizione.addListener("click", () => {
+						infoWindow.open({
+							position: pos,
+							anchor: markerPosizione,
+							title: nome,
+							map,
+						});
+					});
 				},
 				() => {
 					handleLocationError(true, infoWindow, map.getCenter());
