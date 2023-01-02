@@ -23,9 +23,11 @@ function initMap() {
 		},
 		mapId: "ecdb3dce61875a18",
 	});
+	
 
-	infoWindow = new google.maps.InfoWindow();
-
+	// ==========================================================================================================
+	/* BOTTONE PER TROVARE LA TUA POSIZIONE */
+	// ==========================================================================================================
 	const locationButton = document.createElement("button");
 
 	locationButton.textContent = "Trova la tua posizione";
@@ -40,9 +42,9 @@ function initMap() {
 						lat: position.coords.latitude,
 						lng: position.coords.longitude,
 					};
-
+					infoWindow = new google.maps.InfoWindow();
 					infoWindow.setPosition(pos);
-					infoWindow.setContent("Posizione trovata.");
+					infoWindow.setContent("Posizione trovata");
 					infoWindow.open(map);
 					map.setCenter(pos);
 				},
@@ -55,6 +57,44 @@ function initMap() {
 			handleLocationError(false, infoWindow, map.getCenter());
 		}
 	});
+
+
+	// ==========================================================================================================
+	/* TROVA LA TUA POSIZIONE AL CARICAMENTO DELLA PAGINA */
+	// ==========================================================================================================
+	addEventListener("load", () => {
+		// Try HTML5 geolocation.
+		if (navigator.geolocation) {
+			navigator.geolocation.getCurrentPosition(
+				(position) => {
+					const pos = {
+						lat: position.coords.latitude,
+						lng: position.coords.longitude,
+					};
+					infoWindow = new google.maps.InfoWindow();
+					infoWindow.setPosition(pos);
+					infoWindow.setContent("Posizione trovata");
+					infoWindow.open({
+						shouldFocus: false,
+						map,
+					});
+					
+					map.setCenter(pos);
+				},
+				() => {
+					handleLocationError(true, infoWindow, map.getCenter());
+				}
+			);
+		} else {
+			// Browser doesn't support Geolocation
+			handleLocationError(false, infoWindow, map.getCenter());
+		}
+	});
+
+
+	// ==========================================================================================================
+	/* RECUPERARE LE ATTRAZIONI DA FILE JSON */
+	// ==========================================================================================================
 
 	let marker;
 
@@ -74,15 +114,15 @@ function initMap() {
 		}
 	}
 
-  //Funzione che stampa sulla console la posizione del marker (Uso window. perché devo dichiararlo come variabile globale)
-  window.getMarkerPosition = function (counter) {
-    var posizione = {
-      lat: marker[counter].latitudine,
-      lng: marker[counter].longitudine,
-    }
-    console.log(posizione);
-    console.log(marker[counter]);
-  }
+	//Funzione che stampa sulla console la posizione del marker (Uso window. perché devo dichiararlo come variabile globale)
+	window.getMarkerPosition = function (counter) {
+		var posizione = {
+			lat: marker[counter].latitudine,
+			lng: marker[counter].longitudine,
+		}
+		console.log(posizione);
+		console.log(marker[counter]);
+	}
 
 	// Eseguiamo il fetch
 	fetch('./json/Attrazioni.json')
@@ -109,7 +149,7 @@ function initMap() {
 					'<div id="bodyContent">' +
 					'<p>lorem ipsum dolores </p>' +
 					//bottone info marker
-				     `<button type="button" class="btn btn-primary" onclick="getMarkerPosition(${marker[i].id})">Aggiungi al tuo percorso</button>` //Richiamo la funzione getMarkerPosition
+					`<button type="button" class="btn btn-primary" onclick="getMarkerPosition(${marker[i].id})">Aggiungi al tuo percorso</button>` //Richiamo la funzione getMarkerPosition
 					+
 
 					"</div>" +
