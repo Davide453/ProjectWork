@@ -279,7 +279,7 @@ function creaMarker(nodo) {
 		'<p>lorem ipsum dolores </p>' +
 		//bottone info marker
 
-		`<button type="button" class="btn btn-primary" onclick="addNodo("${nodo.place_id}")">Aggiungi al tuo percorso</button>` //Richiamo la funzione getMarkerPosition
+		`<button type="button" class="btn btn-primary" onclick="addNodo('${nodo.place_id}')">Aggiungi al tuo percorso</button>` //Richiamo la funzione getMarkerPosition
 		+
 
 		"</div>" +
