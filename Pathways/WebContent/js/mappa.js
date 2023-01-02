@@ -249,8 +249,6 @@ function nearbySearch(pos) {
 		}
 	}
 }
-
-// FUNZIONE CREA MARKER
 function creaMarker(nodo) {
 
 	tuttiMarker.push();
@@ -260,7 +258,7 @@ function creaMarker(nodo) {
 		map,
 		title: nodo.name,
 	})
-
+	console.log(nodo.place_id)
 	const contentString =
 		'<div id="content">' +
 		'<div id="siteNotice">' +
