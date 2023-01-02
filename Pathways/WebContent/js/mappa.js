@@ -4,6 +4,7 @@
 // locate you.
 let map, infoWindow, posizioneAttuale;
 let percorso = [];
+
 function initMap() {
 	// The location of start
 
@@ -23,50 +24,6 @@ function initMap() {
 		},
 		mapId: "ecdb3dce61875a18",
 	});
-
-	// ==========================================================================================================
-	/* BOTTONE PER TROVARE LA TUA POSIZIONE */
-	// ==========================================================================================================
-	/*
-	const locationButton = document.createElement("button");
-
-	locationButton.textContent = "Trova la tua posizione";
-	locationButton.classList.add("custom-map-control-button");
-	map.controls[google.maps.ControlPosition.TOP_CENTER].push(locationButton);
-	locationButton.addEventListener("click", () => {
-		// Try HTML5 geolocation.
-		if (navigator.geolocation) {
-			navigator.geolocation.getCurrentPosition(
-				(position) => {
-					const pos = {
-						lat: position.coords.latitude,
-						lng: position.coords.longitude,
-					};
-
-					let markerPosizione = new google.maps.Marker({
-						position: pos,
-						map,
-					});
-
-					infoWindow = new google.maps.InfoWindow();
-					infoWindow.setPosition(pos);
-					infoWindow.setContent("Posizione trovata");
-					infoWindow.open({
-						shouldFocus: false,
-						anchor: markerPosizione,
-						map,
-					});
-					map.setCenter(pos);
-				},
-				() => {
-					handleLocationError(true, infoWindow, map.getCenter());
-				}
-			);
-		} else {
-			// Browser doesn't support Geolocation
-			handleLocationError(false, infoWindow, map.getCenter());
-		}
-	}); */
 
 	// ==========================================================================================================
 	/* TROVA LA TUA POSIZIONE AL CARICAMENTO DELLA PAGINA */
@@ -121,26 +78,7 @@ function initMap() {
 						title: nome,
 					});
 
-					var pyrmont = new google.maps.LatLng(pos.lat, pos.lng);
-
-					var request = {
-						location: pyrmont,
-						radius: '500',
-						type: ['restaurant']
-					};
-
-					var service = new google.maps.places.PlacesService(map);
-					service.nearbySearch(request, callback);
-
-
-					function callback(results, status) {
-						if (status == google.maps.places.PlacesServiceStatus.OK) {
-							for (var i = 0; i < results.length; i++) {
-								//createMarker(results[i]);
-								console.log(results[i]);
-							}
-						}
-					}
+					nearbySearch(pos);
 
 					map.setCenter(pos);
 
@@ -267,6 +205,7 @@ function initMap() {
 
 }
 
+// FUNZIONE PER GESTIRE L'ERRORE DI GEOLOCALIZZAZIONE
 function handleLocationError(browserHasGeolocation, infoWindow, pos) {
 	infoWindow.setPosition(pos);
 	infoWindow.setContent(
@@ -278,24 +217,31 @@ function handleLocationError(browserHasGeolocation, infoWindow, pos) {
 }
 
 
-function ricercaVicinanze() {
 
+// FUNZIONE PER RICERCARE NEI DINTORNI DI RAGGIO "radius" GLI PLACES DI TIPO "type"
+function nearbySearch(pos) {
+	// GOOGLE PLACES API
 
+	let posizioneAttuale = new google.maps.LatLng(pos.lat, pos.lng); //VARIABILE PER TENERE TRACCIA DELLA POSIZIONE LAT E LNG
+
+	// VARIABILE RICHIESTA
 	let request = {
 		location: posizioneAttuale,
-		radius: '50000',
-
+		radius: '500',
+		type: ['restaurant']
 	};
-	service = new google.maps.places.PlacesService(map);
+
+	// RICHIESTA DI SERVIZIO NEARBYSEARCH
+	let service = new google.maps.places.PlacesService(map);
 	service.nearbySearch(request, callback);
 
-}
-function callback(results, status) {
-	console.log(results);
-	console.log(status);
-	if (status == google.maps.places.PlacesServiceStatus.OK) {
-		for (var i = 0; i < results.length; i++) {
-			createMarker(results[i]);
+	// FUNZIONE PER CONTROLLARE SE IL SERVIZIO E' AGIBILE
+	function callback(results, status) {
+		if (status == google.maps.places.PlacesServiceStatus.OK) {
+			for (let i = 0; i < results.length; i++) {
+				//createMarker(results[i]);
+				console.log(results[i]);
+			}
 		}
 	}
 }
