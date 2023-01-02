@@ -77,30 +77,7 @@ function initMap() {
 						title: nome,
 					});
 
-					// GOOGLE PLACES API
-
-					var pyrmont = new google.maps.LatLng(pos.lat, pos.lng); //VARIABILE PER TENERE TRACCIA DELLA POSIZIONE LAT E LNG
-
-					// VARIABILE RICHIESTA
-					var request = {
-						location: pyrmont,
-						radius: '500',
-						type: ['restaurant']
-					};
-
-					// RICHIESTA DI SERVIZIO NEARBYSEARCH
-					var service = new google.maps.places.PlacesService(map);
-					service.nearbySearch(request, callback);
-
-					// FUNZIONE PER CONTROLLARE SE IL SERVIZIO E' AGIBILE
-					function callback(results, status) {
-						if (status == google.maps.places.PlacesServiceStatus.OK) {
-							for (var i = 0; i < results.length; i++) {
-								//createMarker(results[i]);
-								console.log(results[i]);
-							}
-						}
-					}
+					nearbySearch(pos);
 
 					map.setCenter(pos);
 
@@ -236,5 +213,32 @@ function handleLocationError(browserHasGeolocation, infoWindow, pos) {
 	infoWindow.open(map);
 }
 
+
+function nearbySearch(pos) {
+	// GOOGLE PLACES API
+
+	let posizioneAttuale = new google.maps.LatLng(pos.lat, pos.lng); //VARIABILE PER TENERE TRACCIA DELLA POSIZIONE LAT E LNG
+
+	// VARIABILE RICHIESTA
+	let request = {
+		location: posizioneAttuale,
+		radius: '500',
+		type: ['restaurant']
+	};
+
+	// RICHIESTA DI SERVIZIO NEARBYSEARCH
+	let service = new google.maps.places.PlacesService(map);
+	service.nearbySearch(request, callback);
+
+	// FUNZIONE PER CONTROLLARE SE IL SERVIZIO E' AGIBILE
+	function callback(results, status) {
+		if (status == google.maps.places.PlacesServiceStatus.OK) {
+			for (let i = 0; i < results.length; i++) {
+				//createMarker(results[i]);
+				console.log(results[i]);
+			}
+		}
+	}
+}
 
 window.initMap = initMap;
