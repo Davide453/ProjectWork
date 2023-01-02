@@ -120,6 +120,27 @@ function initMap() {
 						title: nome,
 					});
 
+					var pyrmont = new google.maps.LatLng(pos.lat, pos.lng);
+
+					var request = {
+						location: pyrmont,
+						radius: '500',
+						type: ['restaurant']
+					};
+
+					var service = new google.maps.places.PlacesService(map);
+					service.nearbySearch(request, callback);
+
+
+					function callback(results, status) {
+						if (status == google.maps.places.PlacesServiceStatus.OK) {
+							for (var i = 0; i < results.length; i++) {
+								//createMarker(results[i]);
+								console.log(results[i]);
+							}
+						}
+					}
+
 					map.setCenter(pos);
 
 					markerPosizione.addListener("click", () => {
@@ -254,12 +275,5 @@ function handleLocationError(browserHasGeolocation, infoWindow, pos) {
 	infoWindow.open(map);
 }
 
-function ricercaVicinanze() {
 
-	service = new google.maps.places.PlacesService(map);
-
-
-	service.nearbySearch(request, callback);
-
-}
 window.initMap = initMap;
