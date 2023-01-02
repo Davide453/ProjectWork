@@ -3,6 +3,7 @@
 // failed.", it means you probably did not give permission for the browser to
 // locate you.
 let map, infoWindow, posizioneAttuale;
+let tuttiMarker = [];
 let percorso = [];
 
 function initMap() {
@@ -90,7 +91,7 @@ function initMap() {
 							map,
 						});
 					});
-					ricercaVicinanze();
+
 				},
 				() => {
 					handleLocationError(true, infoWindow, map.getCenter());
@@ -127,7 +128,7 @@ function initMap() {
 
 	//Funzione che stampa sulla console la posizione del marker (Uso window. perché devo dichiararlo come variabile globale)
 
-	window.addNodo = function (counter) {
+	window.addNodo = function(counter) {
 
 		console.log(marker[counter]);
 		percorso.push(marker[counter]); //aggiunge il marker selezionato a percorso[]
@@ -227,8 +228,10 @@ function nearbySearch(pos) {
 	// VARIABILE RICHIESTA
 	let request = {
 		location: posizioneAttuale,
-		radius: '500',
-		type: ['restaurant']
+		radius: '5000',
+		type: ['tourist_attraction'],
+
+		fields: ['formatted_address', 'geometry', 'place_id']
 	};
 
 	// RICHIESTA DI SERVIZIO NEARBYSEARCH
@@ -239,11 +242,50 @@ function nearbySearch(pos) {
 	function callback(results, status) {
 		if (status == google.maps.places.PlacesServiceStatus.OK) {
 			for (let i = 0; i < results.length; i++) {
-				//createMarker(results[i]);
+
+				creaMarker(results[i]);
 				console.log(results[i]);
 			}
 		}
 	}
 }
+function creaMarker(nodo) {
 
+	tuttiMarker.push();
+
+	let markerAttrazione = new google.maps.Marker({
+		position: nodo.geometry.location,
+		map,
+		title: nodo.name,
+	})
+
+	const contentString =
+		'<div id="content">' +
+		'<div id="siteNotice">' +
+		"</div>" +
+		'<h1 id="firstHeading" class="firstHeading">' + nodo.name + '</h1>' +
+		'<div id="bodyContent">' +
+		'<p>lorem ipsum dolores </p>' +
+		//bottone info marker
+
+		`<button type="button" class="btn btn-primary" onclick="addNodo(${nodo.place_id})">Aggiungi al tuo percorso</button>` //Richiamo la funzione getMarkerPosition
+		+
+
+		"</div>" +
+		"</div>";
+
+
+	const infowindow = new google.maps.InfoWindow({
+		content: contentString,
+		ariaLabel: nodo.name,
+	});
+
+	markerAttrazione.addListener("click", () => {
+		infowindow.open({
+			position: nodo.geometry.location,
+			anchor: markerAttrazione,
+			map,
+		});
+	});
+}
 window.initMap = initMap;
