@@ -2,7 +2,7 @@
 // prompted by your browser. If you see the error "The Geolocation service
 // failed.", it means you probably did not give permission for the browser to
 // locate you.
-let map, infoWindow;
+let map, infoWindow, posizioneAttuale;
 let percorso = [];
 function initMap() {
 	// The location of start
@@ -97,7 +97,8 @@ function initMap() {
 						content: pinViewBackground.element,
 						map,
 					});
-
+					posizioneAttuale = new google.maps.LatLng(-33.8665433, 151.1956316);
+					console.log(posizioneAttuale);
 					//aggiungere geocodifica di google per convertire coordinate in via per la propria posizione
 
 					let divPercorso = document.getElementById("percorso");
@@ -130,6 +131,7 @@ function initMap() {
 							map,
 						});
 					});
+					ricercaVicinanze();
 				},
 				() => {
 					handleLocationError(true, infoWindow, map.getCenter());
@@ -256,10 +258,23 @@ function handleLocationError(browserHasGeolocation, infoWindow, pos) {
 
 function ricercaVicinanze() {
 
+
+	let request = {
+		location: posizioneAttuale,
+		radius: '50000',
+
+	};
 	service = new google.maps.places.PlacesService(map);
-
-
 	service.nearbySearch(request, callback);
 
+}
+function callback(results, status) {
+	console.log(results);
+	console.log(status);
+	if (status == google.maps.places.PlacesServiceStatus.OK) {
+		for (var i = 0; i < results.length; i++) {
+			createMarker(results[i]);
+		}
+	}
 }
 window.initMap = initMap;
