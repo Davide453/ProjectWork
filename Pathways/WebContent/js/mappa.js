@@ -103,29 +103,6 @@ function initMap() {
 		}
 	});
 
-
-	// ==========================================================================================================
-	/* RECUPERARE LE ATTRAZIONI DA FILE JSON */
-	// ==========================================================================================================
-
-	let marker;
-
-	function useMarkerData(callback) {
-		if (marker) {
-			// Se markerData è già stato assegnato, eseguiamo la callback
-			callback(marker);
-		} else {
-			// Altrimenti, impostiamo un timer per controllare periodicamente se markerData è stato assegnato
-			const intervalId = setInterval(() => {
-				if (marker) {
-					// Se markerData è stato assegnato, eseguiamo la callback e cancelliamo il timer
-					callback(marker);
-					clearInterval(intervalId);
-				}
-			}, 100);
-		}
-	}
-
 	//Funzione che stampa sulla console la posizione del marker (Uso window. perché devo dichiararlo come variabile globale)
 
 	window.addNodo = function (nodoID) {
@@ -134,8 +111,8 @@ function initMap() {
 		//percorso.push(marker[counter]); //aggiunge il marker selezionato a percorso[]
 
 		for (let i = 0; i < tuttiMarker.length; i++) {
-			console.log(tuttiMarker[i].place_id);
-			console.log(nodoID);
+			//console.log(tuttiMarker[i].place_id);
+			//console.log(nodoID);
 			if (tuttiMarker[i].place_id == nodoID) {
 				//console.log("TRUE");
 				let divPercorso = document.getElementById("percorso");
@@ -151,65 +128,8 @@ function initMap() {
 		}
 
 	}
-
-	// Eseguiamo il fetch
-	fetch('./json/Attrazioni.json')
-		.then((response) => response.json())
-		.then((json) => {
-			marker = json.attrazioni;
-			//console.log(marker);
-
-			for (let i = 0; i < marker.length; i++) {
-				//console.log(marker[i]);
-				let posizione = { lat: marker[i].latitudine, lng: marker[i].longitudine };
-				let nome = marker[i].nome;
-				let markerAttrazione = new google.maps.Marker({
-					position: posizione,
-					map,
-					title: nome,
-				});
-
-				const contentString =
-					'<div id="content">' +
-					'<div id="siteNotice">' +
-					"</div>" +
-					'<h1 id="firstHeading" class="firstHeading">' + nome + '</h1>' +
-					'<div id="bodyContent">' +
-					'<p>lorem ipsum dolores </p>' +
-					//bottone info marker
-
-					`<button type="button" class="btn btn-primary" onclick="addNodo(${marker[i].id})">Aggiungi al tuo percorso</button>` //Richiamo la funzione getMarkerPosition
-					+
-
-					"</div>" +
-					"</div>";
-
-				const infowindow = new google.maps.InfoWindow({
-					content: contentString,
-					ariaLabel: nome,
-				});
-
-
-				markerAttrazione.addListener("click", () => {
-					infowindow.open({
-						position: posizione,
-						anchor: markerAttrazione,
-						map,
-					});
-				});
-
-
-
-			}
-
-
-		});
-
-	// Usiamo useMarkerData per accedere a markerData in modo sicuro
-	useMarkerData((data) => {
-		//console.log(data);
-	});
-
+	
+	currentLocationButton();
 
 }
 
@@ -300,4 +220,182 @@ function creaMarker(nodo) {
 	});
 }
 
+// FUNZIONE CREA BOTTONE CHE OTTIENE LA POSIZIONE ATTUALE DELL'UTENTE
+function currentLocationButton() {
+
+	const locationButton = document.createElement("button");
+
+	locationButton.textContent = "La tua posizione";
+	locationButton.classList.add("custom-map-control-button");
+	map.controls[google.maps.ControlPosition.TOP_CENTER].push(locationButton);
+	locationButton.addEventListener("click", () => {
+		// Try HTML5 geolocation.
+		if (navigator.geolocation) {
+			navigator.geolocation.getCurrentPosition(
+				(position) => {
+					const pos = {
+						lat: position.coords.latitude,
+						lng: position.coords.longitude,
+					};
+
+					infoWindow.setPosition(pos);
+					infoWindow.open(map);
+					map.setCenter(pos);
+				},
+				() => {
+					handleLocationError(true, infoWindow, map.getCenter());
+				}
+			);
+		} else {
+			// Browser doesn't support Geolocation
+			handleLocationError(false, infoWindow, map.getCenter());
+		}
+	});
+}
+
 window.initMap = initMap;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	// ================================================================================================================================================================
+/* CODICE VECCHIO NON UTILIZZATO | UTILE COME NOTE PER IL FUTURO */
+	// ================================================================================================================================================================
+
+
+	// ==========================================================================================================
+/* RECUPERARE LE ATTRAZIONI DA FILE JSON */
+	// ==========================================================================================================
+
+/*
+let marker;
+	
+function useMarkerData(callback) {
+	if (marker) {
+		// Se markerData è già stato assegnato, eseguiamo la callback
+		callback(marker);
+	} else {
+		// Altrimenti, impostiamo un timer per controllare periodicamente se markerData è stato assegnato
+		const intervalId = setInterval(() => {
+			if (marker) {
+				// Se markerData è stato assegnato, eseguiamo la callback e cancelliamo il timer
+				callback(marker);
+				clearInterval(intervalId);
+			}
+		}, 100);
+	}
+}*/
+
+/*// Eseguiamo il fetch
+fetch('./json/Attrazioni.json')
+	.then((response) => response.json())
+	.then((json) => {
+		marker = json.attrazioni;
+		//console.log(marker);
+
+		for (let i = 0; i < marker.length; i++) {
+			//console.log(marker[i]);
+			let posizione = { lat: marker[i].latitudine, lng: marker[i].longitudine };
+			let nome = marker[i].nome;
+			let markerAttrazione = new google.maps.Marker({
+				position: posizione,
+				map,
+				title: nome,
+			});
+
+			const contentString =
+				'<div id="content">' +
+				'<div id="siteNotice">' +
+				"</div>" +
+				'<h1 id="firstHeading" class="firstHeading">' + nome + '</h1>' +
+				'<div id="bodyContent">' +
+				'<p>lorem ipsum dolores </p>' +
+				//bottone info marker
+
+				`<button type="button" class="btn btn-primary" onclick="addNodo(${marker[i].id})">Aggiungi al tuo percorso</button>` //Richiamo la funzione getMarkerPosition
+				+
+
+				"</div>" +
+				"</div>";
+
+			const infowindow = new google.maps.InfoWindow({
+				content: contentString,
+				ariaLabel: nome,
+			});
+
+
+			markerAttrazione.addListener("click", () => {
+				infowindow.open({
+					position: posizione,
+					anchor: markerAttrazione,
+					map,
+				});
+			});
+
+
+
+		}
+
+
+	});
+
+// Usiamo useMarkerData per accedere a markerData in modo sicuro
+useMarkerData((data) => {
+	//console.log(data);
+});*/
