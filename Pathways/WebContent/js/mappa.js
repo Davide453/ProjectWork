@@ -130,14 +130,11 @@ function initMap() {
 
 	window.addNodo = function (nodoID) {
 
-		//console.log(marker[counter]);
-		//percorso.push(marker[counter]); //aggiunge il marker selezionato a percorso[]
-
 		for (let i = 0; i < tuttiMarker.length; i++) {
-			console.log(tuttiMarker[i].place_id);
-			console.log(nodoID);
+		
 			if (tuttiMarker[i].place_id == nodoID) {
-				//console.log("TRUE");
+				
+				percorso.push(tuttiMarker[i]);
 				let divPercorso = document.getElementById("percorso");
 				let row = document.createElement("div");
 				let label = document.createElement("label");
@@ -145,72 +142,12 @@ function initMap() {
 				row.className = "row mt-3 px-4";
 				row.appendChild(label);
 
-				//console.log(percorso);
+
 				divPercorso.appendChild(row);
 			}
 		}
 
 	}
-
-	// Eseguiamo il fetch
-	fetch('./json/Attrazioni.json')
-		.then((response) => response.json())
-		.then((json) => {
-			marker = json.attrazioni;
-			//console.log(marker);
-
-			for (let i = 0; i < marker.length; i++) {
-				//console.log(marker[i]);
-				let posizione = { lat: marker[i].latitudine, lng: marker[i].longitudine };
-				let nome = marker[i].nome;
-				let markerAttrazione = new google.maps.Marker({
-					position: posizione,
-					map,
-					title: nome,
-				});
-
-				const contentString =
-					'<div id="content">' +
-					'<div id="siteNotice">' +
-					"</div>" +
-					'<h1 id="firstHeading" class="firstHeading">' + nome + '</h1>' +
-					'<div id="bodyContent">' +
-					'<p>lorem ipsum dolores </p>' +
-					//bottone info marker
-
-					`<button type="button" class="btn btn-primary" onclick="addNodo(${marker[i].id})">Aggiungi al tuo percorso</button>` //Richiamo la funzione getMarkerPosition
-					+
-
-					"</div>" +
-					"</div>";
-
-				const infowindow = new google.maps.InfoWindow({
-					content: contentString,
-					ariaLabel: nome,
-				});
-
-
-				markerAttrazione.addListener("click", () => {
-					infowindow.open({
-						position: posizione,
-						anchor: markerAttrazione,
-						map,
-					});
-				});
-
-
-
-			}
-
-
-		});
-
-	// Usiamo useMarkerData per accedere a markerData in modo sicuro
-	useMarkerData((data) => {
-		//console.log(data);
-	});
-
-
 }
 
 // FUNZIONE PER GESTIRE L'ERRORE DI GEOLOCALIZZAZIONE
