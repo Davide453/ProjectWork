@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
 
@@ -62,10 +64,9 @@
 					<div class="row m-2">
 						<input type="text"></input>
 					</div>
-					
 					<div class="row m-2">
-						<button id="percorsoButton" type="button" class="btn btn-primary"
-							>Calcola il percorso</button>
+						<button type="submit" class="btn btn-primary" value="percorso"
+							onclick="getPercorso()">Calcola il percorso</button>
 					</div>
 				</div>
 			</div>
