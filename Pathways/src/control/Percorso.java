@@ -18,7 +18,7 @@ import com.google.gson.Gson;
 
 import model.AttrazioneNodo;
 
-@WebServlet("/GetPercorso")
+@WebServlet("/update")
 public class Percorso extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -33,6 +33,11 @@ public class Percorso extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
+	}
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+
 		// Legge il corpo della richiesta come stringa
 		BufferedReader reader = request.getReader();
 		StringBuilder sb = new StringBuilder();
@@ -40,22 +45,11 @@ public class Percorso extends HttpServlet {
 		while ((line = reader.readLine()) != null) {
 			sb.append(line);
 		}
-		String jsonString = sb.toString();
-
-		// Converti l'oggetto JSON in un array di nodi Java
-		Gson gson = new Gson();
-		AttrazioneNodo[] nodes = gson.fromJson(jsonString, AttrazioneNodo[].class);
 		
-		System.out.println();
+		System.out.println(sb);
 
-		response.setContentType("application/json");
 		response.setCharacterEncoding("UTF-8");
 
-	}
-
-	protected void doPost(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
-		doGet(request, response);
 	}
 
 }

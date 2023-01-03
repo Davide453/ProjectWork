@@ -48,32 +48,33 @@
 	</header>
 
 	<main id="main">
-		<div class="row mr-0">
-			<div class="filters col bg-white">
-				<div class="col">
-					<div id="percorso" class="row container">
-						<div class="row">
-							<h4>Cosa vuoi visitare?</h4>
+		<form id="getPercorso">
+			<div class="row mr-0">
+				<div class="filters col bg-white">
+					<div class="col">
+						<div id="percorso" class="row container">
+							<div class="row">
+								<h4>Cosa vuoi visitare?</h4>
+							</div>
+						</div>
+						<div class="row m-2">
+							<input type="text"></input>
+						</div>
+						<div class="row m-2">
+							<input type="text"></input>
+						</div>
+
+						<div class="row m-2">
+							<input type="submit" class="btn btn-primary"
+								value="Calcola il percorso">
 						</div>
 					</div>
-					<div class="row m-2">
-						<input type="text"></input>
-					</div>
-					<div class="row m-2">
-						<input type="text"></input>
-					</div>
-					
-					<div class="row m-2">
-						<button id="percorsoButton" type="button" class="btn btn-primary"
-							>Calcola il percorso</button>
-					</div>
+				</div>
+				<div id="map-container" class="col-10">
+					<div id="map"></div>
 				</div>
 			</div>
-			<div id="map-container" class="col-10">
-				<div id="map"></div>
-			</div>
-		</div>
-
+		</form>
 	</main>
 
 	<footer id="footer">

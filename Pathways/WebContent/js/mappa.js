@@ -252,29 +252,33 @@ function currentLocationButton() {
 	});
 }
 
-$("#percorsoButton").click(sendJSON);
 
-
-function sendJSON() {
-	myJsonString = JSON.stringify(percorso);
-	console.log(myJsonString);
-	{
-
+$(document).ready(function() {
+	
+	$('#getPercorso').submit(function() {
+		myJsonString = JSON.stringify(percorso);
+		console.log(myJsonString);
 		$.ajax({
-			type: "POST",
-			url: "GetPercorso",
-			data: myJsonString,
-			success: function(response) {
-				console.log("Array inviato con successo al servlet!");
-			},
-			error: function(xhr, status, error) {
-				alert("Non inviato");
-				console.log("Errore durante l'invio dell'array al servlet: " + error);
+			
+			url: 'update', // URL DELLA SERVLET
+			type: 'POST', // TIPO POST
+			dataType: 'json', // TIPO DEI DATI CHE TORNANO
+			contentType: 'application/json', // SETTA IL TIPO DI CONTENT A 'application/json'
+			data: myJsonString, // I DATI DA INVIARE
+			success: function(data) {
+				if(data.isValid){
+					alert(myJsonString);
+				}
+				else {
+					alert('Errore');
+				}
 			}
+			
 		});
-	}
-
-}
+		
+		return false;
+	});
+});
 
 
 window.initMap = initMap;
