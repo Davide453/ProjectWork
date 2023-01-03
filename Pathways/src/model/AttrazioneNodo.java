@@ -14,8 +14,7 @@ public class AttrazioneNodo extends Nodo {
 		this.nomeAttrazione = nomeAttrazione;
 		this.recensione = recensione;
 		this.viaAttrazione = viaAttrazione;
-		
-		
+				
 		
 	}
 
@@ -59,15 +58,11 @@ public class AttrazioneNodo extends Nodo {
 		this.nodo = nodo;
 	}
 
-
 	@Override
 	public String toString() {
 		return "AttrazioneNodo [nomeAttrazione=" + nomeAttrazione + ", recensione=" + recensione + ", viaAttrazione="
 				+ viaAttrazione + ", nodo=" + nodo + "]";
 	}
-	
-	
-	
 	
 	
 	
