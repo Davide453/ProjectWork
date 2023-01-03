@@ -105,13 +105,13 @@ function initMap() {
 
 	//Funzione che stampa sulla console la posizione del marker (Uso window. perché devo dichiararlo come variabile globale)
 
-	window.addNodo = function (nodoID) {
+	window.addNodo = function(nodoID) {
 
 		for (let i = 0; i < tuttiMarker.length; i++) {
 			//console.log(tuttiMarker[i].place_id);
 			//console.log(nodoID);
 			if (tuttiMarker[i].place_id == nodoID) {
-				
+
 				percorso.push(tuttiMarker[i]);
 				let divPercorso = document.getElementById("percorso");
 				let row = document.createElement("div");
@@ -126,7 +126,7 @@ function initMap() {
 		}
 
 	}
-	
+
 	currentLocationButton();
 
 }
@@ -249,6 +249,18 @@ function currentLocationButton() {
 			handleLocationError(false, infoWindow, map.getCenter());
 		}
 	});
+}
+
+function loadDoc() {
+	var xhttp = new XMLHttpRequest();
+	xhttp.onreadystatechange = function() {
+		if (this.readyState == 4 && this.status == 200) {
+			document.getElementById("demo").innerHTML =
+				this.responseText;
+		}
+	};
+	xhttp.open("GET", `${pageContext.request.contextPath}/asd?percorso=` + percorso, true);
+	xhttp.send();
 }
 
 window.initMap = initMap;
