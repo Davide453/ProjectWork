@@ -107,14 +107,12 @@ function initMap() {
 
 	window.addNodo = function (nodoID) {
 
-		//console.log(marker[counter]);
-		//percorso.push(marker[counter]); //aggiunge il marker selezionato a percorso[]
-
 		for (let i = 0; i < tuttiMarker.length; i++) {
 			//console.log(tuttiMarker[i].place_id);
 			//console.log(nodoID);
 			if (tuttiMarker[i].place_id == nodoID) {
-				//console.log("TRUE");
+				
+				percorso.push(tuttiMarker[i]);
 				let divPercorso = document.getElementById("percorso");
 				let row = document.createElement("div");
 				let label = document.createElement("label");
@@ -122,7 +120,7 @@ function initMap() {
 				row.className = "row mt-3 px-4";
 				row.appendChild(label);
 
-				//console.log(percorso);
+
 				divPercorso.appendChild(row);
 			}
 		}
