@@ -258,7 +258,7 @@ $(document).ready(function() {
 
 	$('#getPercorso').submit(function() {
 		myJsonString = JSON.stringify(percorso);
-		console.log(myJsonString);
+		//console.log(myJsonString);
 		$.ajax({
 
 			url: 'update', // URL DELLA SERVLET
@@ -266,7 +266,6 @@ $(document).ready(function() {
 			dataType: 'json', // TIPO DEI DATI CHE TORNANO
 			contentType: 'application/json', // SETTA IL TIPO DI CONTENT A 'application/json'
 			data: myJsonString, // I DATI DA INVIARE
-
 		});
 
 		return false;
