@@ -5,6 +5,7 @@
 let map, infoWindow, posizioneAttuale;
 let tuttiMarker = [];
 let percorso = [];
+let myJsonString;
 
 function initMap() {
 	// The location of start
@@ -251,23 +252,32 @@ function currentLocationButton() {
 	});
 }
 
-function loadDoc() {
-	var xhttp = new XMLHttpRequest();
-	xhttp.onreadystatechange = function() {
-		if (this.readyState == 4 && this.status == 200) {
-			document.getElementById("demo").innerHTML =
-				this.responseText;
-		}
-	};
-	xhttp.open("GET", `${pageContext.request.contextPath}/asd?percorso=` + percorso, true);
-	xhttp.send();
+$("#percorsoButton").click(sendJSON);
+
+
+function sendJSON() {
+	myJsonString = JSON.stringify(percorso);
+	console.log(myJsonString);
+	{
+
+		$.ajax({
+			type: "POST",
+			url: "GetPercorso",
+			data: myJsonString,
+			success: function(response) {
+				console.log("Array inviato con successo al servlet!");
+			},
+			error: function(xhr, status, error) {
+				alert("Non inviato");
+				console.log("Errore durante l'invio dell'array al servlet: " + error);
+			}
+		});
+	}
+
 }
 
+
 window.initMap = initMap;
-
-
-
-
 
 
 

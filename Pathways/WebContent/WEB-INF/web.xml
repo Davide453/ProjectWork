@@ -3,5 +3,7 @@
   <display-name>Pathways</display-name>
   <welcome-file-list>
     <welcome-file>home.html</welcome-file>
+    <welcome-file>mappa.html</welcome-file>
+    <welcome-file>mappa.jsp</welcome-file>
   </welcome-file-list>
 </web-app>
