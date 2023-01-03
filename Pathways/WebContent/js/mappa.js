@@ -168,6 +168,7 @@ function nearbySearch(pos) {
 		if (status == google.maps.places.PlacesServiceStatus.OK) {
 			for (let i = 0; i < results.length; i++) {
 
+			
 				creaMarker(results[i]);
 				//console.log(results[i].place_id);
 			}
@@ -254,20 +255,19 @@ function currentLocationButton() {
 
 
 $(document).ready(function() {
-	
+
 	$('#getPercorso').submit(function() {
 		myJsonString = JSON.stringify(percorso);
 		//console.log(myJsonString);
 		$.ajax({
-			
+
 			url: 'update', // URL DELLA SERVLET
 			type: 'POST', // TIPO POST
 			dataType: 'json', // TIPO DEI DATI CHE TORNANO
 			contentType: 'application/json', // SETTA IL TIPO DI CONTENT A 'application/json'
 			data: myJsonString, // I DATI DA INVIARE
-			
 		});
-		
+
 		return false;
 	});
 });
