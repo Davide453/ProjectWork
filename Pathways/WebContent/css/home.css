@@ -285,26 +285,24 @@ footer li img {
   padding: 20px 0;
 }
 
-.social-icons {
-  list-style: none;
+.footer-links a {
+  text-decoration: none;
+  color: white;
+  font-size: medium;
 }
 
-.social-icons>li {
-  display: inline;
+.footer-links a:hover {
+  color: #ffcf90;
 }
 
-.copyright {
-  text-align: center;
+.copyright-links a {
+  text-decoration: none;
+  color: white;
+  font-size: medium;
 }
 
-.bg-white {
-  background-color: white;
-}
-
-.filters {
-  height: 100%;
-  width: 20%;
-  padding: 20px;
+.copyright-links a:hover {
+  color: #ffcf90;
 }
 
 /*----------------------------------------------------------------------------------------------------------------------------------------------------------------*/
