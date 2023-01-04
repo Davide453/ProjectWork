@@ -229,12 +229,17 @@ section .row img {
 /* ATTRAZIONI SETTIMANA SECTION */
 /*----------------------------------------------------------------------------------------------------------------------------------------------------------------*/
 
-.video-attrazione {
+.img-attrazione-week {
   background: url('/Pathways/WebContent/img/milano.jpg') no-repeat center center / cover;
-  width: 560px;
-  height: 315px;
+  width: 100% !important;
+  height: 50%;
   min-height: 300px;
+  min-width: 300px;
   z-index: 0;
+}
+
+.col-center{
+  margin:0 auto;
 }
 
 
