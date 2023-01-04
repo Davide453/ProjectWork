@@ -184,6 +184,44 @@ section .row img {
 }
 
 /*----------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+/* CONTENT SECTION */
+/*----------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+#image-track {
+  display: flex;
+  position: relative;
+  top: 50%;
+  transform: translate(0%, -50%); 
+  opacity: 1;
+}
+
+#image-track > .image {
+  width: 40vmin;
+  height: 56vmin;
+  object-fit: cover;
+  object-position: 100% center;
+}
+
+.image-track-link {
+  display: flex;
+  position: relative;
+  height: fit-content;
+  left: -30%;
+  z-index: 99;
+  text-decoration: none;
+  font-size: 2em;
+  color: black;
+  margin: 15px 0px;
+  background-color: #ffffff;
+  border-radius: 5px;
+  padding: 2px 15px;
+}
+
+.image-track-link:hover {
+  color: #ffcf90;
+}
+
+/*----------------------------------------------------------------------------------------------------------------------------------------------------------------*/
 /* ATTRAZIONI SECTION */
 /*----------------------------------------------------------------------------------------------------------------------------------------------------------------*/
 
