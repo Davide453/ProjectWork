@@ -28,6 +28,10 @@ body {
   color: white;
 }
 
+ul {
+  list-style: none;
+}
+
 .btn:hover {
   background-color: #ffcf90;
   color: white;
@@ -58,26 +62,6 @@ body {
   padding-right: 0;
 }
 
-#footer {
-  margin-top: 50px;
-  border-top: 5px solid  #17142c;
-  padding: 20px 0;
-  background-color: #1c1b25;
-  color: white;
-}
-
-.social-icons {
-  list-style: none;
-}
-
-.social-icons>li {
-  display: inline;
-}
-
-.copyright {
-  text-align: center;
-}
-
 .index-first {
   z-index: 1000;
   position: absolute;
@@ -90,12 +74,6 @@ body {
 
 .bg-white {
   background-color: white;
-}
-
-.filters {
-  height: 100%;
-  width: 20%;
-  padding: 20px;
 }
 
 
@@ -126,4 +104,38 @@ body {
 }
 .custom-map-control-button:hover {
   background: rgb(235, 235, 235);
+}
+
+
+#footer {
+  margin-top: 50px;
+  border-top: 5px solid  #17142c;
+  padding: 20px 0;
+  background-color: #1c1b25;
+  color: white;
+}
+
+
+/*----------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+/* FOOTER */
+/*----------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+.footer-links a {
+  text-decoration: none;
+  color: white;
+  font-size: medium;
+}
+
+.footer-links a:hover {
+  color: #ffcf90;
+}
+
+.copyright-links a {
+  text-decoration: none;
+  color: white;
+  font-size: medium;
+}
+
+.copyright-links a:hover {
+  color: #ffcf90;
 }
