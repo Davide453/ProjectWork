@@ -72,17 +72,21 @@ public class Percorso extends HttpServlet {
 
 			JsonObject geometryObject = (JsonObject) jsonObject.get("geometry");
 
-			JsonElement geometryElement = geometryObject.get("location");
+			JsonObject geometryObject2 = geometryObject.get("location").getAsJsonObject();
+
+			JsonElement latElement = geometryObject2.get("lat");
+
+			JsonElement lngElement = geometryObject2.get("lng");
 
 			JsonElement namePlaceId = jsonObject.get("place_id");
 
 			JsonElement vicinityElement = jsonObject.get("vicinity");
 
 			System.out.println(nameElement);
-			System.out.println(geometryElement);
+			System.out.println(latElement + " " + lngElement);
 			System.out.println(namePlaceId);
 			System.out.println(vicinityElement);
-			
+
 		}
 
 		response.setCharacterEncoding("UTF-8");
