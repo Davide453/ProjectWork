@@ -59,11 +59,15 @@ function scrollAnimation() {
     window.ontouchmove = e => handleOnMove(e.touches[0]);
 }
 
+function autoPlay(){
+   
+}
 
 
 window.onload = function () {
     autoType();
     scrollAnimation();
+    autoPlay();
 }
 
 
