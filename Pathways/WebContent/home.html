@@ -6,6 +6,7 @@
   <meta charset="utf-8" />
   <meta name="description" content="Mappa con localizzazione delle attrazioni">
   <meta name="author" content="Pathways">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
   <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
   <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
   <link rel="icon" href="img/logo.png">
@@ -19,10 +20,12 @@
 </head>
 
 <body>
+
   <header>
     <nav class="navbar navbar-expand-lg">
       <div class="col">
       </div>
+
       <div class="col">
         <div class="container-fluid">
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -36,12 +39,12 @@
                 <a class="nav-link" href="mappa.html">Percorsi</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">I tuoi percorsi</a>
+                <a class="nav-link" href="percorsi.html">I tuoi percorsi</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Chi Siamo</a>
+                <a class="nav-link" href="about.html">Chi Siamo</a>
               </li>
-              <li class="nav-item">
+              <li class="nav-item" data-bs-toggle="modal" data-bs-target="#logindemo">
                 <a class="nav-link" href="#">Login</a>
               </li>
             </ul>
@@ -171,7 +174,7 @@
             <div class="col" style="transform: translate3d(0px, 0px, 0px); transition: all 0s ease 0s; width: 2232px;">
               <div>
                 <div class="row g-0 align-items-stretch rounded shadow">
-                  
+
                   <div class="col-lg-5 rounded-start col-center">
                     <img src="img/milano.jpg" class="img-attrazione-week">
                     <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/ryBYgYKtTQ0"
@@ -373,6 +376,32 @@
     </div><!-- #copyrights end -->
 
   </footer>
+
+  <!-- MODAL -->
+  <div id="logindemo" class="modal fade">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-body">
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                <div class="my-form bg-dark">
+                    <h1 class="text-center modal-h1">Login</h1>
+                    <form action="#" >
+                        <div class="mb-3 mt-3">
+                            <label for="email">Email</label>
+                            <input type="email" class="form-control">
+                        </div>
+                        <div class="mb-3 mt-3">
+                            <label for="password">Password</label>
+                            <input type="password" class="form-control">
+                        </div>
+                        <button type="button" class="btn btn-light mt-3">LOGIN</button>
+                        <p class="login-form-p">Non sei registrato?<a href="#"> Registrati</a></p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 </body>
 
