@@ -6,7 +6,9 @@
 /* #ffcf90 */
 
 /* SECONDARY COLOR */
-/* #0f0c2b */
+/* #0f0c2b MAIN BLUE */
+/* #17142c LIGHTER BLUE */
+/* #1c1b25 DARK GREY */
 
 
 /*----------------------------------------------------------------------------------------------------------------------------------------------------------------*/
@@ -46,6 +48,8 @@ header {
   margin-top: 0;
   padding: 0;
   width: 100%;
+  max-width: 100%;
+  z-index: 99;
 }
 
 header .row,
@@ -80,7 +84,7 @@ header p {
 
 .nav-link:hover,
 .nav-link:active {
-  color: #ffcf90; 
+  color: #ffcf90;
 }
 
 /*----------------------------------------------------------------------------------------------------------------------------------------------------------------*/
@@ -191,11 +195,11 @@ section .row img {
   display: flex;
   position: relative;
   top: 50%;
-  transform: translate(0%, -50%); 
+  transform: translate(0%, -50%);
   opacity: 1;
 }
 
-#image-track > .image {
+#image-track>.image {
   width: 40vmin;
   height: 56vmin;
   object-fit: cover;
@@ -207,7 +211,7 @@ section .row img {
   position: relative;
   height: fit-content;
   left: -30%;
-  z-index: 99;
+  z-index: 9;
   text-decoration: none;
   font-size: 2em;
   color: black;
@@ -222,11 +226,34 @@ section .row img {
 }
 
 /*----------------------------------------------------------------------------------------------------------------------------------------------------------------*/
-/* ATTRAZIONI SECTION */
+/* ATTRAZIONI SETTIMANA SECTION */
 /*----------------------------------------------------------------------------------------------------------------------------------------------------------------*/
 
-.attrazioni {
-  background-color: #0f0c2b;
+.img-attrazione-week {
+  background: url('/Pathways/WebContent/img/milano.jpg') no-repeat center center / cover;
+  width: 100% !important;
+  height: 50%;
+  min-height: 300px;
+  min-width: 300px;
+  z-index: 0;
+}
+
+.col-center{
+  margin:0 auto;
+}
+
+
+/*----------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+/* NOTIZIE SECTION */
+/*----------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+.row-notizie img {
+  width: 100% !important;
+  height: 35vh !important;
+}
+
+.card-body {
+  color: black;
 }
 
 /*----------------------------------------------------------------------------------------------------------------------------------------------------------------*/
@@ -254,7 +281,7 @@ footer li img {
 
 #footer {
   margin-top: 50px;
-  border-top: 5px solid  #ffcf90;
+  border-top: 5px solid #17142c;
   padding: 20px 0;
 }
 
@@ -262,7 +289,7 @@ footer li img {
   list-style: none;
 }
 
-.social-icons > li {
+.social-icons>li {
   display: inline;
 }
 
