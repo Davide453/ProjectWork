@@ -46,6 +46,8 @@ header {
   margin-top: 0;
   padding: 0;
   width: 100%;
+  max-width: 100%;
+  z-index: 99;
 }
 
 header .row,
@@ -207,7 +209,7 @@ section .row img {
   position: relative;
   height: fit-content;
   left: -30%;
-  z-index: 99;
+  z-index: 9;
   text-decoration: none;
   font-size: 2em;
   color: black;
