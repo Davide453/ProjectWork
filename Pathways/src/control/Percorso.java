@@ -4,9 +4,6 @@ import java.io.BufferedReader;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
@@ -22,6 +19,7 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 
 import model.AttrazioneNodo;
+import model.Edge;
 
 @WebServlet("/update")
 public class Percorso extends HttpServlet {
@@ -52,18 +50,9 @@ public class Percorso extends HttpServlet {
 
 		}
 
-		Gson g = new Gson();
-		System.out.println("g.tojson(sb)" + g.toJson(sb));
-
-		String test = g.toJson(sb);
-		System.out.println(test);
+		ArrayList<AttrazioneNodo> attrazioni = new ArrayList<AttrazioneNodo>();
 
 		JsonArray data = (JsonArray) new JsonParser().parse(sb.toString());
-
-		System.out.println(data);
-
-		System.out.println(data.get(0));
-		// JsonObject jsonObject = data.get(0);
 
 		for (int i = 0; i < data.size(); i++) {
 			JsonObject jsonObject = data.get(i).getAsJsonObject();
@@ -78,17 +67,54 @@ public class Percorso extends HttpServlet {
 
 			JsonElement lngElement = geometryObject2.get("lng");
 
-			JsonElement namePlaceId = jsonObject.get("place_id");
+			JsonElement placeId = jsonObject.get("place_id");
 
 			JsonElement vicinityElement = jsonObject.get("vicinity");
 
-			System.out.println(nameElement);
-			System.out.println(latElement + " " + lngElement);
-			System.out.println(namePlaceId);
-			System.out.println(vicinityElement);
+			AttrazioneNodo nodo = new AttrazioneNodo(placeId.getAsString(), nameElement.getAsString(),
+					vicinityElement.getAsString(), latElement.getAsDouble(), lngElement.getAsDouble());
 
+			attrazioni.add(nodo);
 		}
 
+		System.out.println(attrazioni);
+		ArrayList<Edge> edge = new ArrayList<Edge>();
+		ArrayList<Edge> edgeVisitati = new ArrayList<Edge>();
+		Edge temp2 = null;
+		Edge temp = null;
+		Edge temp3 = null;
+		boolean tempSettato = false;
+
+		for (int i = 0; i < attrazioni.size(); i++) {
+			temp2 = new Edge(null, null, Double.MAX_VALUE);
+			if (attrazioni.indexOf(attrazioni.get(i)) != attrazioni.size() - 1) {
+
+				for (int j = 0; j < attrazioni.size(); j++) {
+
+					if (attrazioni.indexOf(attrazioni.get(j)) != attrazioni.size() - 1) {
+
+						if (i > 0 && tempSettato == false) {
+							temp = attrazioni.get(0).calcolaEdge(edge.get(j).getDestinazione(),
+
+									attrazioni.get(attrazioni.indexOf(edge.get(j).getDestinazione())));
+							tempSettato = true;
+
+						} else {
+							temp = attrazioni.get(0).calcolaEdge(attrazioni.get(i), attrazioni.get(j + 1));
+						}
+						if (temp.getPeso() < temp2.getPeso()) {
+							temp2 = temp;
+
+						}
+					}
+				}
+				edge.add(temp2);
+				tempSettato = false;
+temp3=temp2;
+			}
+
+		}
+		System.out.println(edge);
 		response.setCharacterEncoding("UTF-8");
 
 	}

@@ -56,8 +56,16 @@ function initMap() {
 						content: pinViewBackground.element,
 						map,
 					});
-					posizioneAttuale = new google.maps.LatLng(-33.8665433, 151.1956316);
-					//console.log(posizioneAttuale);
+
+					let posizioneAttuale = {
+						"geometry": { "location": { "lat": pos.lat, "lng": pos.lng } },
+						"place_id": "posizioneAttuale",
+						"name": "posizioneAttuale",
+						"vicinity": "placeholder" // va fatta la geocodifica
+					};
+
+					percorso.push(posizioneAttuale);
+
 					//aggiungere geocodifica di google per convertire coordinate in via per la propria posizione
 
 					let divPercorso = document.getElementById("percorso");
@@ -168,7 +176,7 @@ function nearbySearch(pos) {
 		if (status == google.maps.places.PlacesServiceStatus.OK) {
 			for (let i = 0; i < results.length; i++) {
 
-			
+
 				creaMarker(results[i]);
 				//console.log(results[i].place_id);
 			}
