@@ -59,10 +59,10 @@ public class AttrazioneNodo {
 
 	@Override
 	public String toString() {
-		return " AttrazioneNodo [id=" + id + ", nomeAttrazione=" + nomeAttrazione + ", viaAttrazione=" + viaAttrazione
-				+ ", lat=" + lat + ", lng=" + lng + "] \n";
+		return "Nome: "+ nomeAttrazione + " Via: " + viaAttrazione + "\n";
 	}
 
+	//FUNZIONE CHE RITORNA L'EDGE DANDOGLI UN ORIGINE ED UNA DESTINAZIONE
 	public Edge calcolaEdge(AttrazioneNodo origine, AttrazioneNodo destinazione) {
 		double lat1 = Math.toRadians(origine.lat);
 		double lon1 = Math.toRadians(origine.lng);

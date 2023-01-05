@@ -33,7 +33,7 @@ public class Edge {
 	}
 	@Override
 	public String toString() {
-		return "Edge origine=" + origine + " destinazione=" + destinazione + " peso=" + peso + " \n";
+		return "Origine: " + origine + " Destinazione: " + destinazione + " Peso: " + peso + " Km \n" + "----------------------------------------------------------------------------" + "\n";
 	}
 	
 	
