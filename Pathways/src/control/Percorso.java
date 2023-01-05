@@ -85,33 +85,28 @@ public class Percorso extends HttpServlet {
 
 		ArrayList<AttrazioneNodo> nodiDaCalcolare = new ArrayList<AttrazioneNodo>();
 
-		for (int i = 0; i < attrazioni.size(); i++) {
+		for (int i = 1; i < attrazioni.size(); i++) {
 			nodiDaCalcolare.add(attrazioni.get(i));
 		}
 
 		Edge edgeBest = null;
 		Edge edgeNew = null;
 
-		AttrazioneNodo origine = null;
-		AttrazioneNodo destinazione = null;
 		int k = 0;
-		while (attrazioni.size() - 2 != percorso.size()) {
+		while (attrazioni.size() - 1 != percorso.size()) {
 
 			edgeBest = new Edge(null, null, Double.MAX_VALUE);
 
-			for (int j = 1; j < nodiDaCalcolare.size(); j++) {
+			for (AttrazioneNodo destinazione : nodiDaCalcolare) {
 
-				edgeNew = attrazioni.get(0).calcolaEdge(attrazioni.get(k), nodiDaCalcolare.get(j));
+				edgeNew = attrazioni.get(0).calcolaEdge(attrazioni.get(k), destinazione);
 
 				if (edgeNew.getPeso() < edgeBest.getPeso()) {
 					edgeBest = edgeNew;
-
 				}
 			}
-
 			percorso.add(edgeBest);
 
-//			origine = edgeBest.getDestinazione();
 			k = attrazioni.indexOf(edgeBest.getDestinazione());
 
 			nodiDaCalcolare.remove(edgeBest.getOrigine());
