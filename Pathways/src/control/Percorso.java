@@ -94,9 +94,9 @@ public class Percorso extends HttpServlet {
 					if (attrazioni.indexOf(attrazioni.get(j)) != attrazioni.size() - 1) {
 
 						if (i > 0 && tempSettato == false) {
-							temp = attrazioni.get(0).calcolaEdge(edge.get(j).getDestinazione(),
+							temp = attrazioni.get(0).calcolaEdge(temp3.getDestinazione(),
 
-									attrazioni.get(attrazioni.indexOf(edge.get(j).getDestinazione())));
+									attrazioni.get(attrazioni.indexOf(temp3.getDestinazione()) + 1));
 							tempSettato = true;
 
 						} else {
@@ -110,7 +110,7 @@ public class Percorso extends HttpServlet {
 				}
 				edge.add(temp2);
 				tempSettato = false;
-temp3=temp2;
+				temp3 = temp2.getDestinazione();
 			}
 
 		}
