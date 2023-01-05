@@ -78,43 +78,61 @@ public class Percorso extends HttpServlet {
 		}
 
 		System.out.println(attrazioni);
-		ArrayList<Edge> edge = new ArrayList<Edge>();
-		ArrayList<Edge> edgeVisitati = new ArrayList<Edge>();
-		Edge temp2 = null;
-		Edge temp = null;
-		Edge temp3 = null;
-		boolean tempSettato = false;
+		ArrayList<Edge> nodiVisitati = new ArrayList<Edge>();
+		ArrayList<AttrazioneNodo> nodiDaVisitare = new ArrayList<AttrazioneNodo>();
 
 		for (int i = 0; i < attrazioni.size(); i++) {
-			temp2 = new Edge(null, null, Double.MAX_VALUE);
+
+			nodiDaVisitare.add(attrazioni.get(i));
+		}
+
+		Edge edgeTemporaneo2 = null;
+		Edge edgeTemporaneo1 = null;
+
+		AttrazioneNodo origine = null;
+		AttrazioneNodo destinazione = null;
+
+		boolean percorso = false;
+
+		for (int i = 0; i < attrazioni.size(); i++) {
+			edgeTemporaneo2 = new Edge(null, null, Double.MAX_VALUE);
+
 			if (attrazioni.indexOf(attrazioni.get(i)) != attrazioni.size() - 1) {
 
 				for (int j = 0; j < attrazioni.size(); j++) {
 
-					if (attrazioni.indexOf(attrazioni.get(j)) != attrazioni.size() - 1) {
+					if (nodiDaVisitare.size() != attrazioni.size() - 1) {
 
-						if (i > 0 && tempSettato == false) {
-							temp = attrazioni.get(0).calcolaEdge(temp3.getDestinazione(),
+						if (i == 0) {
 
-									attrazioni.get(attrazioni.indexOf(temp3.getDestinazione()) + 1));
-							tempSettato = true;
+							edgeTemporaneo1 = attrazioni.get(0).calcolaEdge(attrazioni.get(i),
+									nodiDaVisitare.get(j + 1));
 
 						} else {
-							temp = attrazioni.get(0).calcolaEdge(attrazioni.get(i), attrazioni.get(j + 1));
+							destinazione = nodiDaVisitare.get(j + 1);
+
+							edgeTemporaneo1 = attrazioni.get(0).calcolaEdge(origine, destinazione);
+
 						}
-						if (temp.getPeso() < temp2.getPeso()) {
-							temp2 = temp;
+
+						if (edgeTemporaneo1.getPeso() < edgeTemporaneo2.getPeso()) {
+							edgeTemporaneo2 = edgeTemporaneo1;
 
 						}
 					}
 				}
-				edge.add(temp2);
-				tempSettato = false;
-				temp3 = temp2.getDestinazione();
+
+				nodiVisitati.add(edgeTemporaneo2);
+
+				origine = edgeTemporaneo2.getDestinazione();
+
+				nodiDaVisitare.remove(edgeTemporaneo2.getOrigine());
+
 			}
 
 		}
-		System.out.println(edge);
+
+		System.out.println(nodiVisitati);
 		response.setCharacterEncoding("UTF-8");
 
 	}
