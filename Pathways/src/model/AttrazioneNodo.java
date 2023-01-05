@@ -6,9 +6,7 @@ public class AttrazioneNodo {
 
 	private String id;
 	private String nomeAttrazione;
-
 	private String viaAttrazione;
-
 	private double lat;
 	private double lng;
 
