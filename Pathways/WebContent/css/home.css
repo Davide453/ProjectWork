@@ -3,7 +3,8 @@
 /*----------------------------------------------------------------------------------------------------------------------------------------------------------------*/
 
 /* MAIN COLOR */
-/* #ffcf90 */
+/* #ffcf90 GOLD YELLOW */
+/* #ffab4a DARKER YELLOW */
 
 /* SECONDARY COLOR */
 /* #0f0c2b MAIN BLUE */
@@ -42,7 +43,7 @@ body {
 /* HEADER */
 /*----------------------------------------------------------------------------------------------------------------------------------------------------------------*/
 
-header {
+#header {
   padding: 20px 0;
   position: fixed;
   margin-top: 0;
@@ -52,23 +53,23 @@ header {
   z-index: 99;
 }
 
-header .row,
+#header .row,
 footer .row {
   display: flex;
   align-items: center;
 }
 
-header h1 {
+#header h1 {
   font-weight: 700;
   margin: 0;
 }
 
-header nav {
+#header nav {
   display: flex;
   justify-content: flex-end;
 }
 
-header p {
+#header p {
   padding: 0 20px;
   margin: 0;
 }
@@ -76,7 +77,7 @@ header p {
 .nav-link {
   margin: 0 15px;
   border-right: 2px solid white;
-  color: white;
+  color: #ffcf90;
   font-size: 1.5em;
   font-weight: 400;
   text-transform: uppercase;
@@ -84,8 +85,9 @@ header p {
 
 .nav-link:hover,
 .nav-link:active {
-  color: #ffcf90;
+  color: #ffab4a;
 }
+
 
 /*----------------------------------------------------------------------------------------------------------------------------------------------------------------*/
 /* SLIDER SECTION */
@@ -347,10 +349,6 @@ footer li img {
 /* MODAL */
 /*----------------------------------------------------------------------------------------------------------------------------------------------------------------*/
 
-.modal-body {
-  padding: 0px;
-}
-
 .moform {
   box-shadow: 0 4px 6px 0px rgba(22, 22, 26, 0.18);
 }
@@ -364,7 +362,7 @@ footer li img {
 .modal-content {
   width: 80%;
   margin: 0px auto;
-  background-color: rgba(22, 22, 26, 0.7);
+  background-color: rgba(22, 22, 26, 0.85);
 }
 
 .modal-body {
@@ -506,7 +504,7 @@ footer li img {
 
 /* Modal Content/Box */
 .signup-modal-content {
-  background-color: rgba(22, 22, 26, 0.8);
+  background-color: rgba(22, 22, 26, 0.85);
   margin: 5% auto 15% auto;
   /* 5% from the top, 15% from the bottom and centered */
   border: 1px solid #888;
@@ -546,28 +544,29 @@ footer li img {
   }
 }
 
+/*----------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+/* VIDEO BOX */
+/*----------------------------------------------------------------------------------------------------------------------------------------------------------------*/
 
-
-
- /* Layout */
-.wrap{
+/* Layout */
+.wrap {
   position: relative;
   max-width: 1000px;
   width: 90%;
   margin: 100px auto;
 }
 
- /* The outer-div to move the elements */
-.box-video{
+/* The outer-div to move the elements */
+.box-video {
   position: relative;
   width: 100%;
-  margin:0 auto 20px auto;
+  margin: 0 auto 20px auto;
   cursor: pointer;
   overflow: hidden;
 }
 
- /* Set Cover aka Background-Image */
-.box-video .bg-video{
+/* Set Cover aka Background-Image */
+.box-video .bg-video {
   position: absolute;
   top: 0;
   left: 0;
@@ -579,34 +578,33 @@ footer li img {
   z-index: 2;
 }
 
- /* Add light shade to make play button visible*/
-.bg-video::after{ 
-	content:'';
-	position: absolute;
-  	top: 0;
-  	left: 0;
-  	width: 100%;
-  	height: 100%;
-  	background-color: rgba(0,0,0,0.1);
-  	z-index: 3;
-  	}
+/* Add light shade to make play button visible*/
+.bg-video::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.1);
+  z-index: 3;
+}
 
 
 /* The Play-Button using CSS-Only */
 .box-video .bt-play {
   position: absolute;
-  top:50%;
-  left:50%;
-  margin:-30px 0 0 -30px;
+  top: 50%;
+  left: 50%;
+  margin: -30px 0 0 -30px;
   display: inline-block;
   width: 60px;
   height: 60px;
-  background: rgba(255,255,255,0.1);
-  -webkit-backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.1);
   border-radius: 50%;
   text-indent: -999em;
   cursor: pointer;
-  z-index:2;
+  z-index: 2;
   -webkit-transition: all .3s ease-out;
   transition: all .3s ease-out;
 }
@@ -632,16 +630,16 @@ footer li img {
 }
 
 /* When Class added the Cover gets hidden... */
-.box-video.open .bg-video{
+.box-video.open .bg-video {
   visibility: hidden;
   opacity: 0;
 
   -webkit-transition: all .6s .8s;
-  transition: all .6s .8s;  
+  transition: all .6s .8s;
 }
 
 /* and iframe shows up */
-.box-video.open .video-container{
+.box-video.open .video-container {
   opacity: 1;
   -webkit-transition: all .6s .8s;
   transition: all .6s .8s;
@@ -649,18 +647,61 @@ footer li img {
 
 /* Giving the div ratio of 16:9 with padding */
 .video-container {
-	position: relative;
-	width: 100%;
-	height: 0;
+  position: relative;
+  width: 100%;
+  height: 0;
   margin: 0;
   z-index: 1;
-	padding-bottom: 56.27198%;
+  padding-bottom: 56.27198%;
 }
 
 .video-container iframe {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/*----------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+/* GO TO TOP */
+/*----------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+#button {
+  display: inline-block;
+  background-color: #ffcf90;
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  border-radius: 4px;
+  position: fixed;
+  bottom: 30px;
+  right: 50px;
+  transition: background-color .3s,
+    opacity .5s, visibility .5s;
+  z-index: 1000;
+}
+
+#button::after {
+  content: "\f077";
+  font-family: FontAwesome;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 2em;
+  line-height: 50px;
+  color: #000;
+}
+
+#button:hover {
+  cursor: pointer;
+  background-color: #ffab4a;
+}
+
+#button:active {
+  background-color: #555;
+}
+
+#button.show {
+  opacity: 1;
+  visibility: visible;
 }
