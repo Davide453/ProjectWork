@@ -27,6 +27,7 @@ function initMap() {
 		mapId: "ecdb3dce61875a18",
 	});
 
+
 	// ==========================================================================================================
 	/* TROVA LA TUA POSIZIONE AL CARICAMENTO DELLA PAGINA */
 	// ==========================================================================================================
@@ -101,6 +102,10 @@ function initMap() {
 						});
 					});
 
+					google.maps.event.addListener(map, "click", function (event) {
+						infoWindow.close();
+					});
+
 				},
 				() => {
 					handleLocationError(true, infoWindow, map.getCenter());
@@ -114,7 +119,7 @@ function initMap() {
 
 	//Funzione che stampa sulla console la posizione del marker (Uso window. perché devo dichiararlo come variabile globale)
 
-	window.addNodo = function(nodoID) {
+	window.addNodo = function (nodoID) {
 
 		for (let i = 0; i < tuttiMarker.length; i++) {
 			//console.log(tuttiMarker[i].place_id);
@@ -150,7 +155,6 @@ function handleLocationError(browserHasGeolocation, infoWindow, pos) {
 	);
 	infoWindow.open(map);
 }
-
 
 
 // FUNZIONE PER RICERCARE NEI DINTORNI DI RAGGIO "radius" GLI PLACES DI TIPO "type"
@@ -214,17 +218,21 @@ function creaMarker(nodo) {
 		"</div>";
 
 
-	const infowindow = new google.maps.InfoWindow({
+	const infoWindow_attrazioni = new google.maps.InfoWindow({
 		content: contentString,
 		ariaLabel: nodo.name,
 	});
 
 	markerAttrazione.addListener("click", () => {
-		infowindow.open({
+		infoWindow_attrazioni.open({
 			position: nodo.geometry.location,
 			anchor: markerAttrazione,
 			map,
 		});
+	});
+
+	google.maps.event.addListener(map, "click", function (event) {
+		infoWindow_attrazioni.close();
 	});
 }
 
@@ -262,9 +270,10 @@ function currentLocationButton() {
 }
 
 
-$(document).ready(function() {
+// INVIAMO IL FILE JSON DEI NOSTRI PERCORSI SULLA SERVLET DI JAVA IN MODO TALE DA CALCOLARE L'ALGORITMO DI DIJKSTRA
+$(document).ready(function () {
 
-	$('#getPercorso').submit(function() {
+	$('#getPercorso').submit(function () {
 		myJsonString = JSON.stringify(percorso);
 		//console.log(myJsonString);
 		$.ajax({

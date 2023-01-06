@@ -139,3 +139,86 @@ ul {
 .copyright-links a:hover {
   color: #ffcf90;
 }
+
+
+/*----------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+/* MODAL */
+/*----------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+.my-form {
+  max-width: 100%;
+}
+
+.modal-body {
+  padding: 0px;
+}
+
+.moform{
+  box-shadow: 0 4px 6px 0px rgba(22,22,26,0.18);
+}
+
+.btn-close {
+  position: absolute;
+  right: 0;
+  padding: 1em;
+}
+
+.modal-content {
+  width: 80%;
+  margin: 0px auto;
+}
+
+.modal-body {
+  padding: 0px;
+}
+
+.modal-h1 {
+  font-size: 2.3em;
+  font-weight: bold;
+}
+
+.my-form {
+  padding: 2em;
+  max-width: 100%;
+  color: #FFFFFF;
+  box-shadow: 0 4px 6px 0px rgba(22,22,26,0.18);
+  @media(max-width: 576px){
+    max-width: 90%;
+    margin: 0px auto;
+  }
+}
+
+.form-control {
+  background-color: inherit;
+  color: #fff;
+  padding-left: 0px;
+  border: 0px;
+  border-bottom: 1px solid #fff;
+}
+
+.my-form .btn {
+  width: 100%;
+  font-weight: 800;
+  background-color: #fff;
+  border-radius: 0;
+  padding: 0.5em 0;
+}
+
+.my-form .btn:hover {
+  color: #333;
+}
+
+.login-form-p {
+  text-align: center;
+  padding-top: 2em;
+  color: grey;
+}
+
+.login-form-p a {
+  color: #e1e1e1;
+  text-decoration: none;
+}
+
+.login-form-p a:hover {
+  color: #fff;
+}

@@ -25,9 +25,7 @@ import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 
-import model.Node;
 import model.Edge;
-import model.EdgeComparator;
 
 @WebServlet("/update")
 public class Percorso extends HttpServlet {
