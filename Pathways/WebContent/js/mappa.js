@@ -163,8 +163,7 @@ function nearbySearch(pos) {
 	let request = {
 		location: posizioneAttuale,
 		radius: '5000',
-		type: ['tourist_attraction'],
-		fields: ['formatted_address', 'geometry', 'place_id']
+		type: ['tourist_attraction']
 	};
 
 	// RICHIESTA DI SERVIZIO NEARBYSEARCH

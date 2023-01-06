@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Comparator;
 
 import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
@@ -42,6 +43,7 @@ public class Percorso extends HttpServlet {
 			throws ServletException, IOException {
 
 		// Legge il corpo della richiesta come stringa
+
 		BufferedReader reader = request.getReader();
 		StringBuilder sb = new StringBuilder();
 		String line;
@@ -78,43 +80,41 @@ public class Percorso extends HttpServlet {
 		}
 
 		System.out.println(attrazioni);
-		ArrayList<Edge> edge = new ArrayList<Edge>();
-		ArrayList<Edge> edgeVisitati = new ArrayList<Edge>();
-		Edge temp2 = null;
-		Edge temp = null;
-		Edge temp3 = null;
-		boolean tempSettato = false;
 
-		for (int i = 0; i < attrazioni.size(); i++) {
-			temp2 = new Edge(null, null, Double.MAX_VALUE);
-			if (attrazioni.indexOf(attrazioni.get(i)) != attrazioni.size() - 1) {
+		ArrayList<Edge> percorso = new ArrayList<Edge>();
 
-				for (int j = 0; j < attrazioni.size(); j++) {
+		ArrayList<AttrazioneNodo> nodiDaCalcolare = new ArrayList<AttrazioneNodo>();
 
-					if (attrazioni.indexOf(attrazioni.get(j)) != attrazioni.size() - 1) {
+		for (int i = 1; i < attrazioni.size(); i++) {
+			nodiDaCalcolare.add(attrazioni.get(i));
+		}
 
-						if (i > 0 && tempSettato == false) {
-							temp = attrazioni.get(0).calcolaEdge(edge.get(j).getDestinazione(),
+		Edge edgeBest = null;
+		Edge edgeNew = null;
 
-									attrazioni.get(attrazioni.indexOf(edge.get(j).getDestinazione())));
-							tempSettato = true;
+		int k = 0;
+		while (attrazioni.size() - 1 != percorso.size()) {
 
-						} else {
-							temp = attrazioni.get(0).calcolaEdge(attrazioni.get(i), attrazioni.get(j + 1));
-						}
-						if (temp.getPeso() < temp2.getPeso()) {
-							temp2 = temp;
+			edgeBest = new Edge(null, null, Double.MAX_VALUE);
 
-						}
-					}
+			for (AttrazioneNodo destinazione : nodiDaCalcolare) {
+
+				edgeNew = attrazioni.get(0).calcolaEdge(attrazioni.get(k), destinazione);
+
+				if (edgeNew.getPeso() < edgeBest.getPeso()) {
+					edgeBest = edgeNew;
 				}
-				edge.add(temp2);
-				tempSettato = false;
-temp3=temp2;
 			}
+			percorso.add(edgeBest);
+
+			k = attrazioni.indexOf(edgeBest.getDestinazione());
+
+			nodiDaCalcolare.remove(edgeBest.getOrigine());
+			nodiDaCalcolare.remove(edgeBest.getDestinazione());
 
 		}
-		System.out.println(edge);
+
+		System.out.println(percorso);
 		response.setCharacterEncoding("UTF-8");
 
 	}
