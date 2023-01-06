@@ -2,29 +2,29 @@ package model;
 
 public class Edge {
 
-	private Node origine;
-	private Node destinazione;
+	private AttrazioneNodo origine;
+	private AttrazioneNodo destinazione;
 	private double peso;
 
-	public Edge(Node origine, Node destinazione, double peso) {
+	public Edge(AttrazioneNodo origine, AttrazioneNodo destinazione, double peso) {
 		this.origine = origine;
 		this.destinazione = destinazione;
 		this.peso = peso;
 	}
 
-	public Node getOrigine() {
+	public AttrazioneNodo getOrigine() {
 		return origine;
 	}
 
-	public void setOrigine(Node origine) {
+	public void setOrigine(AttrazioneNodo origine) {
 		this.origine = origine;
 	}
 
-	public Node getDestinazione() {
+	public AttrazioneNodo getDestinazione() {
 		return destinazione;
 	}
 
-	public void setDestinazione(Node destinazione) {
+	public void setDestinazione(AttrazioneNodo destinazione) {
 		this.destinazione = destinazione;
 	}
 
@@ -43,7 +43,7 @@ public class Edge {
 	}
 
 	// FUNZIONE CHE RITORNA LA DISTANZA FRA DUE PUNTI DANDOGLI UN ORIGINE ED UNA DESTINAZIONE
-	public static Edge calcolaEdge(Node origine, Node destinazione) {
+	public static Edge calcolaEdge(AttrazioneNodo origine, AttrazioneNodo destinazione) {
 		double lat1 = Math.toRadians(origine.getLat());
 		double lon1 = Math.toRadians(origine.getLng());
 		double lat2 = Math.toRadians(destinazione.getLat());
