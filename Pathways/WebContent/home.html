@@ -6,7 +6,11 @@
   <meta charset="utf-8" />
   <meta name="description" content="Mappa con localizzazione delle attrazioni">
   <meta name="author" content="Pathways">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.6.3.min.js"
+    integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
   <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
   <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
   <link rel="icon" href="img/logo.png">
@@ -21,8 +25,8 @@
 
 <body>
 
-  <header>
-    <nav class="navbar navbar-expand-lg">
+  <header id="header">
+    <nav id="target-navbar" class="navbar navbar-expand-lg">
       <div class="col">
       </div>
 
@@ -122,7 +126,7 @@
           <div class="row text-center">
             <div class="col-md-8 offset-md-2 center">
               <h2 class="text-title-light mb-5 ls1 text-uppercase">Ciao &amp; Benvenuto.</h2>
-              <p style="font-size: 17px; color: #ffcf90">Pathways è l'app perfetta per chi desidera esplorare al meglio
+              <p style="font-size: 17px; color: #ffffff">Pathways è l'app perfetta per chi desidera esplorare al meglio
                 le
                 città durante i viaggi! Con un semplice tocco, sarai in grado di trovare le attrazioni più popolari e
                 interessanti della tua destinazione, e di ottenere un itinerario dettagliato per raggiungerle.
@@ -137,7 +141,8 @@
             </div>
             <div class="col-12 mt-5 mb-3">
               <h3 class="center text-uppercase" style="font-size: 3em;">Scegli La Città</h3>
-
+              <i class="fa-solid fa-arrow-left pe-2 me-2"></i> Scorri le immagini <i
+                class="fa-solid fa-arrow-right ps-2 ms-2"></i>
               <div class="row m-5">
 
                 <div class="col">
@@ -173,48 +178,52 @@
           <div class="row mt-5">
             <div class="col" style="transform: translate3d(0px, 0px, 0px); transition: all 0s ease 0s; width: 2232px;">
               <div>
-                <div class="row g-0 align-items-stretch rounded shadow">
+                <div class="row g-0 align-items-stretch rounded">
 
-                  <div class="col-lg-5 rounded-start col-center">
-                    <img src="img/milano.jpg" class="img-attrazione-week">
-                    <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/ryBYgYKtTQ0"
-                      title="Attrazione Settimana 1" frameborder="0"
-                      allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                      allowfullscreen style="visibility: hidden;"></iframe>
-                    <i class="icon-play"></i>
-                    </img>
-                  </div>
-                  <div class="col-lg-7 d-flex justify-content-center flex-column rounded-end"
-                    style="padding: 80px 50px">
-                    <h3>Duomo di Milano</h3>
-                    <p>Il Duomo di Milano, ufficialmente Cattedrale Metropolitana della Natività della Beata Vergine
-                      Maria, è la cattedrale dell'arcidiocesi di Milano e monumento nazionale italiano. Simbolo del
-                      capoluogo lombardo, e situato nell'omonima piazza al centro della metropoli, è dedicata a santa
-                      Maria Nascente. È la chiesa più grande d'Italia (la più grande della Repubblica Italiana, dato che
-                      la basilica di San Pietro, più grande, è infatti nel territorio della Città del Vaticano; è la
-                      seconda più grande considerando tutta la penisola italiana), la terza nel mondo per superficie, la
-                      sesta per volume. È sede della parrocchia di Santa Tecla nel duomo di Milano.</p>
-                    <div class="slider-features d-none d-sm-block my-3">
-                      <ul class="list-unstyled">
-                        <li class="d-inline-block me-4">
-                          <i class="fa-regular fa-flag"></i>
-                          <h5 class="mb-0">Italia</h5>
-                        </li>
-
-                        <li class="d-inline-block me-4">
-                          <i class="fa-regular fa-building"></i>
-                          <h5 class="mb-0">Milano</h5>
-                        </li>
-
-                        <li class="d-inline-block">
-                          <i class="fa-regular fa-clock"></i>
-                          <h5 class="mb-0">Iniziato nel 1386</h5>
-                        </li>
-                      </ul>
+                  <div class="box-video">
+                    <div class="bg-video" style="background-image: url(img/milano.jpg);">
+                      <div class="bt-play"></div>
                     </div>
-                    <div><a href="#" class="btn btn-light">Guarda l'itinerario
-                        <i class="icon-angle-right"></i></a></div>
+                    <div class="video-container">
+                      <iframe width="590" height="332"
+                        src="https://www.youtube.com/embed/L4whdqbQEGw?rel=0&amp;showinfo=0" frameborder="0"
+                        allowfullscreen="allowfullscreen"></iframe>
+                    </div>
                   </div>
+
+                </div>
+              </div>
+              <div class="row g-0 align-items-stretch rounded shadow">
+                <div class="pt-3 d-flex justify-content-center flex-column rounded-end"
+                  style="padding: 0px 50px 80px 50px">
+                  <h3>Duomo di Milano</h3>
+                  <p>Il Duomo di Milano, ufficialmente Cattedrale Metropolitana della Natività della Beata Vergine
+                    Maria, è la cattedrale dell'arcidiocesi di Milano e monumento nazionale italiano. Simbolo del
+                    capoluogo lombardo, e situato nell'omonima piazza al centro della metropoli, è dedicata a santa
+                    Maria Nascente. È la chiesa più grande d'Italia (la più grande della Repubblica Italiana, dato che
+                    la basilica di San Pietro, più grande, è infatti nel territorio della Città del Vaticano; è la
+                    seconda più grande considerando tutta la penisola italiana), la terza nel mondo per superficie, la
+                    sesta per volume. È sede della parrocchia di Santa Tecla nel duomo di Milano.</p>
+                  <div class="slider-features d-none d-sm-block my-3">
+                    <ul class="list-unstyled">
+                      <li class="d-inline-block me-4">
+                        <i class="fa-regular fa-flag"></i>
+                        <h5 class="mb-0">Italia</h5>
+                      </li>
+
+                      <li class="d-inline-block me-4">
+                        <i class="fa-regular fa-building"></i>
+                        <h5 class="mb-0">Milano</h5>
+                      </li>
+
+                      <li class="d-inline-block">
+                        <i class="fa-regular fa-clock"></i>
+                        <h5 class="mb-0">Iniziato nel 1386</h5>
+                      </li>
+                    </ul>
+                  </div>
+                  <div><a href="#" class="btn btn-light">Guarda l'itinerario
+                      <i class="icon-angle-right"></i></a></div>
                 </div>
               </div>
             </div>
@@ -373,34 +382,81 @@
 
     </div><!-- #copyrights end -->
 
+    <a id="button"></a>
+
   </footer>
 
-  <!-- MODAL -->
+  <!-- LOGIN MODAL -->
   <div id="logindemo" class="modal fade">
     <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-            <div class="modal-body">
-                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
-                <div class="my-form bg-dark">
-                    <h1 class="text-center modal-h1">Login</h1>
-                    <form action="#" >
-                        <div class="mb-3 mt-3">
-                            <label for="email">Email</label>
-                            <input type="email" class="form-control">
-                        </div>
-                        <div class="mb-3 mt-3">
-                            <label for="password">Password</label>
-                            <input type="password" class="form-control">
-                        </div>
-                        <button type="button" class="btn btn-light mt-3">LOGIN</button>
-                        <p class="login-form-p">Non sei registrato?<a href="#"> Registrati</a></p>
-                        
-                    </form>
-                </div>
-            </div>
+      <div class="modal-content">
+        <div class="modal-body">
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+          <div class="my-form">
+            <h1 class="text-center modal-h1">Login</h1>
+            <form action="#">
+              <div class="mb-3 mt-3">
+                <label for="email">Email</label>
+                <input type="email" class="form-control">
+              </div>
+              <div class="mb-3 mt-3">
+                <label for="password">Password</label>
+                <input type="password" class="form-control">
+              </div>
+              <button type="button" class="btn btn-light mt-3">LOGIN</button>
+              <p class="login-form-p">Non sei registrato?<a href="#"
+                  onclick="document.getElementById('id01').style.display='block'; $('#logindemo').modal('hide');">
+                  Registrati</a></p>
+            </form>
+          </div>
         </div>
+      </div>
     </div>
-</div>
+  </div>
+
+  <!-- SIGNUP MODAL -->
+
+  <!-- The Modal (contains the Sign Up form) -->
+  <div id="id01" class="signup-modal">
+    <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">X</span>
+    <form class="signup-modal-content" action="/action_page.php">
+      <div class="container">
+        <h1>Registrati</h1>
+        <p>Compila tutti i campi per registrarti.</p>
+        <hr>
+        <label for="email"><b>Email</b></label>
+        <input class="signup-form-input" type="text" placeholder="Inserisci Email" name="email" required>
+
+        <label for="psw"><b>Password</b></label>
+        <input class="signup-form-input" type="password" placeholder="Inserisci Password" name="psw" required>
+
+        <label for="psw-repeat"><b>Ripeti la password</b></label>
+        <input class="signup-form-input" type="password" placeholder="Reinserisci Password" name="psw-repeat" required>
+
+        <p>Creando un account confermi di aderire ai nostri <a href="#" style="color:rgb(68, 97, 126)">Termini &
+            Privacy</a>.</p>
+
+        <div class="clearfix">
+          <button class="signup btn-signup-form" type="submit">REGISTRATI</button>
+          <button class="btn-signup-form" type="button" onclick="document.getElementById('id01').style.display='none'"
+            class="cancelbtn">ANNULLA</button>
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <script>
+
+    // Get the modal
+    var modal = document.getElementById('id01');
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function (event) {
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    }
+  </script>
 
 </body>
 
