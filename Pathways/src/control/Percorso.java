@@ -100,7 +100,7 @@ public class Percorso extends HttpServlet {
 				edgeNew = attrazioni.get(0).calcolaEdge(attrazioni.get(k), destinazione);
 
 				if (edgeNew.getPeso() < edgeBest.getPeso()) {
-					edgeBest = edgeNew;
+					edgeBest = edgeNew; 
 				}
 			}
 			percorso.add(edgeBest);
