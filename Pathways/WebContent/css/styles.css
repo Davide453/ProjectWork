@@ -1,19 +1,5 @@
 /*----------------------------------------------------------------------------------------------------------------------------------------------------------------*/
-/* USEFUL */
-/*----------------------------------------------------------------------------------------------------------------------------------------------------------------*/
-
-/* MAIN COLOR */
-/* #ffcf90 GOLD YELLOW */
-/* #ffab4a DARKER YELLOW */
-
-/* SECONDARY COLOR */
-/* #0f0c2b MAIN BLUE */
-/* #17142c LIGHTER BLUE */
-/* #1c1b25 DARK GREY */
-
-
-/*----------------------------------------------------------------------------------------------------------------------------------------------------------------*/
-/* GENERAL STYLING */
+/* GENERAL STYLING uguale per tutte le pagine*/
 /*----------------------------------------------------------------------------------------------------------------------------------------------------------------*/
 
 html,
@@ -22,6 +8,7 @@ body {
   height: 100%;
   margin: 0px;
   padding: 0px;
+  overflow-x: hidden;
   font-family: 'Roboto', sans-serif;
   font-weight: 300;
   background-color: #0f0c2b;
@@ -38,8 +25,9 @@ body {
   color: white;
 }
 
+
 /*----------------------------------------------------------------------------------------------------------------------------------------------------------------*/
-/* HEADER */
+/* HEADER uguale per tutti*/
 /*----------------------------------------------------------------------------------------------------------------------------------------------------------------*/
 
 #header {
@@ -89,10 +77,10 @@ footer .row {
 
 
 /*----------------------------------------------------------------------------------------------------------------------------------------------------------------*/
-/* SLIDER SECTION */
+/* SLIDER SECTION home */
 /*----------------------------------------------------------------------------------------------------------------------------------------------------------------*/
 
-.slider {
+.slider #home {
   display: flex;
   align-items: center;
   background-image: url('../img/Slider2.jpg');
@@ -102,22 +90,125 @@ footer .row {
   text-shadow: 0.25px 0.25px 0.25px #000000;
 }
 
-.slider h1 {
+.slider #home h1 {
   font-size: 7em;
   font-weight: 700;
   margin: 0;
   color: #ffcf90;
 }
 
-.slider h2 {
+.slider #home h2 {
   font-size: 3em;
   font-weight: 500;
   margin: 0;
   color: #fff;
 }
 
-.slider h3 {
+.slider #home h3 {
   margin: 0 0 50px;
+  color: #fff;
+}
+
+#home .slider-btn a {
+  margin: 0 2vw;
+}
+
+#home .slider-btn a>button {
+  background-color: white;
+  border-radius: 20px;
+  padding: 10px 25px;
+}
+
+#home .row-attrazioni {
+  text-align: center;
+  margin: 1em;
+  padding: 1em;
+  position: relative;
+  top: 15vh;
+}
+
+#home .div-attrazione {
+  text-align: center;
+  padding: 1em;
+}
+
+#home .link-attrazione img {
+  width: 30vw;
+  height: 20vh;
+  border: 3px solid white;
+  border-bottom: 0;
+  border-radius: 50%;
+  opacity: 1;
+}
+
+#home .link-attrazione img:hover {
+  opacity: 0.8;
+}
+
+#home section .row img {
+
+  width: 75%;
+}
+
+
+#home .col-sm-2 {
+  margin-top: 90px;
+  margin-bottom: 90px;
+  display: flex;
+}
+
+#home .btn.btn-primary {
+  border-radius: 2px;
+  border: 0px;
+  color: #fbd1d5;
+  text-shadow: none;
+  background-color: #ffffff;
+}
+
+#home .btn.btn-primary:hover {
+  color: #ffffff;
+  background-color: #fbd1d5;
+}
+
+#home .btn-secondary {
+  background-color: #E8DFE0;
+  color: #ffffff;
+  margin: 0 0 30px;
+}
+
+
+/*----------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+/* SLIDER SECTION percorsi_salvati */
+/*----------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+.slider #percorsiSalvati {
+  display: flex;
+  align-items: center;
+  background-image: url('../img/forest.jpg');
+  background-size: cover;
+  height: 120vh;
+  color: #ffffff;
+  text-shadow: 0.25px 0.25px 0.25px #000000;
+
+}
+
+
+.slider #percorsiSalvati h1 {
+  font-size: 5em;
+  font-weight: 700;
+  margin: 0;
+  color: #ffcf90;
+}
+
+.slider #percorsiSalvati h2 {
+  font-size: 3em;
+  font-weight: 500;
+  margin: 0;
+  color: #fff;
+}
+
+.slider #percorsiSalvati h3 {
+  margin: 0 0 20px;
   color: #fff;
 }
 
@@ -157,11 +248,6 @@ footer .row {
   opacity: 0.8;
 }
 
-section .row img {
-
-  width: 75%;
-}
-
 
 .col-sm-2 {
   margin-top: 90px;
@@ -188,8 +274,98 @@ section .row img {
   margin: 0 0 30px;
 }
 
+.slider a {
+  color: #ffffff;
+
+}
+
+.slider a:hover,
+.slider a:active {
+  color: #ffcf90;
+}
+
+
 /*----------------------------------------------------------------------------------------------------------------------------------------------------------------*/
-/* CONTENT SECTION */
+/* SLIDER SECTION chi_siamo*/
+/*----------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+.slider #chiSiamo {
+  display: flex;
+  align-items: center;
+  background-image: url('../img/wallpaperflare-cropped.jpg');
+  height: 100vh;
+  color: #ffffff;
+  text-shadow: 0.25px 0.25px 0.25px #000000;
+
+}
+
+
+.slider #chiSiamo h1 {
+  font-size: 5em;
+  font-weight: 700;
+  margin: 0;
+  color: #ffcf90;
+}
+
+.slider #chiSiamo h2 {
+  font-size: 3em;
+  font-weight: 500;
+  margin: 0;
+  color: #fff;
+}
+
+.slider #chiSiamo h3 {
+  margin: 0 0 20px;
+  color: #fff;
+}
+
+.slider-btn a {
+  margin: 0 2vw;
+}
+
+.slider-btn a>button {
+  background-color: white;
+  border-radius: 20px;
+  padding: 10px 25px;
+}
+
+.col-sm-2 {
+  margin-top: 90px;
+  margin-bottom: 90px;
+  display: flex;
+}
+
+.btn.btn-primary {
+  border-radius: 2px;
+  border: 0px;
+  color: #fbd1d5;
+  text-shadow: none;
+  background-color: #ffffff;
+}
+
+.btn.btn-primary:hover {
+  color: #ffffff;
+  background-color: #fbd1d5;
+}
+
+.btn-secondary {
+  background-color: #E8DFE0;
+  color: #ffffff;
+  margin: 0 0 30px;
+}
+
+.slider #chiSiamo a {
+  color: #ffffff;
+
+}
+
+.slider a:hover,
+.slider a:active {
+  color: #ffcf90;
+}
+
+/*----------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+/* CONTENT SECTION home*/
 /*----------------------------------------------------------------------------------------------------------------------------------------------------------------*/
 
 #image-track {
@@ -227,7 +403,7 @@ section .row img {
 }
 
 /*----------------------------------------------------------------------------------------------------------------------------------------------------------------*/
-/* ATTRAZIONI SETTIMANA SECTION */
+/* ATTRAZIONI SETTIMANA SECTION home */
 /*----------------------------------------------------------------------------------------------------------------------------------------------------------------*/
 
 .img-attrazione-week {
@@ -243,9 +419,8 @@ section .row img {
   margin: 0 auto;
 }
 
-
 /*----------------------------------------------------------------------------------------------------------------------------------------------------------------*/
-/* NOTIZIE SECTION */
+/* NOTIZIE SECTION home*/
 /*----------------------------------------------------------------------------------------------------------------------------------------------------------------*/
 
 .row-notizie img {
@@ -258,7 +433,7 @@ section .row img {
 }
 
 /*----------------------------------------------------------------------------------------------------------------------------------------------------------------*/
-/* FOOTER */
+/* FOOTER uguale per tutti*/
 /*----------------------------------------------------------------------------------------------------------------------------------------------------------------*/
 
 footer {
@@ -307,7 +482,7 @@ footer li img {
 }
 
 /*----------------------------------------------------------------------------------------------------------------------------------------------------------------*/
-/* ICONS */
+/* ICONS uguale per tutti*/
 /*----------------------------------------------------------------------------------------------------------------------------------------------------------------*/
 
 /* Style all font awesome icons */
@@ -345,7 +520,7 @@ footer li img {
 }
 
 /*----------------------------------------------------------------------------------------------------------------------------------------------------------------*/
-/* MODAL */
+/* MODAL uguale per tutti*/
 /*----------------------------------------------------------------------------------------------------------------------------------------------------------------*/
 
 .moform {
@@ -422,7 +597,7 @@ footer li img {
 }
 
 /*----------------------------------------------------------------------------------------------------------------------------------------------------------------*/
-/* SIGNUP MODAL */
+/* SIGNUP MODAL home*/
 /*----------------------------------------------------------------------------------------------------------------------------------------------------------------*/
 
 /* Full-width input fields */
@@ -544,7 +719,7 @@ footer li img {
 }
 
 /*----------------------------------------------------------------------------------------------------------------------------------------------------------------*/
-/* VIDEO BOX */
+/* VIDEO BOX home*/
 /*----------------------------------------------------------------------------------------------------------------------------------------------------------------*/
 
 /* Layout */
@@ -663,7 +838,7 @@ footer li img {
 }
 
 /*----------------------------------------------------------------------------------------------------------------------------------------------------------------*/
-/* GO TO TOP */
+/* GO TO TOP home*/
 /*----------------------------------------------------------------------------------------------------------------------------------------------------------------*/
 
 #button {
@@ -704,3 +879,302 @@ footer li img {
   opacity: 1;
   visibility: visible;
 }
+
+/*fine home -->*/
+
+
+/*----------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+/* GOOGLE MAP API */
+/*----------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+
+#map {
+  height: 100vh;
+  /* The height is 100% viewheight */
+  width: 100%;
+  /* The width is the width of the web page */
+  padding: 0;
+}
+
+.custom-map-control-button {
+  background-color: #fff;
+  border: 0;
+  border-radius: 2px;
+  box-shadow: 0 1px 4px -1px rgba(0, 0, 0, 0.3);
+  margin: 10px;
+  padding: 0 0.5em;
+  font: 400 18px Roboto, Arial, sans-serif;
+  overflow: hidden;
+  height: 40px;
+  cursor: pointer;
+}
+
+.custom-map-control-button:hover {
+  background: rgb(235, 235, 235);
+}
+
+
+/*--------------------------------------------------------------
+# Our Team Section (only chi_siamo)
+--------------------------------------------------------------*/
+.team .member {
+  position: relative;
+}
+
+.team .member .member-img {
+  margin: 0 80px;
+  border-radius: 50%;
+  overflow: hidden;
+  position: relative;
+}
+
+@media (max-width: 1024px) {
+  .team .member .member-img {
+    margin: 0 60px;
+  }
+}
+
+.team .member .member-img img {
+  position: relative;
+  z-index: 1;
+}
+
+.team .member .member-img .social {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+  padding-bottom: 20px;
+  transition: 0.3s;
+  visibility: hidden;
+  opacity: 0;
+}
+
+.team .member .member-img .social a {
+  transition: 0.3s;
+  color: #fff;
+  font-size: 20px;
+  margin: 0 8px;
+}
+
+.team .member .member-img .social a:hover {
+  color: var(--color-primary);
+}
+
+.team .member .member-info {
+  margin-top: 30px;
+}
+
+.team .member .member-info h4 {
+  font-weight: 700;
+  margin-bottom: 6px;
+  font-size: 18px;
+  color: var(--color-secondary);
+}
+
+.team .member .member-info span {
+  font-style: italic;
+  display: block;
+  font-size: 15px;
+  color: #838893;
+  margin-bottom: 10px;
+}
+
+.team .member .member-info p {
+  margin-bottom: 0;
+  font-size: 14px;
+}
+
+.team .member:hover .member-img .social {
+  padding-bottom: 0;
+  visibility: visible;
+  opacity: 1;
+}
+
+
+
+
+
+
+
+/*---------fine chi_siamo----------------------------*/
+
+
+/*--------------------------------------------------------------
+# Project Details Section (only pag. percorsi_salvati)
+--------------------------------------------------------------*/
+.project-details .portfolio-details-slider img {
+  width: 100%;
+}
+
+.project-details .portfolio-details-slider .swiper-pagination .swiper-pagination-bullet {
+  width: 12px;
+  height: 12px;
+  background-color: rgba(255, 255, 255, 0.7);
+  opacity: 1;
+}
+
+.project-details .portfolio-details-slider .swiper-pagination .swiper-pagination-bullet-active {
+  background-color: var(--color-primary);
+}
+
+.project-details .swiper-button-prev,
+.project-details .swiper-button-next {
+  width: 48px;
+  height: 48px;
+}
+
+.project-details .swiper-button-prev:after,
+.project-details .swiper-button-next:after {
+  color: rgba(255, 255, 255, 0.8);
+  background-color: rgba(0, 0, 0, 0.2);
+  font-size: 24px;
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s;
+}
+
+.project-details .swiper-button-prev:hover:after,
+.project-details .swiper-button-next:hover:after {
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+@media (max-width: 575px) {
+
+  .project-details .swiper-button-prev,
+  .project-details .swiper-button-next {
+    display: none;
+  }
+}
+
+.project-details .portfolio-info h3 {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  position: relative;
+}
+
+.project-details .portfolio-info h3:after {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 50px;
+  height: 3px;
+  background: var(--color-primary);
+  left: 0;
+  bottom: 0;
+}
+
+.project-details .portfolio-info ul {
+  list-style: none;
+  padding: 0;
+  font-size: 15px;
+}
+
+.project-details .portfolio-info ul li {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 15px;
+}
+
+.project-details .portfolio-info ul strong {
+  text-transform: uppercase;
+  font-weight: 400;
+  color: #838893;
+  font-size: 14px;
+}
+
+.project-details .portfolio-info .btn-visit {
+  padding: 8px 40px;
+  background: var(--color-primary);
+  color: #fff;
+  border-radius: 50px;
+  transition: 0.3s;
+}
+
+.project-details .portfolio-info .btn-visit:hover {
+  background: #ffc019;
+}
+
+.project-details .portfolio-description h2 {
+  font-size: 26px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: var(--color-secondary);
+}
+
+.project-details .portfolio-description p {
+  padding: 0;
+}
+
+.project-details .portfolio-description .testimonial-item {
+  padding: 30px 30px 0 30px;
+  position: relative;
+  background: #f5f6f7;
+  height: 100%;
+  margin-bottom: 50px;
+}
+
+.project-details .portfolio-description .testimonial-item .testimonial-img {
+  width: 90px;
+  border-radius: 50px;
+  border: 6px solid #fff;
+  float: left;
+  margin: 0 10px 0 0;
+}
+
+.project-details .portfolio-description .testimonial-item h3 {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 15px 0 5px 0;
+  padding-top: 20px;
+}
+
+.project-details .portfolio-description .testimonial-item h4 {
+  font-size: 14px;
+  color: #6c757d;
+  margin: 0;
+}
+
+.project-details .portfolio-description .testimonial-item .quote-icon-left,
+.project-details .portfolio-description .testimonial-item .quote-icon-right {
+  color: #ffd565;
+  font-size: 26px;
+  line-height: 0;
+}
+
+.project-details .portfolio-description .testimonial-item .quote-icon-left {
+  display: inline-block;
+  left: -5px;
+  position: relative;
+}
+
+.project-details .portfolio-description .testimonial-item .quote-icon-right {
+  display: inline-block;
+  right: -5px;
+  position: relative;
+  top: 10px;
+  transform: scale(-1, -1);
+}
+
+.project-details .portfolio-description .testimonial-item p {
+  font-style: italic;
+  margin: 0 0 15px 0 0 0;
+  padding: 0;
+}
+
+
+
+
+
+
+
+/*---------------- fine percorsi_salvati-----------*/
