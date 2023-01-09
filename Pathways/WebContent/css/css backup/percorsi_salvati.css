@@ -1,0 +1,610 @@
+/*----------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+/* GENERAL STYLING */
+/*----------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
+  overflow-x: hidden;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  background-color: #0f0c2b;
+  color: white;
+}
+
+.btn:hover {
+  background-color: #ffcf90;
+  color: white;
+}
+
+.btn:active {
+  background-color: #f5b665;
+  color: white;
+}
+
+
+
+
+/*----------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+/* HEADER */
+/*----------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+header {
+    padding: 20px 0;
+    position: fixed;
+    margin-top: 0;
+    padding: 0;
+    width: 100%;
+    max-width: 100%;
+    z-index: 99;
+  }
+  
+  header .row,
+  footer .row {
+    display: flex;
+    align-items: center;
+  }
+  
+  header h1 {
+    font-weight: 700;
+    margin: 0;
+  }
+  
+  header nav {
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  header p {
+    padding: 0 20px;
+    margin: 0;
+  }
+  
+  .nav-link {
+    margin: 0 15px;
+    border-right: 2px solid white;
+    color: white;
+    font-size: 1.5em;
+    font-weight: 400;
+    text-transform: uppercase;
+  }
+  
+  .nav-link:hover,
+  .nav-link:active {
+    color: #ffcf90;
+  }
+
+  /*----------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+/* SLIDER SECTION */
+/*----------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+.slider {
+  display: flex;
+  align-items: center;
+  background-image: url('../img/forest.jpg');
+  background-size:cover;
+  height:120vh;
+  color: #ffffff;
+  text-shadow: 0.25px 0.25px 0.25px #000000;
+  
+}
+
+
+.slider h1 {
+  font-size: 5em;
+  font-weight: 700;
+  margin: 0;
+  color: #ffcf90;
+}
+
+.slider h2 {
+  font-size: 3em;
+  font-weight: 500;
+  margin: 0;
+  color: #fff;
+}
+
+.slider h3 {
+  margin: 0 0 20px;
+  color: #fff;
+}
+
+.slider-btn a {
+  margin: 0 2vw;
+}
+
+.slider-btn a>button {
+  background-color: white;
+  border-radius: 20px;
+  padding: 10px 25px;
+}
+
+.row-attrazioni {
+  text-align: center;
+  margin: 1em;
+  padding: 1em;
+  position: relative;
+  top: 15vh;
+}
+
+.div-attrazione {
+  text-align: center;
+  padding: 1em;
+}
+
+.link-attrazione img {
+  width: 30vw;
+  height: 20vh;
+  border: 3px solid white;
+  border-bottom: 0;
+  border-radius: 50%;
+  opacity: 1;
+}
+
+.link-attrazione img:hover {
+  opacity: 0.8;
+}
+
+
+.col-sm-2 {
+  margin-top: 90px;
+  margin-bottom: 90px;
+  display: flex;
+}
+
+.btn.btn-primary {
+  border-radius: 2px;
+  border: 0px;
+  color: #fbd1d5;
+  text-shadow: none;
+  background-color: #ffffff;
+}
+
+.btn.btn-primary:hover {
+  color: #ffffff;
+  background-color: #fbd1d5;
+}
+
+.btn-secondary {
+  background-color: #E8DFE0;
+  color: #ffffff;
+  margin: 0 0 30px;
+}
+
+.slider a {
+  color: #ffffff;
+
+}
+
+.slider a:hover,
+.slider a:active {
+  color: #ffcf90;
+}
+
+/*----------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+/* Main SECTION */
+/*----------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+# Project Details Section (only pag. percorsi_salvati)
+--------------------------------------------------------------*/
+.project-details .portfolio-details-slider img {
+  width: 100%;
+}
+
+.project-details .portfolio-details-slider .swiper-pagination .swiper-pagination-bullet {
+  width: 12px;
+  height: 12px;
+  background-color: rgba(255, 255, 255, 0.7);
+  opacity: 1;
+}
+
+.project-details .portfolio-details-slider .swiper-pagination .swiper-pagination-bullet-active {
+  background-color: var(--color-primary);
+}
+
+.project-details .swiper-button-prev,
+.project-details .swiper-button-next {
+  width: 48px;
+  height: 48px;
+}
+
+.project-details .swiper-button-prev:after,
+.project-details .swiper-button-next:after {
+  color: rgba(255, 255, 255, 0.8);
+  background-color: rgba(0, 0, 0, 0.2);
+  font-size: 24px;
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s;
+}
+
+.project-details .swiper-button-prev:hover:after,
+.project-details .swiper-button-next:hover:after {
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+@media (max-width: 575px) {
+
+  .project-details .swiper-button-prev,
+  .project-details .swiper-button-next {
+    display: none;
+  }
+}
+
+.project-details .portfolio-info h3 {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  position: relative;
+}
+
+.project-details .portfolio-info h3:after {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 50px;
+  height: 3px;
+  background: var(--color-primary);
+  left: 0;
+  bottom: 0;
+}
+
+.project-details .portfolio-info ul {
+  list-style: none;
+  padding: 0;
+  font-size: 15px;
+}
+
+.project-details .portfolio-info ul li {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 15px;
+}
+
+.project-details .portfolio-info ul strong {
+  text-transform: uppercase;
+  font-weight: 400;
+  color: #838893;
+  font-size: 14px;
+}
+
+.project-details .portfolio-info .btn-visit {
+  padding: 8px 40px;
+  background: var(--color-primary);
+  color: #fff;
+  border-radius: 50px;
+  transition: 0.3s;
+}
+
+.project-details .portfolio-info .btn-visit:hover {
+  background: #ffc019;
+}
+
+.project-details .portfolio-description h2 {
+  font-size: 26px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: var(--color-secondary);
+}
+
+.project-details .portfolio-description p {
+  padding: 0;
+}
+
+.project-details .portfolio-description .testimonial-item {
+  padding: 30px 30px 0 30px;
+  position: relative;
+  background: #f5f6f7;
+  height: 100%;
+  margin-bottom: 50px;
+}
+
+.project-details .portfolio-description .testimonial-item .testimonial-img {
+  width: 90px;
+  border-radius: 50px;
+  border: 6px solid #fff;
+  float: left;
+  margin: 0 10px 0 0;
+}
+
+.project-details .portfolio-description .testimonial-item h3 {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 15px 0 5px 0;
+  padding-top: 20px;
+}
+
+.project-details .portfolio-description .testimonial-item h4 {
+  font-size: 14px;
+  color: #6c757d;
+  margin: 0;
+}
+
+.project-details .portfolio-description .testimonial-item .quote-icon-left,
+.project-details .portfolio-description .testimonial-item .quote-icon-right {
+  color: #ffd565;
+  font-size: 26px;
+  line-height: 0;
+}
+
+.project-details .portfolio-description .testimonial-item .quote-icon-left {
+  display: inline-block;
+  left: -5px;
+  position: relative;
+}
+
+.project-details .portfolio-description .testimonial-item .quote-icon-right {
+  display: inline-block;
+  right: -5px;
+  position: relative;
+  top: 10px;
+  transform: scale(-1, -1);
+}
+
+.project-details .portfolio-description .testimonial-item p {
+  font-style: italic;
+  margin: 0 0 15px 0 0 0;
+  padding: 0;
+}
+
+
+
+
+/*--------------------------------------------------------------
+# Our Team Section (only pag.chiSiamo)
+--------------------------------------------------------------*/
+.team .member {
+position: relative;
+}
+
+.team .member .member-img {
+margin: 0 80px;
+border-radius: 50%;
+overflow: hidden;
+position: relative;
+}
+
+@media (max-width: 1024px) {
+.team .member .member-img {
+  margin: 0 60px;
+}
+}
+
+.team .member .member-img img {
+position: relative;
+z-index: 1;
+}
+
+.team .member .member-img .social {
+position: absolute;
+inset: 0;
+background-color: rgba(0, 0, 0, 0.6);
+display: flex;
+justify-content: center;
+align-items: center;
+z-index: 2;
+padding-bottom: 20px;
+transition: 0.3s;
+visibility: hidden;
+opacity: 0;
+}
+
+.team .member .member-img .social a {
+transition: 0.3s;
+color: #fff;
+font-size: 20px;
+margin: 0 8px;
+}
+
+.team .member .member-img .social a:hover {
+color: var(--color-primary);
+}
+
+.team .member .member-info {
+margin-top: 30px;
+}
+
+.team .member .member-info h4 {
+font-weight: 700;
+margin-bottom: 6px;
+font-size: 18px;
+color: var(--color-secondary);
+}
+
+.team .member .member-info span {
+font-style: italic;
+display: block;
+font-size: 15px;
+color: #838893;
+margin-bottom: 10px;
+}
+
+.team .member .member-info p {
+margin-bottom: 0;
+font-size: 14px;
+}
+
+.team .member:hover .member-img .social {
+padding-bottom: 0;
+visibility: visible;
+opacity: 1;
+}
+
+
+/*----------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+/* FOOTER */
+/*----------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+footer {
+font-size: 12px;
+padding: 20px 0;
+}
+
+footer .col-sm-8 {
+display: flex;
+justify-content: flex-end;
+}
+
+footer ul {
+list-style: none;
+}
+
+footer li img {
+width: 32px;
+height: 32px;
+}
+
+#footer {
+margin-top: 50px;
+border-top: 5px solid #17142c;
+padding: 20px 0;
+}
+
+.footer-links a {
+text-decoration: none;
+color: white;
+font-size: medium;
+}
+
+.footer-links a:hover {
+color: #ffcf90;
+}
+
+.copyright-links a {
+text-decoration: none;
+color: white;
+font-size: medium;
+}
+
+.copyright-links a:hover {
+color: #ffcf90;
+}
+
+/*----------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+/* ICONS */
+/*----------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+/* Style all font awesome icons */
+.fa {
+padding: 5px;
+font-size: 30px;
+width: 50px;
+text-align: center;
+text-decoration: none;
+}
+
+/* Hover effect */
+.fa:hover {
+opacity: 0.7;
+}
+
+/* Set a specific color for each brand */
+
+/* Facebook */
+.fa-facebook {
+background: #3B5998;
+color: white;
+}
+
+/* Twitter */
+.fa-twitter {
+background: #55ACEE;
+color: white;
+}
+
+.fa {
+margin: 0 10px;
+padding: 10px 0;
+border-radius: 20%;
+}
+
+/*----------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+/* MODAL */
+/*----------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+.my-form {
+max-width: 100%;
+}
+
+.modal-body {
+padding: 0px;
+}
+
+.moform{
+box-shadow: 0 4px 6px 0px rgba(22,22,26,0.18);
+}
+
+.btn-close {
+position: absolute;
+right: 0;
+padding: 1em;
+}
+
+.modal-content {
+width: 80%;
+margin: 0px auto;
+}
+
+.modal-body {
+padding: 0px;
+}
+
+.modal-h1 {
+font-size: 2.3em;
+font-weight: bold;
+}
+
+.my-form {
+padding: 2em;
+max-width: 100%;
+color: #FFFFFF;
+box-shadow: 0 4px 6px 0px rgba(22,22,26,0.18);
+@media(max-width: 576px){
+  max-width: 90%;
+  margin: 0px auto;
+}
+}
+
+.form-control {
+background-color: inherit;
+color: #fff;
+padding-left: 0px;
+border: 0px;
+border-bottom: 1px solid #fff;
+}
+
+.my-form .btn {
+width: 100%;
+font-weight: 800;
+background-color: #fff;
+border-radius: 0;
+padding: 0.5em 0;
+}
+
+.my-form .btn:hover {
+color: #333;
+}
+
+.login-form-p {
+text-align: center;
+padding-top: 2em;
+color: grey;
+}
+
+.login-form-p a {
+color: #e1e1e1;
+text-decoration: none;
+}
+
+.login-form-p a:hover {
+color: #fff;
+}

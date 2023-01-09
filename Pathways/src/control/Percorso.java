@@ -4,7 +4,6 @@ import java.io.BufferedReader;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Comparator;
 
 import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
@@ -13,7 +12,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.google.gson.Gson;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
@@ -102,7 +100,7 @@ public class Percorso extends HttpServlet {
 				edgeNew = attrazioni.get(0).calcolaEdge(attrazioni.get(k), destinazione);
 
 				if (edgeNew.getPeso() < edgeBest.getPeso()) {
-					edgeBest = edgeNew;
+					edgeBest = edgeNew; 
 				}
 			}
 			percorso.add(edgeBest);
