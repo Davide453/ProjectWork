@@ -35,6 +35,7 @@
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
 
 <script src="https://kit.fontawesome.com/9b5234d401.js"
+
 	crossorigin="anonymous"></script>
 
 <link rel="stylesheet" type="text/css" href="./css/styles.css">
@@ -43,11 +44,11 @@
 </head>
 
 <body>
+
 	<a id="button"></a>
 	<header id="header">
 		<nav id="target-navbar" class="navbar navbar-expand-lg">
 			<div class="col-3"></div>
-
 			<div class="col">
 				<div class="container-fluid">
 					<button class="navbar-toggler" type="button"
@@ -70,9 +71,18 @@
 								href="/Pathways/OttieniPercorsi">I tuoi percorsi</a></li>
 							<li class="nav-item"><a class="nav-link" href="chiSiamo.jsp">Chi
 									Siamo</a></li>
-							<li class="nav-item" data-bs-toggle="modal"
-								data-bs-target="#logindemo"><a class="nav-link" href="#">Login</a>
-							</li>
+
+							  <li class="nav-item" data-bs-toggle="modal"
+								<% HttpSession session2 = request.getSession();%>
+								<%String username = (String) session.getAttribute("email"); %>
+								<%Boolean loggato2 = (Boolean) session.getAttribute("loggato"); %>
+								<%if(loggato2==true){ %>
+								data-bs-target="#logindemo"><a class="nav-link" href="#"  >Benvenuto <%= username %>  </a>
+								<%} else { %>
+								<li class="nav-item" data-bs-toggle="modal" data-bs-target="#logindemo"><a class="nav-link" href="#"  >Login</a>
+								<% } %>
+							</li> 
+
 						</ul>
 					</div>
 				</div>

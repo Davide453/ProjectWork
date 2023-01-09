@@ -79,6 +79,7 @@
 				<button type="button" class="btn-close btn-close-white"
 					data-bs-dismiss="modal"></button>
 				<div class="my-form">
+				
 					<h1 class="text-center modal-h1">Login</h1>
 					<form action="login" method="post">
 					
