@@ -34,8 +34,6 @@
 </head>
 
 <body>
-
-<<<<<<< Updated upstream
 	<header>
 		<nav class="navbar navbar-expand-lg">
 			<div class="col"></div>
@@ -65,7 +63,7 @@
 			<div class="col"></div>
 		</nav>
 	</header>
-=======
+
   <header id="header">
     <nav id="target-navbar" class="navbar navbar-expand-lg">
       <div class="col">
@@ -100,4 +98,3 @@
       </div>
     </nav>
   </header>
->>>>>>> Stashed changes
