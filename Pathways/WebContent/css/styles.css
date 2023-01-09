@@ -1,0 +1,1094 @@
+/*----------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+/* GENERAL STYLING uguale per tutte le pagine*/
+/*----------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+html, body {
+	width: 100%;
+	height: 100%;
+	margin: 0px;
+	padding: 0px;
+	overflow-x: hidden;
+	font-family: 'Roboto', sans-serif;
+	font-weight: 300;
+	background-color: #0f0c2b;
+	color: white;
+}
+
+.btn:hover {
+	background-color: #ffcf90 !important;
+	color: white;
+}
+
+.btn:active {
+	background-color: #f5b665 !important;
+	color: white;
+}
+
+.btn:first-child:active {
+	color: white !important;
+	border-color: none! important;
+}
+
+/*----------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+/* HEADER uguale per tutti*/
+/*----------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+#header {
+	padding: 20px 0;
+	position: fixed;
+	margin-top: 0;
+	padding: 0;
+	width: 100%;
+	max-width: 100%;
+	z-index: 99;
+}
+
+#header .row, footer .row {
+	display: flex;
+	align-items: center;
+}
+
+#header h1 {
+	font-weight: 700;
+	margin: 0;
+}
+
+#header nav {
+	display: flex;
+	justify-content: flex-end;
+}
+
+#header p {
+	padding: 0 20px;
+	margin: 0;
+}
+
+.nav-link {
+	margin: 0 15px;
+	border-right: 2px solid white;
+	color: #ffcf90;
+	font-size: 1.5em;
+	font-weight: 400;
+	text-transform: uppercase;
+}
+
+.nav-link:hover, .nav-link:active {
+	color: #ffab4a;
+}
+
+/*----------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+/* SLIDER SECTION home */
+/*----------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+.slider #home {
+	display: flex;
+	align-items: center;
+	background-image: url('../img/home slider.jpg');
+	background-size: cover;
+	color: #ffffff;
+	height: 100vh;
+	text-shadow: 0.25px 0.25px 0.25px #000000;
+}
+
+.slider #home h1 {
+	font-size: 7em;
+	font-weight: 700;
+	margin: 0;
+	color: #ffcf90;
+}
+
+.slider #home h2 {
+	font-size: 3em;
+	font-weight: 500;
+	margin: 0;
+	color: #fff;
+}
+
+.slider #home h3 {
+	margin: 0 0 50px;
+	color: #fff;
+}
+
+#home .slider-btn a {
+	margin: 0 2vw;
+}
+
+#home .slider-btn a > button {
+	background-color: white;
+	border-radius: 20px;
+	padding: 10px 25px;
+}
+
+#home .row-attrazioni {
+	text-align: center;
+	margin: 1em;
+	padding: 1em;
+	position: relative;
+	top: 15vh;
+}
+
+#home .div-attrazione {
+	text-align: center;
+	padding: 1em;
+}
+
+#home .link-attrazione img {
+	width: 30vw;
+	height: 20vh;
+	border: 3px solid white;
+	border-bottom: 0;
+	border-radius: 50%;
+	opacity: 1;
+}
+
+#home .link-attrazione img:hover {
+	opacity: 0.8;
+}
+
+#home section .row img {
+	width: 75%;
+}
+
+#home .col-sm-2 {
+	margin-top: 90px;
+	margin-bottom: 90px;
+	display: flex;
+}
+
+#home .btn.btn-primary {
+	border-radius: 2px;
+	border: 0px;
+	color: #fbd1d5;
+	text-shadow: none;
+	background-color: #ffffff;
+}
+
+#home .btn.btn-primary:hover {
+	color: #ffffff;
+	background-color: #fbd1d5;
+}
+
+#home .btn-secondary {
+	background-color: #E8DFE0;
+	color: #ffffff;
+	margin: 0 0 30px;
+}
+
+/*----------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+/* SLIDER SECTION chiSiamo */
+/*----------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+.slider #chiSiamo {
+	display: flex;
+	align-items: center;
+	background-image: url('../img/chi siamo slider.jpg');
+	background-size: cover;
+	height: 100vh;
+	color: #ffffff;
+	text-shadow: 0.25px 0.25px 0.25px #000000;
+}
+
+.slider #chiSiamo h1 {
+	font-size: 5em;
+	font-weight: 700;
+	margin: 0;
+	color: #ffcf90;
+}
+
+.slider #chiSiamo h2 {
+	font-size: 3em;
+	font-weight: 500;
+	margin: 0;
+	color: #fff;
+}
+
+.slider #chiSiamo h3 {
+	margin: 0 0 20px;
+	color: #fff;
+}
+
+/*----------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+/* SLIDER SECTION percorsiUtente */
+/*----------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+.slider #percorsiUtente {
+	display: flex;
+	align-items: center;
+	background-image: url('../img/percorsi slider.jpg');
+	background-size: cover;
+	background-position: center;
+	height: 100vh;
+	color: #ffffff;
+	text-shadow: 0.25px 0.25px 0.25px #000000;
+	margin-bottom: 2em;
+}
+
+.slider #percorsiUtente h1 {
+	font-size: 5em;
+	font-weight: 700;
+	margin: 0;
+	color: #ffcf90;
+}
+
+.slider #percorsiUtente h2 {
+	font-size: 3em;
+	font-weight: 500;
+	margin: 0;
+	color: #fff;
+}
+
+.slider #percorsiUtente h3 {
+	margin: 0 0 20px;
+	color: #fff;
+}
+
+/*----------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+/* CONTENT SECTION home*/
+/*----------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+#image-track {
+	display: flex;
+	position: relative;
+	top: 50%;
+	transform: translate(0%, -50%);
+	opacity: 1;
+}
+
+#image-track>.image {
+	width: 40vmin;
+	height: 56vmin;
+	object-fit: cover;
+	object-position: 100% center;
+}
+
+.image-track-link {
+	display: flex;
+	position: relative;
+	height: fit-content;
+	left: -30%;
+	z-index: 9;
+	text-decoration: none;
+	font-size: 2em;
+	color: black;
+	margin: 15px 0px;
+	background-color: #ffffff;
+	border-radius: 5px;
+	padding: 2px 15px;
+}
+
+.image-track-link:hover {
+	color: #ffcf90;
+}
+
+/*----------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+/* ATTRAZIONI SETTIMANA SECTION home */
+/*----------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+.img-attrazione-week {
+	background: url('/Pathways/WebContent/img/milano.jpg') no-repeat center
+		center/cover;
+	width: 100% !important;
+	height: 50%;
+	min-height: 300px;
+	min-width: 300px;
+	z-index: 0;
+}
+
+.col-center {
+	margin: 0 auto;
+}
+
+/*----------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+/* NOTIZIE SECTION home*/
+/*----------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+.row-notizie img {
+	width: 100% !important;
+	height: 35vh !important;
+}
+
+.card-body {
+	color: black;
+}
+
+/*----------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+/* FOOTER uguale per tutti*/
+/*----------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+footer {
+	font-size: 12px;
+	padding: 20px 0;
+}
+
+footer .col-sm-8 {
+	display: flex;
+	justify-content: flex-end;
+}
+
+footer ul {
+	list-style: none;
+}
+
+footer li img {
+	width: 32px;
+	height: 32px;
+}
+
+#footer {
+	margin-top: 50px;
+	border-top: 5px solid #17142c;
+	padding: 20px 0;
+}
+
+.footer-links a {
+	text-decoration: none;
+	color: white;
+	font-size: medium;
+}
+
+.footer-links a:hover {
+	color: #ffcf90;
+}
+
+.copyright-links a {
+	text-decoration: none;
+	color: white;
+	font-size: medium;
+}
+
+.copyright-links a:hover {
+	color: #ffcf90;
+}
+
+/*----------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+/* ICONS uguale per tutti*/
+/*----------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+/* Style all font awesome icons */
+.fa {
+	padding: 5px;
+	font-size: 30px;
+	width: 50px;
+	text-align: center;
+	text-decoration: none;
+}
+
+/* Hover effect */
+.fa:hover {
+	opacity: 0.7;
+}
+
+/* Set a specific color for each brand */
+
+/* Facebook */
+.fa-facebook {
+	background: #3B5998;
+	color: white;
+}
+
+/* Twitter */
+.fa-twitter {
+	background: #55ACEE;
+	color: white;
+}
+
+.fa {
+	margin: 0 10px;
+	padding: 10px 0;
+	border-radius: 20%;
+}
+
+/*----------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+/* MODAL uguale per tutti*/
+/*----------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+.moform {
+	box-shadow: 0 4px 6px 0px rgba(22, 22, 26, 0.18);
+}
+
+.btn-close {
+	position: absolute;
+	right: 0;
+	padding: 1em;
+}
+
+.modal-content {
+	width: 80%;
+	margin: 0px auto;
+	background-color: rgba(22, 22, 26, 0.85);
+}
+
+.modal-body {
+	padding: 0px;
+}
+
+.modal-h1 {
+	font-size: 2.3em;
+	font-weight: bold;
+}
+
+.my-form {
+	padding: 2em;
+	max-width: 100%;
+	color: #FFFFFF;
+	background-color: rgba(22, 22, 26, 0.18);
+	box-shadow: 0 4px 6px 0px rgba(22, 22, 26, 0.18);
+	@media
+	(
+	max-width
+	:
+	576px)
+{
+	max-width
+	:
+	 
+	90
+	%;
+	
+    
+	margin
+	:
+	 
+	0px
+	 
+	auto
+	;
+	
+  
+}
+
+}
+.form-control {
+	background-color: inherit;
+	color: #fff;
+	padding-left: 0px;
+	border: 0px;
+	border-bottom: 1px solid #fff;
+}
+
+.my-form .btn {
+	width: 100%;
+	font-weight: 800;
+	background-color: #fff;
+	border-radius: 0;
+	padding: 0.5em 0;
+}
+
+.my-form .btn:hover {
+	color: #333;
+}
+
+.login-form-p {
+	text-align: center;
+	padding-top: 2em;
+	color: grey;
+}
+
+.login-form-p a {
+	color: #e1e1e1;
+	text-decoration: none;
+}
+
+.login-form-p a:hover {
+	color: #fff;
+}
+
+/*----------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+/* SIGNUP MODAL home*/
+/*----------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+/* Full-width input fields */
+.signup-form-input {
+	width: 100%;
+	padding: 15px;
+	margin: 5px 0 22px 0;
+	display: inline-block;
+	border: none;
+	background: #f1f1f1;
+	background-color: inherit;
+	color: #fff;
+	padding-left: 5px;
+	border: 0px;
+	border-bottom: 1px solid #fff;
+	border-radius: 5px;
+}
+
+/* Add a background color when the inputs get focus */
+.signup-form-input:focus {
+	background-color: rgb(255, 255, 255);
+	color: #000;
+	outline: none;
+}
+
+/* Set a style for all signup form buttons */
+.btn-signup-form {
+	color: black;
+	padding: 14px 20px;
+	margin: 8px 0;
+	border: none;
+	cursor: pointer;
+	width: 100%;
+	opacity: 0.9;
+}
+
+.btn-signup-form:hover {
+	opacity: 1;
+}
+
+/* Extra styles for the cancel button */
+.cancelbtn {
+	padding: 14px 20px;
+	background-color: white;
+	color: #000;
+}
+
+/* Float cancel and signup buttons and add an equal width */
+.cancelbtn, .signupbtn {
+	float: left;
+	width: 50%;
+}
+
+/* Add padding to container elements */
+.container {
+	padding: 16px;
+}
+
+/* The Modal (background) */
+.signup-modal {
+	display: none;
+	/* Hidden by default */
+	position: fixed;
+	/* Stay in place */
+	z-index: 1999;
+	/* Sit on top */
+	left: 0;
+	top: 0;
+	width: 100%;
+	/* Full width */
+	height: 100%;
+	/* Full height */
+	overflow: auto;
+	/* Enable scroll if needed */
+	padding-top: 50px;
+}
+
+/* Modal Content/Box */
+.signup-modal-content {
+	background-color: rgba(22, 22, 26, 0.85);
+	margin: 5% auto 15% auto;
+	/* 5% from the top, 15% from the bottom and centered */
+	border: 1px solid #888;
+	width: 80%;
+	/* Could be more or less, depending on screen size */
+}
+
+/* The Close Button (x) */
+.close {
+	position: absolute;
+	right: 35px;
+	top: 15px;
+	font-size: 40px;
+	font-weight: bold;
+	color: rgba(122, 122, 122, 0.603);
+}
+
+.close:hover, .close:focus {
+	color: #c0c0c0;
+	cursor: pointer;
+}
+
+/* Clear floats */
+.clearfix::after {
+	content: "";
+	clear: both;
+	display: table;
+}
+
+/* Change styles for cancel button and signup button on extra small screens */
+@media screen and (max-width: 300px) {
+	.cancelbtn, .signupbtn {
+		width: 100%;
+	}
+}
+
+/*----------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+/* VIDEO BOX home*/
+/*----------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+/* Layout */
+.wrap {
+	position: relative;
+	max-width: 1000px;
+	width: 90%;
+	margin: 100px auto;
+}
+
+/* The outer-div to move the elements */
+.box-video {
+	position: relative;
+	width: 100%;
+	margin: 0 auto 20px auto;
+	cursor: pointer;
+	overflow: hidden;
+}
+
+/* Set Cover aka Background-Image */
+.box-video .bg-video {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	z-index: 2;
+}
+
+/* Add light shade to make play button visible*/
+.bg-video::after {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.1);
+	z-index: 3;
+}
+
+/* The Play-Button using CSS-Only */
+.box-video .bt-play {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin: -30px 0 0 -30px;
+	display: inline-block;
+	width: 60px;
+	height: 60px;
+	background: rgba(255, 255, 255, 0.1);
+	border-radius: 50%;
+	text-indent: -999em;
+	cursor: pointer;
+	z-index: 2;
+	-webkit-transition: all .3s ease-out;
+	transition: all .3s ease-out;
+}
+
+/* The Play-Triangle */
+.box-video .bt-play:after {
+	content: '';
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	height: 0;
+	width: 0;
+	margin: -12px 0 0 -6px;
+	border: solid transparent;
+	border-left-color: #000;
+	border-width: 12px 20px;
+	-webkit-transition: all .3s ease-out;
+	transition: all .3s ease-out;
+}
+
+.box-video:hover .bt-play {
+	transform: scale(1.1);
+}
+
+/* When Class added the Cover gets hidden... */
+.box-video.open .bg-video {
+	visibility: hidden;
+	opacity: 0;
+	-webkit-transition: all .6s .8s;
+	transition: all .6s .8s;
+}
+
+/* and iframe shows up */
+.box-video.open .video-container {
+	opacity: 1;
+	-webkit-transition: all .6s .8s;
+	transition: all .6s .8s;
+}
+
+/* Giving the div ratio of 16:9 with padding */
+.video-container {
+	position: relative;
+	width: 100%;
+	height: 0;
+	margin: 0;
+	z-index: 1;
+	padding-bottom: 56.27198%;
+}
+
+.video-container iframe {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+/*----------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+/* GO TO TOP home*/
+/*----------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+#button {
+	display: inline-block;
+	background-color: #ffcf90;
+	width: 50px;
+	height: 50px;
+	text-align: center;
+	border-radius: 4px;
+	position: fixed;
+	bottom: 30px;
+	right: 50px;
+	transition: background-color .3s, opacity .5s, visibility .5s;
+	z-index: 1000;
+}
+
+#button::after {
+	content: "\f077";
+	font-family: FontAwesome;
+	font-weight: normal;
+	font-style: normal;
+	font-size: 2em;
+	line-height: 50px;
+	color: #000;
+}
+
+#button:hover {
+	cursor: pointer;
+	background-color: #ffab4a;
+}
+
+#button:active {
+	background-color: #555;
+}
+
+#button.show {
+	opacity: 1;
+	visibility: visible;
+}
+
+/*fine home -->*/
+
+/*----------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+/* GOOGLE MAP API */
+/*----------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+#map {
+	height: 100vh;
+	/* The height is 100% viewheight */
+	width: 100%;
+	/* The width is the width of the web page */
+	padding: 0;
+}
+
+.map-div {
+	padding: 30px 40px 0 10px;
+}
+
+.custom-map-control-button {
+	background-color: #fff;
+	border: 0;
+	border-radius: 2px;
+	box-shadow: 0 1px 4px -1px rgba(0, 0, 0, 0.3);
+	margin: 10px;
+	padding: 0 0.5em;
+	font: 400 18px Roboto, Arial, sans-serif;
+	overflow: hidden;
+	height: 40px;
+	cursor: pointer;
+}
+
+.custom-map-control-button:hover {
+	background: rgb(235, 235, 235);
+}
+
+
+.gm-style .gm-style-iw-c {
+	background-color : #3f9eef;
+	
+}
+
+.btn-primary {
+	background-color: white !important;
+	color: black !important;
+	border: none !important;
+}
+
+/*--------------------------------------------------------------
+# Our Team Section (only chi_siamo)
+--------------------------------------------------------------*/
+.team .member {
+	position: relative;
+}
+
+.team .member .member-img {
+	margin: 0 80px;
+	border-radius: 50%;
+	overflow: hidden;
+	position: relative;
+}
+
+@media ( max-width : 1024px) {
+	.team .member .member-img {
+		margin: 0 60px;
+	}
+}
+
+.team .member .member-img img {
+	position: relative;
+	z-index: 1;
+}
+
+.team .member .member-img .social {
+	position: absolute;
+	inset: 0;
+	background-color: rgba(0, 0, 0, 0.6);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	z-index: 2;
+	padding-bottom: 20px;
+	transition: 0.3s;
+	visibility: hidden;
+	opacity: 0;
+}
+
+.team .member .member-img .social a {
+	transition: 0.3s;
+	color: #fff;
+	font-size: 20px;
+	margin: 0 8px;
+}
+
+.team .member .member-img .social a:hover {
+	color: var(- -color-primary);
+}
+
+.team .member .member-info {
+	margin-top: 30px;
+}
+
+.team .member .member-info h4 {
+	font-weight: 700;
+	margin-bottom: 6px;
+	font-size: 18px;
+	color: var(- -color-secondary);
+}
+
+.team .member .member-info span {
+	font-style: italic;
+	display: block;
+	font-size: 15px;
+	color: #838893;
+	margin-bottom: 10px;
+}
+
+.team .member .member-info p {
+	margin-bottom: 0;
+	font-size: 14px;
+}
+
+.team .member:hover .member-img .social {
+	padding-bottom: 0;
+	visibility: visible;
+	opacity: 1;
+}
+
+/*------Blockquote pag chi_siamo---------*/
+blockquote {
+	background: #111111;
+	border-left: 10px solid #ccc;
+	margin: 1.5em 10px;
+	padding: 0.5em 10px;
+	quotes: "\201C" "\201D" "\2018" "\2019";
+}
+
+blockquote:before {
+	color: #ccc;
+	content: open-quote;
+	font-size: 4em;
+	line-height: 0.1em;
+	margin-right: 0.25em;
+	vertical-align: -0.4em;
+}
+
+blockquote::after {
+	color: #ccc;
+	content: close-quote;
+	font-size: 4em;
+	line-height: 0.1em;
+	margin-right: 0.25em;
+	vertical-align: -0.4em;
+}
+
+blockquote p {
+	display: inline;
+}
+
+/*---------fine chi_siamo----------------------------*/
+
+/*--------------------------------------------------------------
+# Project Details Section (only pag. percorsi_salvati)
+--------------------------------------------------------------*/
+.project-details .portfolio-details-slider img {
+	width: 100%;
+}
+
+.project-details .portfolio-details-slider .swiper-pagination .swiper-pagination-bullet
+	{
+	width: 12px;
+	height: 12px;
+	background-color: rgba(255, 255, 255, 0.7);
+	opacity: 1;
+}
+
+.project-details .portfolio-details-slider .swiper-pagination .swiper-pagination-bullet-active
+	{
+	background-color: var(- -color-primary);
+}
+
+.project-details .swiper-button-prev, .project-details .swiper-button-next
+	{
+	width: 48px;
+	height: 48px;
+}
+
+.project-details .swiper-button-prev:after, .project-details .swiper-button-next:after
+	{
+	color: rgba(255, 255, 255, 0.8);
+	background-color: rgba(0, 0, 0, 0.2);
+	font-size: 24px;
+	border-radius: 50%;
+	width: 48px;
+	height: 48px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	transition: 0.3s;
+}
+
+.project-details .swiper-button-prev:hover:after, .project-details .swiper-button-next:hover:after
+	{
+	background-color: rgba(0, 0, 0, 0.6);
+}
+
+@media ( max-width : 575px) {
+	.project-details .swiper-button-prev, .project-details .swiper-button-next
+		{
+		display: none;
+	}
+}
+
+.project-details .portfolio-info h3 {
+	font-size: 22px;
+	font-weight: 700;
+	margin-bottom: 20px;
+	padding-bottom: 20px;
+	position: relative;
+}
+
+.project-details .portfolio-info h3:after {
+	content: "";
+	position: absolute;
+	display: block;
+	width: 50px;
+	height: 3px;
+	background: var(- -color-primary);
+	left: 0;
+	bottom: 0;
+}
+
+.project-details .portfolio-info ul {
+	list-style: none;
+	padding: 0;
+	font-size: 15px;
+}
+
+.project-details .portfolio-info ul li {
+	display: flex;
+	flex-direction: column;
+	padding-bottom: 15px;
+}
+
+.project-details .portfolio-info ul strong {
+	text-transform: uppercase;
+	font-weight: 400;
+	color: #838893;
+	font-size: 14px;
+}
+
+.project-details .portfolio-info .btn-visit {
+	padding: 8px 40px;
+	background: var(- -color-primary);
+	color: #fff;
+	border-radius: 50px;
+	transition: 0.3s;
+}
+
+.project-details .portfolio-info .btn-visit:hover {
+	background: #ffc019;
+}
+
+.project-details .portfolio-description h2 {
+	font-size: 26px;
+	font-weight: 700;
+	margin-bottom: 20px;
+	color: var(- -color-secondary);
+}
+
+.project-details .portfolio-description p {
+	padding: 0;
+}
+
+.project-details .portfolio-description .testimonial-item {
+	padding: 30px 30px 0 30px;
+	position: relative;
+	background: #f5f6f7;
+	height: 100%;
+	margin-bottom: 50px;
+}
+
+.project-details .portfolio-description .testimonial-item .testimonial-img
+	{
+	width: 90px;
+	border-radius: 50px;
+	border: 6px solid #fff;
+	float: left;
+	margin: 0 10px 0 0;
+}
+
+.project-details .portfolio-description .testimonial-item h3 {
+	font-size: 18px;
+	font-weight: bold;
+	margin: 15px 0 5px 0;
+	padding-top: 20px;
+}
+
+.project-details .portfolio-description .testimonial-item h4 {
+	font-size: 14px;
+	color: #6c757d;
+	margin: 0;
+}
+
+.project-details .portfolio-description .testimonial-item .quote-icon-left,
+	.project-details .portfolio-description .testimonial-item .quote-icon-right
+	{
+	color: #ffd565;
+	font-size: 26px;
+	line-height: 0;
+}
+
+.project-details .portfolio-description .testimonial-item .quote-icon-left
+	{
+	display: inline-block;
+	left: -5px;
+	position: relative;
+}
+
+.project-details .portfolio-description .testimonial-item .quote-icon-right
+	{
+	display: inline-block;
+	right: -5px;
+	position: relative;
+	top: 10px;
+	transform: scale(-1, -1);
+}
+
+.project-details .portfolio-description .testimonial-item p {
+	font-style: italic;
+	margin: 0 0 15px 0 0 0;
+	padding: 0;
+}
+
+/*---------------- fine percorsi_salvati-----------*/

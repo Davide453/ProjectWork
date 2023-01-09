@@ -2,54 +2,27 @@
 <!-- SLIDER SECTION -->
 <!-- ======================================================================== -->
 <section class="slider">
-	<div class="container">
-		<div class="row text-center">
-			<div class="row">
+	<div class="container" id="home" style="max-width: 100%;">
+		<div class="col">
+			<div class="row text-center">
 				<h1>
 					P<span class="auto-type"></span>
 				</h1>
-				<h2>Dove vuoi andare?</h2>
-				<h3>Cerca un'attrazione</h3>
 			</div>
-			<div class="row">
-				<div class="col-2"></div>
-				<div class="col-8 slider-btn">
-					<a href="#" role="button">
-						<button type="button" class="btn btn-light">Guarda i
-							nostri percorsi</button>
-					</a> <a href="#" role="button">
-						<button type="button" class="btn btn-light">Cerca</button>
-					</a>
+			<div class="row text-center">
+				<div class="row">
+					<h2>Dove vuoi andare?</h2>
+					<h3>Cerca un'attrazione</h3>
 				</div>
-				<div class="col-2"></div>
-			</div>
-		</div>
-		<div class="row row-attrazioni">
-			<div class="col">
-				<div class="div-attrazione">
-					<a href="#" class="link-attrazione"> <img
-						src="img/attrazione-1.jpg" alt="attrazione" class="img-attrazione">
-					</a>
-				</div>
-			</div>
-			<div class="col">
-				<div class="div-attrazione">
-					<a href="#" class="link-attrazione"> <img
-						src="img/attrazione-2.jpg" alt="attrazione" class="img-attrazione">
-					</a>
-				</div>
-			</div>
-			<div class="col">
-				<div class="div-attrazione">
-					<a href="#" class="link-attrazione"> <img
-						src="img/attrazione-3.jpg" alt="attrazione" class="img-attrazione"></a>
-				</div>
-			</div>
-			<div class="col">
-				<div class="div-attrazione">
-					<a href="#" class="link-attrazione"> <img
-						src="img/attrazione-4.jpg" alt="attrazione" class="img-attrazione">
-					</a>
+				<div class="row">
+					<div class="col-2"></div>
+					<div class="col-8 slider-btn">
+						<a href="percorsiUtente.jsp" role="button">
+							<button type="button" class="btn">Guarda i
+								nostri percorsi</button>
+						</a>
+					</div>
+					<div class="col-2"></div>
 				</div>
 			</div>
 		</div>
@@ -79,6 +52,7 @@
 							il tuo viaggio sarà ancora più facile e divertente! Scaricala
 							subito e inizia a esplorare.</p>
 					</div>
+					
 					<div class="col-12 mt-5 mb-3">
 						<h3 class="center text-uppercase" style="font-size: 3em;">Scegli
 							La Città</h3>
@@ -281,81 +255,7 @@
 		</div>
 	</div>
 
-	</div>
+
 </section>
-<footer id="footer" class="dark" style="background-color: #1c1b25;">
-
-	<div class="container">
-
-		<!-- Footer Widgets
-      ============================================= -->
-		<div class="footer-widgets-wrap row clearfix">
-
-			<!-- Footer Widget 3
-        ============================================= -->
-			<div class="col-lg-3 col-sm-6 mb-5 mb-sm-0">
-				<div class="widget widget_links clearfix">
-					<h4 class="mb-3 mb-sm-4">Link Utili</h4>
-					<ul class="footer-links">
-						<li><a href="https://codex.wordpress.org/">Su Di Noi</a></li>
-						<li><a
-							href="https://wordpress.org/support/forum/requests-and-feedback">Feedback</a></li>
-						<li><a href="https://wordpress.org/extend/plugins/">Percorsi</a></li>
-						<li><a href="https://wordpress.org/extend/themes/">Contatti</a></li>
-						<li><a href="https://wordpress.org/news/">Blog</a></li>
-						<li><a href="https://planet.wordpress.org/">Recensioni</a></li>
-					</ul>
-				</div>
-			</div>
-
-			<!-- Footer Widget 4
-        ============================================= -->
-			<div class="col-lg-3 col-sm-6 mb-0">
-				<div class="widget widget_links clearfix">
-					<h4 class="mb-3 mb-sm-4">Scarica sul Telefono</h4>
-					<p>Scarica subito la nostra app sul tuo telefono e inizia a
-						visitare le attrazioni!</p>
-					<a href="#"
-						class="button button-light text-dark w-100 text-center bg-white nott ls0 button-rounded button-xlarge ms-0"><i
-						class="icon-apple"></i>App Store</a> <a href="#"
-						class="button button-light text-dark w-100 text-center bg-white nott ls0 button-rounded button-xlarge ms-0"><i
-						class="icon-googleplay"></i>Google Play</a>
-				</div>
-			</div>
-
-		</div>
-
-	</div>
-
-	<!-- Copyrights
-    ============================================= -->
-	<div id="copyrights">
-
-		<div class="container clearfix">
-
-			<div class="row justify-content-center">
-				<div class="col-md-6 align-self-center">
-					Copyrights © 2023 All Rights Reserved by Pathways.<br>
-					<div class="copyright-links">
-						<a href="#">Terms of Use</a> / <a href="#">Privacy Policy</a>
-					</div>
-				</div>
-
-				<div class="col-md-6 align-self-center">
-					<div class="copyrights-menu float-end copyright-links m-0 clearfix">
-						<a href="#">Home</a> / <a href="#">Su Di Noi</a> / <a href="#">FAQs</a>
-						/ <a href="#">Contatti</a>
-					</div>
-				</div>
-			</div>
-
-		</div>
-
-	</div>
-	<!-- #copyrights end -->
-
-	<a id="button"></a>
-
-</footer>
 
 <%@ include file="footer.jsp"%>
