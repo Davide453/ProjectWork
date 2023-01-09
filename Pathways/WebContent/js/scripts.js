@@ -59,33 +59,6 @@ function scrollAnimation() {
     window.ontouchmove = e => handleOnMove(e.touches[0]);
 }
 
-
-function changeColourOnScroll() {
-    // seleziona l'elemento #target
-    var target = $('#target-navbar');
-
-    // se l'elemento esiste
-    if (target.length) {
-        // calcola l'altezza dell'elemento #target dall'inizio della pagina
-        var targetTop = target.offset().top;
-
-        // quando si scorre la pagina
-        $(window).scroll(function () {
-            // calcola l'altezza attuale della finestra di visualizzazione dall'inizio della pagina
-            var windowTop = $(window).scrollTop();
-
-            // se l'altezza attuale della finestra di visualizzazione è maggiore o uguale dell'altezza dell'elemento #target
-            if (windowTop >= targetTop) {
-                // cambia il colore del navbar
-                $('nav').css('background-color', 'red');
-            } else {
-                // altrimenti, ripristina il colore originale del navbar
-                $('nav').css('background-color', '');
-            }
-        });
-    }
-}
-
 function buttonToTop() {
     var btn = $('#button');
 
@@ -110,7 +83,6 @@ window.onload = function () {
 	buttonToTop();
     autoType();
     scrollAnimation();
-    changeColourOnScroll();
 
     $(".box-video").click(function () {
         $('iframe', this)[0].src += "&amp;autoplay=1";
