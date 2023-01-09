@@ -11,15 +11,16 @@ public class UserDAO {
 
 		try {
 			ConnessioneDB.connect();
-			String query = "INSERT INTO Utenti (email,password) VALUES" + "(?,?);";
+			String query = "INSERT INTO Utenti (email,password,nPercorsi) VALUES" + "(?,?,?);";
 
 			PreparedStatement st = ConnessioneDB.getCon().prepareStatement(query);
 
 			st.setString(1, utente.getEmail());
 			st.setString(2, utente.getPassword());
+			st.setInt(3, 0);
 
 			st.executeUpdate();
-			System.out.println("Query di inserimento eseguita correttamente"+ utente);
+			System.out.println("Query di inserimento eseguita correttamente" + utente);
 
 			ConnessioneDB.close();
 		} catch (SQLException e) {
@@ -39,10 +40,10 @@ public class UserDAO {
 
 			while (rs.next()) {
 				String email = rs.getString("email");
-
 				String password = rs.getString("password");
-
-				user = new User(email, password);
+				int rsIdUtenti = rs.getInt("idUtenti");
+				int nPercorsi = rs.getInt("nPercorsi");
+				user = new User(email, password, rsIdUtenti, nPercorsi);
 			}
 			ConnessioneDB.close();
 
@@ -67,13 +68,13 @@ public class UserDAO {
 			while (rs.next()) {
 
 				String resultEmail = rs.getString("email");
-
 				String resultPassword = rs.getString("password");
 
-				user = new User(resultEmail, resultPassword);
-				
+				int idUtenti = rs.getInt("IdUtenti");
+				int nPercorsi = rs.getInt("nPercorsi");
+				user = new User(resultEmail, resultPassword, idUtenti, nPercorsi);
 			}
-			
+
 			ConnessioneDB.close();
 
 		} catch (SQLException e) {

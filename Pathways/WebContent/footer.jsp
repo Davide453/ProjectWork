@@ -8,7 +8,7 @@
 
 			<!-- Footer Widget 3
         ============================================= -->
-			<div class="col-lg-3 col-sm-6 mb-5 mb-sm-0">
+			<div class="col">
 				<div class="widget widget_links clearfix">
 					<h4 class="mb-3 mb-sm-4">Link Utili</h4>
 					<ul class="footer-links">
@@ -25,16 +25,15 @@
 
 			<!-- Footer Widget 4
         ============================================= -->
-			<div class="col-lg-3 col-sm-6 mb-0">
-				<div class="widget widget_links clearfix">
+
+			<div class="col">
+				<div>
 					<h4 class="mb-3 mb-sm-4">Scarica sul Telefono</h4>
 					<p>Scarica subito la nostra app sul tuo telefono e inizia a
 						visitare le attrazioni!</p>
-					<a href="#"
-						class="button button-light text-dark w-100 text-center bg-white nott ls0 button-rounded button-xlarge ms-0"><i
-						class="icon-apple"></i>App Store</a> <a href="#"
-						class="button button-light text-dark w-100 text-center bg-white nott ls0 button-rounded button-xlarge ms-0"><i
-						class="icon-googleplay"></i>Google Play</a>
+					<a href="#" class="btn btn-light"><i class="fab fa-app-store"></i>
+						App Store</a> <a href="#" class="btn btn-light"><i
+						class="fab fa-google-play"></i> Google Play</a>
 				</div>
 			</div>
 
@@ -44,13 +43,14 @@
 
 	<!-- Copyrights
     ============================================= -->
+
 	<div id="copyrights">
 
 		<div class="container clearfix">
 
 			<div class="row justify-content-center">
 				<div class="col-md-6 align-self-center">
-					Copyrights © 2023 All Rights Reserved by Pathways.<br>
+					Copyrights Â© 2023 All Rights Reserved by Pathways.<br>
 					<div class="copyright-links">
 						<a href="#">Terms of Use</a> / <a href="#">Privacy Policy</a>
 					</div>
@@ -81,8 +81,8 @@
 				<div class="my-form">
 				
 					<h1 class="text-center modal-h1">Login</h1>
-
 					<form action="login" method="post">
+					
 						<div class="mb-3 mt-3">
 							<label for="email">Email</label> <input name="email" type="text"
 								class="form-control">
@@ -90,7 +90,6 @@
 						<div class="mb-3 mt-3">
 							<label for="password">Password</label> <input name="password"
 								type="password" class="form-control">
-
 						</div>
 						<button type="submit" class="btn btn-light mt-3">LOGIN</button>
 						<p class="login-form-p">
@@ -121,9 +120,9 @@
 				name="email" required> <label for="psw"><b>Password</b></label>
 			<input class="signup-form-input" type="password"
 				placeholder="Inserisci Password" name="password" required> <label
-				for="psw-repeat"><b>Ripeti la password</b></label> <input
+				for="password-repeat"><b>Ripeti la password</b></label> <input
 				class="signup-form-input" type="password"
-				placeholder="Reinserisci Password" name="psw-repeat" required>
+				placeholder="Reinserisci Password" name="password-repeat" required>
 
 			<p>
 				Creando un account confermi di aderire ai nostri <a href="#"
@@ -151,9 +150,7 @@
 		}
 	}
 </script>
-<script
-	src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
-	integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
-	crossorigin="anonymous"></script>
+
 </body>
+
 </html>
