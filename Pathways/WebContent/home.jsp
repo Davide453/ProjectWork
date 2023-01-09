@@ -16,12 +16,9 @@
             <div class="col-2">
             </div>
             <div class="col-8 slider-btn">
-              <a href="#" role="button">
+              <a href="percorsiUtente.jsp" role="button">
                 <button type="button" class="btn btn-light">Guarda i nostri
                   percorsi</button>
-              </a>
-              <a href="#" role="button">
-                <button type="button" class="btn btn-light">Cerca</button>
               </a>
             </div>
             <div class="col-2">
@@ -228,7 +225,7 @@
       </div>
     </div>
 
-    </div>
+
   </section>
 
 <%@ include file="footer.jsp"%>

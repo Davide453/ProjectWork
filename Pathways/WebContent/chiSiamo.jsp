@@ -7,7 +7,7 @@
 
 				<h1>About</h1>
 				<h3>
-					<a href="home.html">Home</a>
+					<a href="home.jsp">Home</a>
 				</h3>
 			</div>
 		</div>
