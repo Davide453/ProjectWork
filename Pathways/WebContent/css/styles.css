@@ -14,13 +14,18 @@ html, body {
 }
 
 .btn:hover {
-	background-color: #ffcf90;
+	background-color: #ffcf90 !important;
 	color: white;
 }
 
 .btn:active {
-	background-color: #f5b665;
+	background-color: #f5b665 !important;
 	color: white;
+}
+
+.btn:first-child:active {
+	color: white !important;
+	border-color: none! important;
 }
 
 /*----------------------------------------------------------------------------------------------------------------------------------------------------------------*/
@@ -105,7 +110,7 @@ html, body {
 	margin: 0 2vw;
 }
 
-#home .slider-btn a>button {
+#home .slider-btn a > button {
 	background-color: white;
 	border-radius: 20px;
 	padding: 10px 25px;
@@ -167,9 +172,41 @@ html, body {
 }
 
 /*----------------------------------------------------------------------------------------------------------------------------------------------------------------*/
-/* SLIDER SECTION percorsi_salvati */
+/* SLIDER SECTION chiSiamo */
 /*----------------------------------------------------------------------------------------------------------------------------------------------------------------*/
-.slider #percorsiSalvati {
+.slider #chiSiamo {
+	display: flex;
+	align-items: center;
+	background-image: url('../img/wallpaperflare-cropped.jpg');
+	background-size: cover;
+	height: 120vh;
+	color: #ffffff;
+	text-shadow: 0.25px 0.25px 0.25px #000000;
+}
+
+.slider #chiSiamo h1 {
+	font-size: 5em;
+	font-weight: 700;
+	margin: 0;
+	color: #ffcf90;
+}
+
+.slider #chiSiamo h2 {
+	font-size: 3em;
+	font-weight: 500;
+	margin: 0;
+	color: #fff;
+}
+
+.slider #chiSiamo h3 {
+	margin: 0 0 20px;
+	color: #fff;
+}
+
+/*----------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+/* SLIDER SECTION percorsiUtente */
+/*----------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+.slider #percorsiUtente {
 	display: flex;
 	align-items: center;
 	background-image: url('../img/forest.jpg');
@@ -179,92 +216,23 @@ html, body {
 	text-shadow: 0.25px 0.25px 0.25px #000000;
 }
 
-.slider #percorsiSalvati h1 {
+.slider #percorsiUtente h1 {
 	font-size: 5em;
 	font-weight: 700;
 	margin: 0;
 	color: #ffcf90;
 }
 
-.slider #percorsiSalvati h2 {
+.slider #percorsiUtente h2 {
 	font-size: 3em;
 	font-weight: 500;
 	margin: 0;
 	color: #fff;
 }
 
-.slider #percorsiSalvati h3 {
+.slider #percorsiUtente h3 {
 	margin: 0 0 20px;
 	color: #fff;
-}
-
-.slider-btn a {
-	margin: 0 2vw;
-}
-
-.slider-btn a>button {
-	background-color: white;
-	border-radius: 20px;
-	padding: 10px 25px;
-}
-
-.row-attrazioni {
-	text-align: center;
-	margin: 1em;
-	padding: 1em;
-	position: relative;
-	top: 15vh;
-}
-
-.div-attrazione {
-	text-align: center;
-	padding: 1em;
-}
-
-.link-attrazione img {
-	width: 30vw;
-	height: 20vh;
-	border: 3px solid white;
-	border-bottom: 0;
-	border-radius: 50%;
-	opacity: 1;
-}
-
-.link-attrazione img:hover {
-	opacity: 0.8;
-}
-
-.col-sm-2 {
-	margin-top: 90px;
-	margin-bottom: 90px;
-	display: flex;
-}
-
-.btn.btn-primary {
-	border-radius: 2px;
-	border: 0px;
-	color: #fbd1d5;
-	text-shadow: none;
-	background-color: #ffffff;
-}
-
-.btn.btn-primary:hover {
-	color: #ffffff;
-	background-color: #fbd1d5;
-}
-
-.btn-secondary {
-	background-color: #E8DFE0;
-	color: #ffffff;
-	margin: 0 0 30px;
-}
-
-.slider a {
-	color: #ffffff;
-}
-
-.slider a:hover, .slider a:active {
-	color: #ffcf90;
 }
 
 /*----------------------------------------------------------------------------------------------------------------------------------------------------------------*/

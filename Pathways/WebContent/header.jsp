@@ -39,7 +39,7 @@
 
 <link rel="stylesheet" type="text/css" href="./css/styles.css">
 
-<script src="./js/home.js"></script>
+<script src="./js/scripts.js"></script>
 </head>
 
 <body>

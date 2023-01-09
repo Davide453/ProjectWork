@@ -18,7 +18,7 @@
 					<div class="col-2"></div>
 					<div class="col-8 slider-btn">
 						<a href="percorsiUtente.jsp" role="button">
-							<button type="button" class="btn btn-light">Guarda i
+							<button type="button" class="btn">Guarda i
 								nostri percorsi</button>
 						</a>
 					</div>
@@ -52,6 +52,7 @@
 							il tuo viaggio sarà ancora più facile e divertente! Scaricala
 							subito e inizia a esplorare.</p>
 					</div>
+					
 					<div class="col-12 mt-5 mb-3">
 						<h3 class="center text-uppercase" style="font-size: 3em;">Scegli
 							La Città</h3>

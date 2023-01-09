@@ -2,7 +2,7 @@ var typed;
 
 function autoType() {
     typed = new Typed('.auto-type', {
-        strings: ["raticità", "erfezione", "athways"],
+        strings: ["athways", "erformance", "recision"],
         smartBackspace: true,
         typeSpeed: 150,
         backSpeed: 150,
@@ -59,22 +59,6 @@ function scrollAnimation() {
     window.ontouchmove = e => handleOnMove(e.touches[0]);
 }
 
-function buttonToTop() {
-    var btn = $('#button');
-
-    $(window).scroll(function () {
-        if ($(window).scrollTop() > 300) {
-            btn.addClass('show');
-        } else {
-            btn.removeClass('show');
-        }
-    });
-
-    btn.on('click', function (e) {
-        e.preventDefault();
-        $('html, body').animate({ scrollTop: 0 }, '300');
-    });
-}
 
 function changeColourOnScroll() {
     // seleziona l'elemento #target
@@ -102,12 +86,30 @@ function changeColourOnScroll() {
     }
 }
 
+function buttonToTop() {
+    var btn = $('#button');
+
+    $(window).scroll(function () {
+        if ($(window).scrollTop() > 300) {
+            btn.addClass('show');
+        } else {
+            btn.removeClass('show');
+        }
+    });
+
+    btn.on('click', function (e) {
+        e.preventDefault();
+        $('html, body').animate({ scrollTop: 0 }, '300');
+    });
+}
+
+
 
 window.onload = function () {
-
+	
+	buttonToTop();
     autoType();
     scrollAnimation();
-    buttonToTop();
     changeColourOnScroll();
 
     $(".box-video").click(function () {
@@ -116,6 +118,5 @@ window.onload = function () {
     });
 
 }
-
 
 

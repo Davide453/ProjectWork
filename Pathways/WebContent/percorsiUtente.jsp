@@ -1,19 +1,32 @@
 <%@ include file="header.jsp"%>
-<!--Slider-->
-<section class="slider mb-5" style="display: flex; align-items: center; background-image: url('./img/forest.jpg'); height: 100vh; color: #ffffff; text-shadow: 0.25px 0.25px 0.25px #000000; background-size: cover;">
-	<div class="container">
-		<div class="row text-center">
-			<div class="row">
 
-				<h1>I Tuoi Percorsi</h1>
-				<h3>
-					<a href="home.jsp">Home</a>
-				</h3>
+<!-- SLIDER SECTION -->
+<!-- ======================================================================== -->
+<section class="slider">
+	<div class="container" id="percorsiUtente" style="max-width: 100%;">
+		<div class="col">
+			<div class="row text-center">
+				<h1>
+					P<span class="auto-type"></span>
+				</h1>
+			</div>
+			<div class="row text-center">
+				<div class="row mb-5 pb-5">
+					<h2>I Tuoi Percorsi</h2>
+				</div>
+				<div class="row mt-5 pt-5">
+					<div class="col-2"></div>
+					<div class="col-8 slider-btn">
+						<a href="home.jsp" role="button">
+							<button type="button" class="btn btn-light">Home</button>
+						</a>
+					</div>
+					<div class="col-2"></div>
+				</div>
 			</div>
 		</div>
 	</div>
 </section>
-<!--end Slider section-->
 
 
 
