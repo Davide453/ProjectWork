@@ -48,7 +48,7 @@ public class login extends HttpServlet {
 			} else {
 				
 				session.setAttribute("loggato", false);
-				response.sendRedirect("");
+				response.sendRedirect("home.jsp");
 			
 			}
 

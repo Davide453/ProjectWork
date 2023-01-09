@@ -49,7 +49,7 @@
 
 </head>
 <body>
-
+/
 	<header>
 		<nav class="navbar navbar-expand-lg">
 			<div class="col"></div>
@@ -70,8 +70,14 @@
 							<li class="nav-item"><a class="nav-link" href="chiSiamo.jsp">Chi
 									Siamo</a></li>
 							  <li class="nav-item" data-bs-toggle="modal"
-								
-								data-bs-target="#logindemo"><a <%String name = request.getAttribute(); %>  class="nav-link" href="#"  >Login</a>
+								<% HttpSession session2 = request.getSession();%>
+								<%String username = (String) session.getAttribute("email"); %>
+								<%Boolean loggato2 = (Boolean) session.getAttribute("loggato"); %>
+								<%if(loggato2==true){ %>
+								data-bs-target="#logindemo"><a class="nav-link" href="#"  >Benvenuto <%= username %>  </a>
+								<%} else { %>
+								<li class="nav-item" data-bs-toggle="modal" data-bs-target="#logindemo"><a class="nav-link" href="#"  >Login</a>
+								<% } %>
 							</li> 
 						</ul>
 					</div>
