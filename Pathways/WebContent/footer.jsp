@@ -80,16 +80,18 @@
 					data-bs-dismiss="modal"></button>
 				<div class="my-form">
 					<h1 class="text-center modal-h1">Login</h1>
-					<form action="#">
+
+					<form action="login" method="post">
 						<div class="mb-3 mt-3">
-							<label for="email">Email</label> <input type="email"
+							<label for="email">Email</label> <input name="email" type="text"
 								class="form-control">
 						</div>
 						<div class="mb-3 mt-3">
-							<label for="password">Password</label> <input type="password"
-								class="form-control">
+							<label for="password">Password</label> <input name="password"
+								type="password" class="form-control">
+
 						</div>
-						<button type="button" class="btn btn-light mt-3">LOGIN</button>
+						<button type="submit" class="btn btn-light mt-3">LOGIN</button>
 						<p class="login-form-p">
 							Non sei registrato?<a href="#"
 								onclick="document.getElementById('id01').style.display='block'; $('#logindemo').modal('hide');">
@@ -108,7 +110,7 @@
 <div id="id01" class="signup-modal">
 	<span onclick="document.getElementById('id01').style.display='none'"
 		class="close" title="Close Modal">X</span>
-	<form class="signup-modal-content" action="/action_page.php">
+	<form class="signup-modal-content" action="Registrazione" method="post">
 		<div class="container">
 			<h1>Registrati</h1>
 			<p>Compila tutti i campi per registrarti.</p>
@@ -117,7 +119,7 @@
 				class="signup-form-input" type="text" placeholder="Inserisci Email"
 				name="email" required> <label for="psw"><b>Password</b></label>
 			<input class="signup-form-input" type="password"
-				placeholder="Inserisci Password" name="psw" required> <label
+				placeholder="Inserisci Password" name="password" required> <label
 				for="psw-repeat"><b>Ripeti la password</b></label> <input
 				class="signup-form-input" type="password"
 				placeholder="Reinserisci Password" name="psw-repeat" required>
