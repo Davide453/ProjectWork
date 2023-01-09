@@ -29,7 +29,7 @@
 	crossorigin="anonymous"></script>
 
 <!-- CSS nostro -->
-<link rel="stylesheet" type="text/css" href="./css/home.css">
+<link rel="stylesheet" type="text/css" href="./css/styles.css">
 <!-- Ajax -->
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
@@ -69,9 +69,10 @@
 								href="percorsiUtente.jsp">I tuoi percorsi</a></li>
 							<li class="nav-item"><a class="nav-link" href="chiSiamo.jsp">Chi
 									Siamo</a></li>
-							<li class="nav-item" data-bs-toggle="modal"
-								data-bs-target="#logindemo"><a class="nav-link" href="#" >Login</a>
-							</li>
+							  <li class="nav-item" data-bs-toggle="modal"
+								
+								data-bs-target="#logindemo"><a <%String name = request.getAttribute(); %>  class="nav-link" href="#"  >Login</a>
+							</li> 
 						</ul>
 					</div>
 				</div>

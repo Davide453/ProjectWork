@@ -70,18 +70,17 @@ public class UserDAO {
 
 				String resultPassword = rs.getString("password");
 
-				int idUtenti = rs.getInt("idUtenti");
-
-				user = new User(resultEmail, resultPassword, idUtenti);
+				user = new User(resultEmail, resultPassword);
+				
 			}
-
-			System.out.println(user.toString());
+			
 			ConnessioneDB.close();
 
 		} catch (SQLException e) {
+			System.out.println("Errore");
 			e.printStackTrace();
 		}
-		System.out.println("Query di selezione(email,password) eseguita correttamente");
+		
 		return user;
 	}
 

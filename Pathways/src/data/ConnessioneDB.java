@@ -24,7 +24,7 @@ public class ConnessioneDB {
 			dataSource.setPortNumber(3306);
 			dataSource.setServerName("localhost");
 			dataSource.setUser("root");
-			dataSource.setPassword("");
+			dataSource.setPassword("Salvatore12");
 
 			con = dataSource.getConnection();
 			
