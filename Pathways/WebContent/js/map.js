@@ -7,9 +7,7 @@ let tuttiMarker = [];
 let percorso = [];
 let myJsonString;
 
-let infoWindow = new google.maps.InfoWindow({
-
-});
+let infoWindow = new google.maps.InfoWindow({});
 
 
 function initMap() {
@@ -139,8 +137,56 @@ function initMap() {
 
 	}
 
+
+	window.addNodo = function(nodoID) {
+
+		for (let i = 0; i < tuttiMarker.length; i++) {
+			//console.log(tuttiMarker[i].place_id);
+			//console.log(nodoID);
+			if (tuttiMarker[i].place_id == nodoID) {
+
+				percorso.push(tuttiMarker[i]);
+				let divPercorso = document.getElementById("percorso");
+				let row = document.createElement("div");
+				let label = document.createElement("label");
+				let deleteBtn = document.createElement("button");
+				label.innerText = tuttiMarker[i].name;
+				label.className = "col";
+				deleteBtn.className = "button";
+				deleteBtn.style = "width: 25%; padding: 0; border-radius: 15%; max-width: 25px; max-height: 25px;";
+				deleteBtn.innerHTML = "x";
+				row.className = "row mt-3 px-4";
+				row.appendChild(label);
+				row.appendChild(deleteBtn);
+
+
+				divPercorso.appendChild(row);
+
+				deleteBtn.addEventListener('click', function() {
+					divPercorso.removeChild(row);
+
+					for (let j = 0; j < percorso.length; j++) {
+						if (percorso[j].place_id == nodoID) {
+							console.log(percorso[j]);
+							removeElement(percorso, percorso[j]);
+						}
+					}
+				});
+			}
+		}
+
+	}
+
 	currentLocationButton();
 
+}
+
+
+function removeElement(array, element) {
+	const index = array.indexOf(element);
+	if (index !== -1) {
+		percorso.splice(index, 1);
+	}
 }
 
 // FUNZIONE PER GESTIRE L'ERRORE DI GEOLOCALIZZAZIONE
@@ -223,7 +269,7 @@ function creaMarker(nodo) {
 	});
 
 	google.maps.event.addListener(map, "click", function() {
-		infoWindow_attrazioni.close();
+		infoWindow.close();
 	});
 }
 
