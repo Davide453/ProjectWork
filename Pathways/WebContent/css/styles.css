@@ -80,7 +80,7 @@ html, body {
 .slider #home {
 	display: flex;
 	align-items: center;
-	background-image: url('../img/Slider2.jpg');
+	background-image: url('../img/home slider.jpg');
 	background-size: cover;
 	color: #ffffff;
 	height: 100vh;
@@ -177,9 +177,9 @@ html, body {
 .slider #chiSiamo {
 	display: flex;
 	align-items: center;
-	background-image: url('../img/wallpaperflare-cropped.jpg');
+	background-image: url('../img/chi siamo slider.jpg');
 	background-size: cover;
-	height: 120vh;
+	height: 100vh;
 	color: #ffffff;
 	text-shadow: 0.25px 0.25px 0.25px #000000;
 }
@@ -209,11 +209,13 @@ html, body {
 .slider #percorsiUtente {
 	display: flex;
 	align-items: center;
-	background-image: url('../img/forest.jpg');
+	background-image: url('../img/percorsi slider.jpg');
 	background-size: cover;
-	height: 120vh;
+	background-position: center;
+	height: 100vh;
 	color: #ffffff;
 	text-shadow: 0.25px 0.25px 0.25px #000000;
+	margin-bottom: 2em;
 }
 
 .slider #percorsiUtente h1 {

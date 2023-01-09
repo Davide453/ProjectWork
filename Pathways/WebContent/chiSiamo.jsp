@@ -14,15 +14,7 @@
 				<div class="row mb-5 pb-5">
 					<h2>Chi Siamo</h2>
 				</div>
-				<div class="row mt-5 pt-5">
-					<div class="col-2"></div>
-					<div class="col-8 slider-btn">
-						<a href="home.jsp" role="button">
-							<button type="button" class="btn btn-light">Home</button>
-						</a>
-					</div>
-					<div class="col-2"></div>
-				</div>
+				
 			</div>
 		</div>
 	</div>

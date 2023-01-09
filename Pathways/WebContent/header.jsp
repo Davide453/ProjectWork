@@ -46,7 +46,7 @@
 	<a id="button"></a>
 	<header id="header">
 		<nav id="target-navbar" class="navbar navbar-expand-lg">
-			<div class="col"></div>
+			<div class="col-3"></div>
 
 			<div class="col">
 				<div class="container-fluid">
@@ -57,7 +57,13 @@
 						<span class="navbar-toggler-icon"></span>
 					</button>
 					<div class="collapse navbar-collapse" id="navbarSupportedContent">
+						<a class="navbar-brand " href="home.jsp"> <img
+							src="./img/logo.png" alt="Bootstrap" width="100" height="100"
+							style="border-radius: 50%; opacity: 0.9;">
+						</a>
 						<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+							<li class="nav-item"><a class="nav-link" href="home.jsp">Home</a>
+							</li>
 							<li class="nav-item"><a class="nav-link" href="mappa.jsp">Percorsi</a>
 							</li>
 							<li class="nav-item"><a class="nav-link"
@@ -71,6 +77,6 @@
 					</div>
 				</div>
 			</div>
-			<div class="col"></div>
+			<div class="col-2"></div>
 		</nav>
 	</header>
