@@ -35,16 +35,15 @@ public class login extends HttpServlet {
 		String password = request.getParameter("password");
 
 		HttpSession session = request.getSession();
-User user= UserDAO.selectUserFromPassEmail(email, password);
-		
-		if (email.equalsIgnoreCase(user.getEmail()) &&) {
+		User user = UserDAO.selectUserFromPassEmail(email, password);
 
+		if (user != null && email.equalsIgnoreCase(user.getEmail()) && password.equals(user.getPassword())) {
+			session.setAttribute("idUtente", user.getId());
 			session.setAttribute("loggato", true);
 			session.setAttribute("email", email);
 			response.sendRedirect("home.jsp");
-
 		} else {
-
+			System.out.println("login fallito");
 			session.setAttribute("loggato", false);
 			response.sendRedirect("");
 

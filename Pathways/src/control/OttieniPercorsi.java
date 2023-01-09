@@ -27,10 +27,10 @@ public class OttieniPercorsi extends HttpServlet {
 		System.out.println("ottieniPercorsi servlet");
 		HttpSession session = request.getSession();
 
-		int idUtente = session.getAttribute("");
-
+		int idUtente = (int) session.getAttribute("idUtente");
+		System.out.println(idUtente);
 		ArrayList<Percorso> percorso = PercorsoDAO.selectPercorsoFromIdUtente(idUtente);
-
+		request.setAttribute("percorso", percorso);
 		System.out.println(percorso);
 		response.sendRedirect("percorsiUtente.jsp");
 

@@ -14,7 +14,7 @@
 				<div class="row mb-5 pb-5">
 					<h2>I Tuoi Percorsi</h2>
 				</div>
-				
+
 			</div>
 		</div>
 	</div>
@@ -40,7 +40,9 @@
 							<img src="./img/attrazione-1.jpg" class="img-fluid" alt="">
 							<div class="portfolio-info">
 								<h4>Percorso 1</h4>
-
+								<%
+								Percorso percorso = request.getAttribute("percorso");
+								%>
 								<a href="./img/attrazione-1.jpg" title="Remodeling 1"
 									data-gallery="portfolio-gallery-remodeling"
 									class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
