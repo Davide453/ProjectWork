@@ -34,6 +34,7 @@ public class login extends HttpServlet {
 		String email = request.getParameter("email");
 		String password = request.getParameter("password");
 
+
 		HttpSession session = request.getSession();
 User user= UserDAO.selectUserFromPassEmail(email, password);
 		
@@ -50,6 +51,24 @@ User user= UserDAO.selectUserFromPassEmail(email, password);
 
 		}
 
+
+		
+		if (UserDAO.selectUserFromPassEmail(email, password) != null) {
+			
+			session.setAttribute("loggato", true);
+			session.setAttribute("email", email);
+			response.sendRedirect("home.jsp");
+			
+			
+			} else {
+				
+				session.setAttribute("loggato", false);
+				response.sendRedirect("home.jsp");
+			
+			}
+
+		
+		
 	}
 
 }

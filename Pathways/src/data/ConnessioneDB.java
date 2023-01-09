@@ -26,6 +26,7 @@ public class ConnessioneDB {
 			dataSource.setUser("root");
 			dataSource.setPassword("3465115007dD");
 
+
 			con = dataSource.getConnection();
 			
 			System.out.println("Connessione avvenuta con il database : " + con.getCatalog());

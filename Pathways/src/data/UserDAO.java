@@ -69,6 +69,7 @@ public class UserDAO {
 
 				String resultEmail = rs.getString("email");
 				String resultPassword = rs.getString("password");
+
 				int idUtenti = rs.getInt("IdUtenti");
 				int nPercorsi = rs.getInt("nPercorsi");
 				user = new User(resultEmail, resultPassword, idUtenti, nPercorsi);
@@ -77,9 +78,10 @@ public class UserDAO {
 			ConnessioneDB.close();
 
 		} catch (SQLException e) {
+			System.out.println("Errore");
 			e.printStackTrace();
 		}
-		System.out.println("Query di selezione(email,password) eseguita correttamente");
+		
 		return user;
 	}
 
