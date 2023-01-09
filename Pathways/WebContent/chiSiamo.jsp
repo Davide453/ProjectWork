@@ -1,19 +1,24 @@
 <%@ include file="header.jsp"%>
-<!--Slider-->
-<section class="slider mb-5">
-	<div class="container">
-		<div class="row text-center">
-			<div class="row">
 
-				<h1>About</h1>
-				<h3>
-					<a href="home.html">Home</a>
-				</h3>
+<!-- SLIDER SECTION -->
+<!-- ======================================================================== -->
+<section class="slider">
+	<div class="container" id="chiSiamo" style="max-width: 100%;">
+		<div class="col">
+			<div class="row text-center">
+				<h1>
+					P<span class="auto-type"></span>
+				</h1>
+			</div>
+			<div class="row text-center">
+				<div class="row mb-5 pb-5">
+					<h2>Chi Siamo</h2>
+				</div>
+				
 			</div>
 		</div>
 	</div>
 </section>
-<!--end Slider section-->
 
 
 <!-- Main Section-->
