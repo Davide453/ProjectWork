@@ -102,7 +102,7 @@ function initMap() {
 						});
 					});
 
-					google.maps.event.addListener(map, "click", function (event) {
+					google.maps.event.addListener(map, "click", function(event) {
 						infoWindow.close();
 					});
 
@@ -119,7 +119,7 @@ function initMap() {
 
 	//Funzione che stampa sulla console la posizione del marker (Uso window. perché devo dichiararlo come variabile globale)
 
-	window.addNodo = function (nodoID) {
+	window.addNodo = function(nodoID) {
 
 		for (let i = 0; i < tuttiMarker.length; i++) {
 			//console.log(tuttiMarker[i].place_id);
@@ -210,7 +210,7 @@ function creaMarker(nodo) {
 		'<p>lorem ipsum dolores </p>' +
 		//bottone info marker
 
-		`<button type="button" class="btn btn-primary" onclick="addNodo('${nodo.place_id}')">Aggiungi al tuo percorso</button>` //Richiamo la funzione getMarkerPosition
+		`<button type="button" class="btn btn-light" onclick="addNodo('${nodo.place_id}')">Aggiungi al tuo percorso</button>` //Richiamo la funzione getMarkerPosition
 		+
 
 		"</div>" +
@@ -230,7 +230,7 @@ function creaMarker(nodo) {
 		});
 	});
 
-	google.maps.event.addListener(map, "click", function (event) {
+	google.maps.event.addListener(map, "click", function(event) {
 		infoWindow_attrazioni.close();
 	});
 }
@@ -270,9 +270,9 @@ function currentLocationButton() {
 
 
 // INVIAMO IL FILE JSON DEI NOSTRI PERCORSI SULLA SERVLET DI JAVA IN MODO TALE DA CALCOLARE L'ALGORITMO DI DIJKSTRA
-$(document).ready(function () {
+$(document).ready(function() {
 
-	$('#getPercorso').submit(function () {
+	$('#getPercorso').submit(function() {
 		myJsonString = JSON.stringify(percorso);
 		//console.log(myJsonString);
 		$.ajax({

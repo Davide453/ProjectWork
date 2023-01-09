@@ -787,6 +787,18 @@ footer li img {
 	background: rgb(235, 235, 235);
 }
 
+
+.gm-style .gm-style-iw-c {
+	background-color : #3f9eef;
+	
+}
+
+.btn-primary {
+	background-color: white !important;
+	color: black !important;
+	border: none !important;
+}
+
 /*--------------------------------------------------------------
 # Our Team Section (only chi_siamo)
 --------------------------------------------------------------*/
