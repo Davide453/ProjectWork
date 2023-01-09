@@ -40,13 +40,14 @@
 
     <!-- Copyrights
     ============================================= -->
+
     <div id="copyrights">
 
       <div class="container clearfix">
 
         <div class="row justify-content-center">
           <div class="col-md-6 align-self-center">
-            Copyrights © 2023 All Rights Reserved by Pathways.<br>
+            Copyrights Â© 2023 All Rights Reserved by Pathways.<br>
             <div class="copyright-links"><a href="#">Terms of Use</a> / <a href="#">Privacy Policy</a></div>
           </div>
 
@@ -134,7 +135,6 @@
       }
     }
   </script>
-
 
 </body>
 
