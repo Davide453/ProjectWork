@@ -2,10 +2,15 @@
 // prompted by your browser. If you see the error "The Geolocation service
 // failed.", it means you probably did not give permission for the browser to
 // locate you.
-let map, infoWindow, posizioneAttuale;
+let map, posizioneAttuale;
 let tuttiMarker = [];
 let percorso = [];
 let myJsonString;
+
+let infoWindow = new google.maps.InfoWindow({
+
+});
+
 
 function initMap() {
 	// The location of start
@@ -79,22 +84,15 @@ function initMap() {
 					//console.log(percorso);
 					divPercorso.appendChild(row);
 
-					infoWindow = new google.maps.InfoWindow();
-					infoWindow.setPosition(pos);
-					infoWindow.setContent("La tua posizione");
-					infoWindow.open({
-						shouldFocus: false,
-						anchor: markerPosizione,
-						map,
-						title: nome,
-					});
-
 					nearbySearch(pos);
 
 					map.setCenter(pos);
 
 					markerPosizione.addListener("click", () => {
+						infoWindow.setPosition(pos);
+						infoWindow.setContent("La tua posizione");
 						infoWindow.open({
+							shouldFocus: false,
 							position: pos,
 							anchor: markerPosizione,
 							title: nome,
@@ -102,7 +100,7 @@ function initMap() {
 						});
 					});
 
-					google.maps.event.addListener(map, "click", function (event) {
+					google.maps.event.addListener(map, "click", function() {
 						infoWindow.close();
 					});
 
@@ -119,7 +117,7 @@ function initMap() {
 
 	//Funzione che stampa sulla console la posizione del marker (Uso window. perché devo dichiararlo come variabile globale)
 
-	window.addNodo = function (nodoID) {
+	window.addNodo = function(nodoID) {
 
 		for (let i = 0; i < tuttiMarker.length; i++) {
 			//console.log(tuttiMarker[i].place_id);
@@ -201,6 +199,8 @@ function creaMarker(nodo) {
 	//console.log(tuttiMarker);
 	//console.log(nodo.place_id);
 
+	let markerPos = markerAttrazione.position;
+
 	const contentString =
 		'<div id="content">' +
 		'<div id="siteNotice">' +
@@ -210,30 +210,23 @@ function creaMarker(nodo) {
 		'<p>lorem ipsum dolores </p>' +
 		//bottone info marker
 
-		`<button type="button" class="btn btn-primary" onclick="addNodo('${nodo.place_id}')">Aggiungi al tuo percorso</button>` //Richiamo la funzione getMarkerPosition
+		`<button type="button" class="btn btn-light" onclick="addNodo('${nodo.place_id}')">Aggiungi al tuo percorso</button>` //Richiamo la funzione getMarkerPosition
 		+
 
 		"</div>" +
 		"</div>";
 
 
-	const infoWindow_attrazioni = new google.maps.InfoWindow({
-		content: contentString,
-		ariaLabel: nodo.name,
-	});
 
 	markerAttrazione.addListener("click", () => {
-		infoWindow_attrazioni.open({
-			position: nodo.geometry.location,
-			anchor: markerAttrazione,
-			map,
-		});
+		createInfoWindow(markerPos, contentString, nodo, markerAttrazione, map);
 	});
 
-	google.maps.event.addListener(map, "click", function (event) {
+	google.maps.event.addListener(map, "click", function() {
 		infoWindow_attrazioni.close();
 	});
 }
+
 
 // FUNZIONE CREA BOTTONE CHE OTTIENE LA POSIZIONE ATTUALE DELL'UTENTE
 function currentLocationButton() {
@@ -248,14 +241,15 @@ function currentLocationButton() {
 		if (navigator.geolocation) {
 			navigator.geolocation.getCurrentPosition(
 				(position) => {
-					const pos = {
+					const pos2 = {
 						lat: position.coords.latitude,
 						lng: position.coords.longitude,
 					};
 
-					infoWindow.setPosition(pos);
+					map.setCenter(pos2);
+					infoWindow.setPosition(pos2);
+					infoWindow.setContent("La tua posizione");
 					infoWindow.open(map);
-					map.setCenter(pos);
 				},
 				() => {
 					handleLocationError(true, infoWindow, map.getCenter());
@@ -268,11 +262,25 @@ function currentLocationButton() {
 	});
 }
 
+// CREA UN INFOWINDOW SUL MARKER COSI DA AVERE UN INFOWINDOW IN OGNI MOMENTO
+function createInfoWindow(markerPos, contentString, nodo, markerAttrazione, map) {
+
+	infoWindow.setPosition(markerPos);
+	infoWindow.setContent(contentString);
+	infoWindow.open({
+		content: contentString,
+		ariaLabel: nodo.name,
+		position: nodo.geometry.location,
+		anchor: markerAttrazione,
+		map,
+	});
+}
+
 
 // INVIAMO IL FILE JSON DEI NOSTRI PERCORSI SULLA SERVLET DI JAVA IN MODO TALE DA CALCOLARE L'ALGORITMO DI DIJKSTRA
-$(document).ready(function () {
+$(document).ready(function() {
 
-	$('#getPercorso').submit(function () {
+	$('#getPercorso').submit(function() {
 		myJsonString = JSON.stringify(percorso);
 		//console.log(myJsonString);
 		$.ajax({
