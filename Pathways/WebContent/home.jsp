@@ -11,8 +11,7 @@
 			</div>
 			<div class="row text-center">
 				<div class="row">
-					<h2>Dove vuoi andare?</h2>
-					<h3>Cerca un'attrazione</h3>
+					<h2 class="mb-5">Dove vuoi andare?</h2>
 				</div>
 				<div class="row">
 					<div class="col-2"></div>
