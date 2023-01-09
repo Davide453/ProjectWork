@@ -46,17 +46,17 @@ function scrollAnimation() {
 
     /* -- Touch events -- */
 
-    window.onmousedown = e => handleOnDown(e);
+    document.getElementById('image-track').onmousedown = e => handleOnDown(e);
 
-    window.ontouchstart = e => handleOnDown(e.touches[0]);
+    document.getElementById('image-track').ontouchstart = e => handleOnDown(e.touches[0]);
 
-    window.onmouseup = e => handleOnUp(e);
+    document.getElementById('image-track').onmouseup = e => handleOnUp(e);
 
-    window.ontouchend = e => handleOnUp(e.touches[0]);
+    document.getElementById('image-track').ontouchend = e => handleOnUp(e.touches[0]);
 
-    window.onmousemove = e => handleOnMove(e);
+    document.getElementById('image-track').onmousemove = e => handleOnMove(e);
 
-    window.ontouchmove = e => handleOnMove(e.touches[0]);
+    document.getElementById('image-track').ontouchmove = e => handleOnMove(e.touches[0]);
 }
 
 function buttonToTop() {
