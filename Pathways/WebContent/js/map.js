@@ -53,11 +53,16 @@ function initMap() {
 						glyphColor: '#415F7D',
 						scale: 1.2,
 					});
-
+	
+					const markerImg = document.createElement("img");
+					
+					markerImg.src = "img/iosonoqui.png";	
+						
 					// AGGIUNTA MARKER AVANZATO CON PERSONALIZZAZIONE COLORI
 					let markerPosizione = new google.maps.marker.AdvancedMarkerView({
 						position: pos,
-						content: pinViewBackground.element,
+						content: markerImg,
+						//content: pinViewBackground.element,
 						map,
 					});
 
@@ -253,7 +258,6 @@ function creaMarker(nodo) {
 		"</div>" +
 		'<h1 id="firstHeading" class="firstHeading">' + nodo.name + '</h1>' +
 		'<div id="bodyContent">' +
-		'<p>lorem ipsum dolores </p>' +
 		//bottone info marker
 
 		`<button type="button" class="btn btn-light" onclick="addNodo('${nodo.place_id}')">Aggiungi al tuo percorso</button>` //Richiamo la funzione getMarkerPosition
