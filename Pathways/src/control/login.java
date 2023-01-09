@@ -8,7 +8,9 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
+import data.UserDAO;
 import model.User;
 
 @WebServlet("/login")
@@ -27,15 +29,31 @@ public class login extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		System.out.println("login servlet");
 
+		System.out.println("login servlet");
 		String email = request.getParameter("email");
 		String password = request.getParameter("password");
-		System.out.println(email + " " + password);
-		User u = new User(email, password);
 		
-		response.sendRedirect("home.jsp");
+		
+		HttpSession session = request.getSession();
 
+		
+		if (UserDAO.selectUserFromPassEmail(email, password) != null) {
+			
+			session.setAttribute("loggato", true);
+			session.setAttribute("email", email);
+			response.sendRedirect("home.jsp");
+			
+			
+			} else {
+				
+				session.setAttribute("loggato", false);
+				response.sendRedirect("");
+			
+			}
+
+		
+		
 	}
 
 }

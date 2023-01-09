@@ -13,7 +13,6 @@ public class PercorsoDAO {
 
 	private final static String NUOVO_PERCORSO = "INSERT INTO percorsi (idPercorso,idUtente,ordine,indirizzo,nome) VALUES"
 			+ "(?,?,?,?,?);";
-	private static final String SELECT_PERCORSO_BY_ID_PERCORSO = "select * from percorsi where (idPercorso=?)";
 	private static final String SELECT_PERCORSO_BY_ID_UTENTE = "select * from percorsi where (idUtente=?)";
 
 	private static final String SELECT_ALL_USER = "SELECT * from userdb.user";
@@ -43,45 +42,10 @@ public class PercorsoDAO {
 		}
 	}
 
-	public static Percorso selectPercorsoFromIdPercorso(int idPercorso) {
-		Percorso percorso = new Percorso();
-		AttrazioneNodo nodo = null;
-		ArrayList<AttrazioneNodo> nodi = new ArrayList<>();
-		try {
-			ConnessioneDB.connect();
-			PreparedStatement st = ConnessioneDB.getCon().prepareStatement(SELECT_PERCORSO_BY_ID_PERCORSO);
-			st.setInt(1, idPercorso);
-			ResultSet rs = st.executeQuery();
-
-			int rsIdPercorso = rs.getInt("idPercorso");
-			int idUtente = rs.getInt("idUtente");
-			System.out.println("idPercoso: " + rsIdPercorso);
-			while (rs.next()) {
-				String nodoNome = rs.getString("nome");
-				String nodoIndirizzo = rs.getString("indirizzo");
-				int nodoPosizione = rs.getInt("ordine");
-				nodo = new AttrazioneNodo(nodoNome, nodoIndirizzo, nodoPosizione);
-				nodi.add(nodo);
-				System.out.println(nodo);
-			}
-			percorso.setOrdineNodi(nodi);
-			percorso.setIdUtente(idUtente);
-			percorso.setIdPercorso(rsIdPercorso);
-
-			System.out.println("query percorso" + percorso);
-			ConnessioneDB.close();
-
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
-		System.out.println("Query di selezione(idPercorso) eseguita correttamente" + percorso);
-		return percorso;
-	}
-
 	public static ArrayList<Percorso> selectPercorsoFromIdUtente(int idUtente) {
 		Percorso percorso = new Percorso();
 		ArrayList<Percorso> arrayPercorso = new ArrayList<>();
-
+AttrazioneNodo nodo = new AttrazioneNodo();
 		try {
 			ConnessioneDB.connect();
 			PreparedStatement st = ConnessioneDB.getCon().prepareStatement(SELECT_PERCORSO_BY_ID_UTENTE);
@@ -90,11 +54,13 @@ public class PercorsoDAO {
 			ResultSet rs = st.executeQuery();
 
 			while (rs.next()) {
-				int rsIdPercorso = rs.getInt("idPercorso");
+				int rsIdUtente = rs.getInt("idUtente");
+				String nome = rs.getString("nome");
+				String indirizzo = rs.getString("indirizzo");
+				int ordine = rs.getInt("ordine");
+				int idPercorso = rs.getInt("idPercorso");
 
-				percorso = PercorsoDAO.selectPercorsoFromIdPercorso(rsIdPercorso);
-				System.out.println(percorso);
-				arrayPercorso.add(percorso);
+				
 			}
 
 			System.out.println(arrayPercorso);
@@ -104,34 +70,6 @@ public class PercorsoDAO {
 			e.printStackTrace();
 		}
 		return arrayPercorso;
-	}
-
-	public static Percorso selectPercorsoFromIdUtenteIdPercorso(int idUtente) {
-		Percorso percorso = new Percorso();
-		ArrayList<Percorso> arrayPercorso = new ArrayList<>();
-
-		try {
-			ConnessioneDB.connect();
-			PreparedStatement st = ConnessioneDB.getCon().prepareStatement(SELECT_PERCORSO_BY_ID_UTENTE);
-			st.setInt(1, idUtente);
-			System.out.println(idUtente);
-			ResultSet rs = st.executeQuery();
-
-			while (rs.next()) {
-				int rsIdPercorso = rs.getInt("idPercorso");
-
-				percorso = PercorsoDAO.selectPercorsoFromIdPercorso(rsIdPercorso);
-				System.out.println(percorso);
-				arrayPercorso.add(percorso);
-			}
-
-			System.out.println(arrayPercorso);
-			ConnessioneDB.close();
-
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
-		return percorso;
 	}
 
 }

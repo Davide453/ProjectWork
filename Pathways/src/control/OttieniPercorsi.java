@@ -26,9 +26,8 @@ public class OttieniPercorsi extends HttpServlet {
 		System.out.println("ottieniPercorsi servlet");
 
 		int idUtente = 1;
-		Percorso percorso = PercorsoDAO.selectPercorsoFromIdPercorso(0);
-		// ArrayList<Percorso> percorso =
-		// PercorsoDAO.selectPercorsoFromIdUtente(idUtente);
+
+		ArrayList<Percorso> percorso = PercorsoDAO.selectPercorsoFromIdUtente(idUtente);
 
 		System.out.println(percorso);
 		response.sendRedirect("percorsiUtente.jsp");
