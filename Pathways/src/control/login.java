@@ -35,8 +35,9 @@ public class login extends HttpServlet {
 		String password = request.getParameter("password");
 
 		HttpSession session = request.getSession();
-
-		if (UserDAO.selectUserFromPassEmail(email, password) != null) {
+User user= UserDAO.selectUserFromPassEmail(email, password);
+		
+		if (email.equalsIgnoreCase(user.getEmail()) &&) {
 
 			session.setAttribute("loggato", true);
 			session.setAttribute("email", email);
