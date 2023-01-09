@@ -8,6 +8,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import data.PercorsoDAO;
 import model.Percorso;
@@ -24,11 +25,11 @@ public class OttieniPercorsi extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		System.out.println("ottieniPercorsi servlet");
+		HttpSession session = request.getSession();
 
-		int idUtente = 1;
-		Percorso percorso = PercorsoDAO.selectPercorsoFromIdPercorso(0);
-		// ArrayList<Percorso> percorso =
-		// PercorsoDAO.selectPercorsoFromIdUtente(idUtente);
+		int idUtente = session.getAttribute("");
+
+		ArrayList<Percorso> percorso = PercorsoDAO.selectPercorsoFromIdUtente(idUtente);
 
 		System.out.println(percorso);
 		response.sendRedirect("percorsiUtente.jsp");
