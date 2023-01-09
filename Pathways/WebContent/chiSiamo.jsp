@@ -14,7 +14,7 @@
 				<div class="row mb-5 pb-5">
 					<h2>Chi Siamo</h2>
 				</div>
-				
+
 			</div>
 		</div>
 	</div>
@@ -53,7 +53,6 @@
 		</div>
 
 		<div class="row gy-5 mt-4">
-
 			<div class="col-lg-6 col-md-6 member">
 				<div class="member-img">
 					<img src="./img/team-1.jpg" class="img-fluid" alt="">
@@ -80,35 +79,40 @@
 			</div>
 			<!-- End Team Member -->
 
-			<div class="row gy-5">
-				<div class="col-lg-6 col-md-6 member">
-					<div class="member-img">
-						<img src="./img/team-4.jpg" class="img-fluid" alt="">
-
-					</div>
-					<div class="member-info text-center">
-						<h4>Salvatore</h4>
-						<p>Backender puro, innamorato degli algoritmi dell'AI e della
-							vita</p>
-					</div>
-				</div>
-				<!-- End Team Member -->
-
-				<div class="col-lg-6 col-md-6 member">
-					<div class="member-img">
-						<img src="./img/team-5.jpg" class="img-fluid" alt="">
-
-					</div>
-					<div class="member-info text-center">
-						<h4>Wei</h4>
-						<p>Non smette di programmare nemmeno quando dorme, capace in
-							tutti i fronti</p>
-					</div>
-				</div>
-				<!-- End Team Member -->
-			</div>
 		</div>
+
+		<div class="row gy-5 mt-4">
+
+			<div class="col-lg-6 col-md-6 member">
+				<div class="member-img">
+					<img src="./img/team-4.jpg" class="img-fluid" alt="">
+
+				</div>
+				<div class="member-info text-center">
+					<h4>Salvatore</h4>
+					<p>Backender puro, innamorato degli algoritmi dell'AI e della
+						vita</p>
+				</div>
+			</div>
+			<!-- End Team Member -->
+
+			<div class="col-lg-6 col-md-6 member">
+				<div class="member-img">
+					<img src="./img/team-5.jpg" class="img-fluid" alt="">
+
+				</div>
+				<div class="member-info text-center">
+					<h4>Wei</h4>
+					<p>Non smette di programmare nemmeno quando dorme, capace in
+						tutti i fronti</p>
+				</div>
+			</div>
+			<!-- End Team Member -->
+
+		</div>
+
 	</section>
 </section>
+
 
 <%@ include file="footer.jsp"%>
