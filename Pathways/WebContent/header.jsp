@@ -67,11 +67,11 @@
 							<li class="nav-item"><a class="nav-link" href="mappa.jsp">Percorsi</a>
 							</li>
 							<li class="nav-item"><a class="nav-link"
-								href="percorsiUtente.jsp">I tuoi percorsi</a></li>
+								href="/Pathways/OttieniPercorsi">I tuoi percorsi</a></li>
 							<li class="nav-item"><a class="nav-link" href="chiSiamo.jsp">Chi
 									Siamo</a></li>
 							<li class="nav-item" data-bs-toggle="modal"
-								data-bs-target="#logindemo"><a class="nav-link" href="#" >Login</a>
+								data-bs-target="#logindemo"><a class="nav-link" href="#">Login</a>
 							</li>
 						</ul>
 					</div>
