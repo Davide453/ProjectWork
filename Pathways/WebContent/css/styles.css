@@ -770,6 +770,10 @@ footer li img {
 	padding: 0;
 }
 
+.map-div {
+	padding: 30px 40px 0 10px;
+}
+
 .custom-map-control-button {
 	background-color: #fff;
 	border: 0;

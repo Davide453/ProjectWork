@@ -27,33 +27,38 @@
 	integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
 	crossorigin="anonymous"></script>
 	
-<script type="module" src="./js/mappa.js"></script>
+<script type="module" src="./js/map.js"></script>
 </head>
 
 <body>
-	<header>
-		<nav class="navbar navbar-expand-lg bg-light">
-			<div class="container-fluid">
-				<a class="navbar-brand" href="#">Pathways</a>
-				<button class="navbar-toggler" type="button"
-					data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-					aria-controls="navbarSupportedContent" aria-expanded="false"
-					aria-label="Toggle navigation">
-					<span class="navbar-toggler-icon"></span>
-				</button>
-				<div class="collapse navbar-collapse" id="navbarSupportedContent">
-					<ul class="navbar-nav me-auto mb-2 mb-lg-0">
-						<li class="nav-item"><a class="nav-link active"
-							aria-current="page" href="home.jsp">Home</a></li>
-						<li class="nav-item"><a class="nav-link"
-							href="percorsiUtente.jsp">Percorsi Salvati</a></li>
-						<li class="nav-item"><a class="nav-link" href="chiSiamo.jsp">Chi
-								Siamo</a></li>
-						<li class="nav-item" data-bs-toggle="modal"
-							data-bs-target="#logindemo"><a class="nav-link" href="#">Login</a></li>
-					</ul>
+	<header id="header" style="position: relative;">
+		<nav id="target-navbar" class="navbar navbar-expand-lg">
+			<div class="col"></div>
+
+			<div class="col">
+				<div class="container-fluid">
+					<button class="navbar-toggler" type="button"
+						data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+						aria-controls="navbarSupportedContent" aria-expanded="false"
+						aria-label="Toggle navigation">
+						<span class="navbar-toggler-icon"></span>
+					</button>
+					<div class="collapse navbar-collapse" id="navbarSupportedContent">
+						<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+							<li class="nav-item"><a class="nav-link" href="mappa.jsp">Percorsi</a>
+							</li>
+							<li class="nav-item"><a class="nav-link"
+								href="percorsiUtente.jsp">I tuoi percorsi</a></li>
+							<li class="nav-item"><a class="nav-link" href="chiSiamo.jsp">Chi
+									Siamo</a></li>
+							<li class="nav-item" data-bs-toggle="modal"
+								data-bs-target="#logindemo"><a class="nav-link" href="#">Login</a>
+							</li>
+						</ul>
+					</div>
 				</div>
 			</div>
+			<div class="col"></div>
 		</nav>
 	</header>
 
@@ -80,7 +85,7 @@
 						</div>
 					</div>
 				</div>
-				<div id="map-container" class="col-10">
+				<div id="map-container" class="col-10 map-div">
 					<div id="map"></div>
 				</div>
 			</div>
