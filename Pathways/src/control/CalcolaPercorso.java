@@ -17,14 +17,17 @@ import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 
+import data.PercorsoDAO;
 import model.AttrazioneNodo;
 import model.Edge;
+import model.Percorso;
+import model.User;
 
 @WebServlet("/update")
-public class Percorso extends HttpServlet {
+public class CalcolaPercorso extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	public Percorso() {
+	public CalcolaPercorso() {
 		super();
 	}
 
@@ -100,7 +103,7 @@ public class Percorso extends HttpServlet {
 				edgeNew = attrazioni.get(0).calcolaEdge(attrazioni.get(k), destinazione);
 
 				if (edgeNew.getPeso() < edgeBest.getPeso()) {
-					edgeBest = edgeNew; 
+					edgeBest = edgeNew;
 				}
 			}
 			percorso.add(edgeBest);
@@ -113,6 +116,11 @@ public class Percorso extends HttpServlet {
 		}
 
 		System.out.println(percorso);
+		Percorso percorso2 = new Percorso("attrazioni", percorso);
+		System.out.println(percorso2);
+		
+		User user = new User("pippo", "pippo", 1, 0);
+		PercorsoDAO.insertPercorso(percorso2, user);
 		response.setCharacterEncoding("UTF-8");
 
 	}

@@ -37,7 +37,7 @@
 <script src="https://code.jquery.com/jquery-3.6.3.min.js"
 	integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU="
 	crossorigin="anonymous"></script>
-	
+
 <!-- ?? mapppa di google-->
 <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
 <!-- Typed -->
@@ -66,11 +66,11 @@
 							<li class="nav-item"><a class="nav-link" href="mappa2.jsp">Percorsi</a>
 							</li>
 							<li class="nav-item"><a class="nav-link"
-								href="percorsiUtente.jsp">I tuoi percorsi</a></li>
+								href="/Pathways/OttieniPercorsi">I tuoi percorsi</a></li>
 							<li class="nav-item"><a class="nav-link" href="chiSiamo.jsp">Chi
 									Siamo</a></li>
 							<li class="nav-item" data-bs-toggle="modal"
-								data-bs-target="#logindemo"><a class="nav-link" href="#" >Login</a>
+								data-bs-target="#logindemo"><a class="nav-link" href="#">Login</a>
 							</li>
 						</ul>
 					</div>
