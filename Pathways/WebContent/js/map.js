@@ -241,12 +241,15 @@ function currentLocationButton() {
 		if (navigator.geolocation) {
 			navigator.geolocation.getCurrentPosition(
 				(position) => {
-					const pos = {
+					const pos2 = {
 						lat: position.coords.latitude,
 						lng: position.coords.longitude,
 					};
 
-					map.setCenter(pos);
+					map.setCenter(pos2);
+					infoWindow.setPosition(pos2);
+					infoWindow.setContent("La tua posizione");
+					infoWindow.open(map);
 				},
 				() => {
 					handleLocationError(true, infoWindow, map.getCenter());
@@ -261,7 +264,7 @@ function currentLocationButton() {
 
 // CREA UN INFOWINDOW SUL MARKER COSI DA AVERE UN INFOWINDOW IN OGNI MOMENTO
 function createInfoWindow(markerPos, contentString, nodo, markerAttrazione, map) {
-	
+
 	infoWindow.setPosition(markerPos);
 	infoWindow.setContent(contentString);
 	infoWindow.open({
