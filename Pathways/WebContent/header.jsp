@@ -43,7 +43,7 @@
 </head>
 
 <body>
-    <a id="button"></a>
+	<a id="button"></a>
 	<header id="header">
 		<nav id="target-navbar" class="navbar navbar-expand-lg">
 			<div class="col"></div>

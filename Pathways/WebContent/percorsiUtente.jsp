@@ -1,6 +1,6 @@
 <%@ include file="header.jsp"%>
 <!--Slider-->
-<section class="slider mb-5">
+<section class="slider mb-5" style="display: flex; align-items: center; background-image: url('./img/forest.jpg'); height: 100vh; color: #ffffff; text-shadow: 0.25px 0.25px 0.25px #000000; background-size: cover;">
 	<div class="container">
 		<div class="row text-center">
 			<div class="row">
