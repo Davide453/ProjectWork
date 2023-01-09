@@ -20,11 +20,11 @@ public class ConnessioneDB {
 
 			//oggeto di tipo MysqlDataSource per settare i parametri di configurazione
 			MysqlDataSource dataSource = new MysqlDataSource();
-			dataSource.setDatabaseName("Projectwork");
+			dataSource.setDatabaseName("pathways");
 			dataSource.setPortNumber(3306);
 			dataSource.setServerName("localhost");
 			dataSource.setUser("root");
-			dataSource.setPassword("");
+			dataSource.setPassword("3465115007dD");
 
 			con = dataSource.getConnection();
 			

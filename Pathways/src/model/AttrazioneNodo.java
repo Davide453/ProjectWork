@@ -1,7 +1,5 @@
 package model;
 
-import model.testDijkstra.Node;
-
 public class AttrazioneNodo {
 
 	private String id;
@@ -9,14 +7,20 @@ public class AttrazioneNodo {
 	private String viaAttrazione;
 	private double lat;
 	private double lng;
+	private int ordine;
 
 	public AttrazioneNodo(String id, String nomeAttrazione, String viaAttrazione, double lat, double lng) {
-
 		this.id = id;
 		this.nomeAttrazione = nomeAttrazione;
 		this.viaAttrazione = viaAttrazione;
 		this.lat = lat;
 		this.lng = lng;
+	}
+
+	public AttrazioneNodo(String nomeAttrazione, String viaAttrazione, int ordine) {
+		this.nomeAttrazione = nomeAttrazione;
+		this.viaAttrazione = viaAttrazione;
+		this.ordine = ordine;
 	}
 
 	public String getNomeAttrazione() {
@@ -55,10 +59,18 @@ public class AttrazioneNodo {
 		return id;
 	}
 
+	public int getOrdine() {
+		return ordine;
+	}
+
+	public void setOrdine(int ordine) {
+		this.ordine = ordine;
+	}
+
 	@Override
 	public String toString() {
-		return " AttrazioneNodo [id=" + id + ", nomeAttrazione=" + nomeAttrazione + ", viaAttrazione=" + viaAttrazione
-				+ ", lat=" + lat + ", lng=" + lng + "] \n";
+		return "AttrazioneNodo [id=" + id + ", nomeAttrazione=" + nomeAttrazione + ", viaAttrazione=" + viaAttrazione
+				+ ", lat=" + lat + ", lng=" + lng + ", ordine=" + ordine + "]";
 	}
 
 	public Edge calcolaEdge(AttrazioneNodo origine, AttrazioneNodo destinazione) {
