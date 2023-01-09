@@ -7,6 +7,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import data.UserDAO;
+import model.User;
+
 @WebServlet("/Registrazione")
 public class Registrazione extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -31,6 +34,9 @@ public class Registrazione extends HttpServlet {
 		String password = request.getParameter("password");
 		System.out.println(email + " " + password);
 
+		User u = new User(email, password);
+		UserDAO.insertUtente(u);
+		
 		response.sendRedirect("home.jsp");
 	}
 
