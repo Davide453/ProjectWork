@@ -33,27 +33,22 @@ public class login extends HttpServlet {
 		System.out.println("login servlet");
 		String email = request.getParameter("email");
 		String password = request.getParameter("password");
-		
-		
+
 		HttpSession session = request.getSession();
 
-		
 		if (UserDAO.selectUserFromPassEmail(email, password) != null) {
-			
+
 			session.setAttribute("loggato", true);
 			session.setAttribute("email", email);
 			response.sendRedirect("home.jsp");
-			
-			
-			} else {
-				
-				session.setAttribute("loggato", false);
-				response.sendRedirect("");
-			
-			}
 
-		
-		
+		} else {
+
+			session.setAttribute("loggato", false);
+			response.sendRedirect("");
+
+		}
+
 	}
 
 }

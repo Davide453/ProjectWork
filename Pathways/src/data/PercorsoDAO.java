@@ -45,25 +45,29 @@ public class PercorsoDAO {
 	public static ArrayList<Percorso> selectPercorsoFromIdUtente(int idUtente) {
 		Percorso percorso = new Percorso();
 		ArrayList<Percorso> arrayPercorso = new ArrayList<>();
-AttrazioneNodo nodo = new AttrazioneNodo();
+		AttrazioneNodo nodo = null;
+		ArrayList<AttrazioneNodo> ordineNodi = new ArrayList<>();
 		try {
 			ConnessioneDB.connect();
 			PreparedStatement st = ConnessioneDB.getCon().prepareStatement(SELECT_PERCORSO_BY_ID_UTENTE);
 			st.setInt(1, idUtente);
-			System.out.println(idUtente);
 			ResultSet rs = st.executeQuery();
-
+			int rsIdUtente = 0;
+			int idPercorso = 0;
 			while (rs.next()) {
-				int rsIdUtente = rs.getInt("idUtente");
+				rsIdUtente = rs.getInt("idUtente");
+				idPercorso = rs.getInt("idPercorso");
+				int ordine = rs.getInt("ordine");
 				String nome = rs.getString("nome");
 				String indirizzo = rs.getString("indirizzo");
-				int ordine = rs.getInt("ordine");
-				int idPercorso = rs.getInt("idPercorso");
 
-				
+				nodo = new AttrazioneNodo(nome, indirizzo, ordine);
+				ordineNodi.add(nodo);
 			}
-
-			System.out.println(arrayPercorso);
+			percorso.setIdPercorso(idPercorso);
+			percorso.setIdUtente(rsIdUtente);
+			percorso.setOrdineNodi(ordineNodi);
+			arrayPercorso.add(percorso);
 			ConnessioneDB.close();
 
 		} catch (SQLException e) {
