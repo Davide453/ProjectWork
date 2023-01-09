@@ -11,8 +11,7 @@
 			</div>
 			<div class="row text-center">
 				<div class="row">
-					<h2>Dove vuoi andare?</h2>
-					<h3>Cerca un'attrazione</h3>
+					<h2 class="mb-5">Dove vuoi andare?</h2>
 				</div>
 				<div class="row">
 					<div class="col-2"></div>
@@ -88,7 +87,7 @@
 
 	<div class="section bg-transparent" style="padding: 100px 0">
 		<div class="container">
-			<h2 class="text-title-light" style="margin: 0 0 -20px 15px;">Attrazioni
+			<h2 class="text-title-light">Attrazione
 				della settimana</h2>
 			<div class="row">
 
@@ -159,7 +158,7 @@
 	<div class="section mb-0" style="padding: 100px 0">
 		<div class="container">
 			<div class="row clearfix">
-				<div class="heading-block center col-md-6 offset-3">
+				<div class="heading-block center col-md-6">
 					<h2 class="mb-3">Ultime Notizie</h2>
 					<p>Ricevi le ultime notizie sulle attrazioni e gli itinerari di
 						Pathways</p>
