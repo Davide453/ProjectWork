@@ -103,7 +103,6 @@
 								<h4>Cosa vuoi visitare?</h4>
 							</div>
 						</div>
-
 						<div class="row m-2 ps-3">
 							<input id="submit" type="submit" class="btn btn-primary"
 								value="Calcola il percorso">
