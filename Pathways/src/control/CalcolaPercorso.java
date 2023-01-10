@@ -80,7 +80,7 @@ public class CalcolaPercorso extends HttpServlet {
 			attrazioni.add(nodo);
 		}
 
-		System.out.println(attrazioni);
+		//System.out.println(attrazioni);
 
 		ArrayList<Edge> percorso = new ArrayList<Edge>();
 
@@ -116,11 +116,11 @@ public class CalcolaPercorso extends HttpServlet {
 		}
 
 		System.out.println(percorso);
-		Percorso percorso2 = new Percorso("attrazioni", percorso);
-		System.out.println(percorso2);
+		//Percorso percorso2 = new Percorso("attrazioni", percorso);
+		//System.out.println(percorso2);
 		
-		User user = new User("pippo", "pippo", 1, 0);
-		PercorsoDAO.insertPercorso(percorso2, user);
+		//User user = new User("pippo", "pippo", 1, 0);
+		//PercorsoDAO.insertPercorso(percorso2, user);
 		response.setCharacterEncoding("UTF-8");
 
 	}

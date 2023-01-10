@@ -34,6 +34,7 @@ public class login extends HttpServlet {
 		String password = request.getParameter("password");
 
 		HttpSession session = request.getSession(true);
+
 		User user = UserDAO.selectUserFromPassEmail(email, password);
 	
 		
