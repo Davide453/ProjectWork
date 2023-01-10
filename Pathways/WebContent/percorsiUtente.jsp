@@ -34,14 +34,17 @@
 			%>
 			<%
 			ArrayList<Percorso> percorso2;
-			if (loggato) {
-				//ArrayList<Percorso> percorso = (ArrayList<Percorso>) request.getAttribute("percorso");
+			if (loggato != null && loggato == true) {
+
 				percorso2 = (ArrayList<Percorso>) session.getAttribute("percorso");
 
 				if (percorso2 != null && percorso2.size() > 0) {
 					for (int i = 0; i < percorso2.size(); i++) {
-
-				for (AttrazioneNodo nodo : percorso2.get(i).getOrdineNodi()) {
+			%>
+			<h1>
+				<%=percorso2.get(i).getNome()%></h1>
+			<%
+			for (AttrazioneNodo nodo : percorso2.get(i).getOrdineNodi()) {
 			%>
 			<div class="portfolio-info">
 				<h4>
@@ -60,12 +63,12 @@
 
 				} else {
 				%>
-				<h1>Devi usare un account per vedere questa pagina</h1>
+				<h1>Devi effettuare l'accesso per vedere questa pagina</h1>
 				<%
 				}
 				%>
-
 			</div>
+		</div>
 	</section>
 	<!-- End Our Projects Section -->
 

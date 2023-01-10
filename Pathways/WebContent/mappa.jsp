@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
 
@@ -71,7 +71,10 @@
 			<div class="col-2"></div>
 		</nav>
 	</header>
-
+	<%
+	Boolean loggato = (Boolean) session.getAttribute("loggato");
+	if (loggato != null && loggato == true) {
+	%>
 	<main id="main">
 		<form id="getPercorso">
 			<div class="row mr-0">
@@ -95,5 +98,11 @@
 			</div>
 		</form>
 	</main>
-
+	<%
+	} else {
+	%>
+	<h1>Devi essere loggato per potere usare la nostra mappa</h1>
+	<%
+	}
+	%>
 	<%@ include file="footer.jsp"%>

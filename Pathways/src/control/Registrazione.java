@@ -32,16 +32,15 @@ public class Registrazione extends HttpServlet {
 
 		String email = request.getParameter("email");
 		String password = request.getParameter("password");
-		String repeatPass = request.getParameter("psw-repeat");
+		String repeatPass = request.getParameter("password-repeat");
 		System.out.println(email + " " + password);
-		if(password == repeatPass) {
+		if (password.equals(repeatPass)) {
 			User u = new User(email, password);
-			UserDAO.insertUtente(u);	
-		}else {
+			UserDAO.insertUtente(u);
+		} else {
 			System.out.println("Le password non coincidono");
 		}
-		
-			
+
 		response.sendRedirect("home.jsp");
 	}
 

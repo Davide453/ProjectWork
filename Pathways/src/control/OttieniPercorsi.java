@@ -38,9 +38,8 @@ public class OttieniPercorsi extends HttpServlet {
 			throws ServletException, IOException {
 		System.out.println("Ottieni percorsi servlet 2");
 		HttpSession session = request.getSession(true);
-
 		User user = (User) session.getAttribute("user");
-		System.out.println(user.getId());
+
 		ArrayList<Percorso> percorso = PercorsoDAO.selectPercorsoFromIdUtente(user.getId());
 		request.setAttribute("percorso", percorso);
 		session.setAttribute("percorso", percorso);

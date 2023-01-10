@@ -11,8 +11,8 @@ import model.User;
 
 public class PercorsoDAO {
 
-	private final static String NUOVO_PERCORSO = "INSERT INTO percorsi (idPercorso,idUtente,ordine,indirizzo,nome) VALUES"
-			+ "(?,?,?,?,?);";
+	private final static String NUOVO_PERCORSO = "INSERT INTO percorsi (idPercorso,idUtente,nomePercorso,ordine,indirizzo,nome) VALUES"
+			+ "(?,?,?,?,?,?);";
 	private static final String SELECT_PERCORSO_BY_ID_UTENTE = "select * from percorsi where (idUtente=?)";
 
 	private static final String SELECT_ALL_USER = "SELECT * from userdb.user";
@@ -28,9 +28,10 @@ public class PercorsoDAO {
 				System.out.println(nodo);
 				st.setInt(1, user.getnPercorsi());
 				st.setInt(2, user.getId());
-				st.setInt(3, nodo.getOrdine());
-				st.setString(4, nodo.getViaAttrazione());
-				st.setString(5, nodo.getNomeAttrazione());
+				st.setString(3, "Itinerario " + user.getnPercorsi());
+				st.setInt(4, nodo.getOrdine());
+				st.setString(5, nodo.getViaAttrazione());
+				st.setString(6, nodo.getNomeAttrazione());
 
 				st.executeUpdate();
 			}
@@ -54,16 +55,19 @@ public class PercorsoDAO {
 			ResultSet rs = st.executeQuery();
 			int rsIdUtente = 0;
 			int idPercorso = 0;
+			String nomePercorso = "";
 			while (rs.next()) {
 				rsIdUtente = rs.getInt("idUtente");
 				idPercorso = rs.getInt("idPercorso");
 				int ordine = rs.getInt("ordine");
 				String nome = rs.getString("nome");
+				nomePercorso = rs.getString("nomePercorso");
 				String indirizzo = rs.getString("indirizzo");
 
 				nodo = new AttrazioneNodo(nome, indirizzo, ordine);
 				ordineNodi.add(nodo);
 			}
+			percorso.setNome(nomePercorso);
 			percorso.setIdPercorso(idPercorso);
 			percorso.setIdUtente(rsIdUtente);
 			percorso.setOrdineNodi(ordineNodi);

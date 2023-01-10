@@ -46,6 +46,10 @@ public class CalcolaPercorso extends HttpServlet {
 
 		// Legge il corpo della richiesta come stringa
 		HttpSession session = request.getSession(true);
+		Boolean loggato = (Boolean) session.getAttribute("loggato");
+		if (loggato != null && loggato == true) {
+			
+		}
 		BufferedReader reader = request.getReader();
 		StringBuilder sb = new StringBuilder();
 		String line;
