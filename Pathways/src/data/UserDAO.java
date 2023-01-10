@@ -30,6 +30,7 @@ public class UserDAO {
 
 	public static User selectUserFromId(int idUtenti) {
 		User user = null;
+		System.out.println("select user ");
 		try {
 			ConnessioneDB.connect();
 			String query = "SELECT * from Utenti WHERE idUtenti=?";
@@ -81,7 +82,7 @@ public class UserDAO {
 			System.out.println("Errore");
 			e.printStackTrace();
 		}
-		
+
 		return user;
 	}
 

@@ -40,7 +40,7 @@ public class OttieniPercorsi extends HttpServlet {
 		HttpSession session = request.getSession(true);
 		User user = (User) session.getAttribute("user");
 
-		ArrayList<Percorso> percorso = PercorsoDAO.selectPercorsoFromIdUtente(user.getId());
+		ArrayList<Percorso> percorso = PercorsoDAO.selectPercorsoFromIdUtente(user);
 		request.setAttribute("percorso", percorso);
 		session.setAttribute("percorso", percorso);
 		ArrayList<Percorso> percorso2 = (ArrayList<Percorso>) request.getAttribute("percorso");
