@@ -25,7 +25,7 @@ html, body {
 
 .btn:first-child:active {
 	color: white !important;
-	border-color: none! important;
+	border-color: none ! important;
 }
 
 /*----------------------------------------------------------------------------------------------------------------------------------------------------------------*/
@@ -110,7 +110,7 @@ html, body {
 	margin: 0 2vw;
 }
 
-#home .slider-btn a > button {
+#home .slider-btn a>button {
 	background-color: white;
 	border-radius: 20px;
 	padding: 10px 25px;
@@ -430,21 +430,45 @@ footer li img {
 	576px)
 {
 	max-width
+	
+	
+	
+	
 	:
+	
+	
 	 
+	
+	
 	90
+	
+	
+	
+	
 	%;
-	
-    
 	margin
-	:
-	 
-	0px
-	 
-	auto
-	;
 	
-  
+	
+	
+	
+	:
+	
+	
+	 
+	
+	
+	0px
+	
+	
+	 
+	
+	
+	auto
+	
+	
+	
+	
+	;
 }
 
 }
@@ -793,10 +817,8 @@ footer li img {
 	background: rgb(235, 235, 235);
 }
 
-
 .gm-style .gm-style-iw-c {
-	background-color : #3f9eef;
-	
+	background-color: #3f9eef;
 }
 
 .btn-primary {
@@ -1093,4 +1115,7 @@ blockquote p {
 	padding: 0;
 }
 
+#card-body-percorso {
+	color: white!important;
+}
 /*---------------- fine percorsi_salvati-----------*/

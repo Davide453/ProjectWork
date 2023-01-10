@@ -71,7 +71,10 @@
 			<div class="col-2"></div>
 		</nav>
 	</header>
-
+	<%
+	Boolean loggato = (Boolean) session.getAttribute("loggato");
+	if (loggato != null && loggato == true) {
+	%>
 	<main id="main">
 		<form id="getPercorso" method="POST">
 			<div class="row mr-0">
@@ -95,5 +98,11 @@
 			</div>
 		</form>
 	</main>
-
+	<%
+	} else {
+	%>
+	<h1>Devi essere loggato per potere usare la nostra mappa</h1>
+	<%
+	}
+	%>
 	<%@ include file="footer.jsp"%>
