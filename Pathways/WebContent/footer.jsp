@@ -31,7 +31,7 @@
 					<h4 class="mb-3 mb-sm-4">Scarica sul Telefono</h4>
 					<p>Scarica subito la nostra app sul tuo telefono e inizia a
 						visitare le attrazioni!</p>
-					<a href="#" class="btn btn-light"><i class="fab fa-app-store"></i>
+					<a href="#" class="btn btn-light me-3"><i class="fab fa-app-store"></i>
 						App Store</a> <a href="#" class="btn btn-light"><i
 						class="fab fa-google-play"></i> Google Play</a>
 				</div>
@@ -50,7 +50,7 @@
 
 			<div class="row justify-content-center">
 				<div class="col-md-6 align-self-center">
-					Copyrights Â© 2023 All Rights Reserved by Pathways.<br>
+					Copyrights © 2023 All Rights Reserved by Pathways.<br>
 					<div class="copyright-links">
 						<a href="#">Terms of Use</a> / <a href="#">Privacy Policy</a>
 					</div>
