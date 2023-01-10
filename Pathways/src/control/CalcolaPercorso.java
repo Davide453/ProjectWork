@@ -130,7 +130,7 @@ public class CalcolaPercorso extends HttpServlet {
 
 		PercorsoDAO.insertPercorso(percorso2, user);
     
-    Gson gson = new Gson();
+		Gson gson = new Gson();
 
 		String percorsoJson = gson.toJson(percorso);
 		//System.out.println(percorsoJson);
