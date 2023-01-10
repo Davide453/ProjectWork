@@ -54,7 +54,7 @@ public class UserDAO {
 		System.out.println("Query di selezione(id) eseguita correttamente" + user);
 		return user;
 	}
-
+	
 	public static User selectUserFromPassEmail(String email, String password) {
 		User user = null;
 		try {
