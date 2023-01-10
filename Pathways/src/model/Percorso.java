@@ -59,6 +59,7 @@ public class Percorso {
 	}
 
 	public ArrayList<AttrazioneNodo> getOrdineNodi() {
+		System.out.println(ordineNodi);
 		return ordineNodi;
 	}
 

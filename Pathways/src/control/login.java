@@ -2,7 +2,6 @@ package control;
 
 import java.io.IOException;
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -34,10 +33,10 @@ public class login extends HttpServlet {
 		String email = request.getParameter("email");
 		String password = request.getParameter("password");
 
-
-		HttpSession session = request.getSession();
+		HttpSession session = request.getSession(true);
 		User user = UserDAO.selectUserFromPassEmail(email, password);
-
+	
+		
 		if (user != null && email.equalsIgnoreCase(user.getEmail()) && password.equals(user.getPassword())) {
 			session.setAttribute("idUtente", user.getId());
 			session.setAttribute("loggato", true);
@@ -50,24 +49,19 @@ public class login extends HttpServlet {
 
 		}
 
-
-		
 		if (UserDAO.selectUserFromPassEmail(email, password) != null) {
-			
+
 			session.setAttribute("loggato", true);
 			session.setAttribute("email", email);
 			response.sendRedirect("home.jsp");
-			
-			
-			} else {
-				
-				session.setAttribute("loggato", false);
-				response.sendRedirect("home.jsp");
-			
-			}
 
-		
-		
+		} else {
+
+			session.setAttribute("loggato", false);
+			response.sendRedirect("home.jsp");
+
+		}
+
 	}
 
 }

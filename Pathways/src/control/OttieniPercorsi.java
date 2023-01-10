@@ -1,44 +1,43 @@
 package control;
 
 import java.io.IOException;
-import java.util.ArrayList;
-
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
-import data.PercorsoDAO;
-import model.Percorso;
-
+/**
+ * Servlet implementation class OttieniPercorsi
+ */
 @WebServlet("/OttieniPercorsi")
 public class OttieniPercorsi extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
+	/**
+	 * @see HttpServlet#HttpServlet()
+	 */
 	public OttieniPercorsi() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
+	 *      response)
+	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		System.out.println("ottieniPercorsi servlet");
-		HttpSession session = request.getSession();
-
-		int idUtente = (int) session.getAttribute("idUtente");
-		System.out.println(idUtente);
-		ArrayList<Percorso> percorso = PercorsoDAO.selectPercorsoFromIdUtente(idUtente);
-		request.setAttribute("percorso", percorso);
-		System.out.println(percorso);
-		response.sendRedirect("percorsiUtente.jsp");
-
+		System.out.println("Ottieni percorsi servlet 2");
 	}
 
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
+	 *      response)
+	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-
+		// TODO Auto-generated method stub
 		doGet(request, response);
 	}
 

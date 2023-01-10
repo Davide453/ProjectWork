@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
 
@@ -35,7 +37,6 @@
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
 
 <script src="https://kit.fontawesome.com/9b5234d401.js"
-
 	crossorigin="anonymous"></script>
 
 <link rel="stylesheet" type="text/css" href="./css/styles.css">
@@ -72,16 +73,25 @@
 							<li class="nav-item"><a class="nav-link" href="chiSiamo.jsp">Chi
 									Siamo</a></li>
 
-							  <li class="nav-item" data-bs-toggle="modal"
-								<% HttpSession session2 = request.getSession();%>
-								<%String username = (String) session.getAttribute("email"); %>
-								<%Boolean loggato2 = (Boolean) session.getAttribute("loggato"); %>
-								<%if(loggato2==true){ %>
-								data-bs-target="#logindemo"><a class="nav-link" href="#"  >Benvenuto <%= username %>  </a>
-								<%} else { %>
-								<li class="nav-item" data-bs-toggle="modal" data-bs-target="#logindemo"><a class="nav-link" href="#"  >Login</a>
-								<% } %>
-							</li> 
+							<li class="nav-item" data-bs-toggle="modal"
+								data-bs-target="#logindemo">
+								<%
+								Boolean loggato = false;
+
+								loggato = (Boolean) session.getAttribute("loggato");
+
+								if (loggato != null && loggato== true) {
+									String username = (String) session.getAttribute("email");
+								%><a class="nav-link" href="#">Benvenuto <%=username%>
+							</a> <%
+ } else {
+ %>
+							
+							<li class="nav-item" data-bs-toggle="modal"
+								data-bs-target="#logindemo"><a class="nav-link" href="#">Login</a>
+								<%
+								}
+								%></li>
 
 						</ul>
 					</div>
