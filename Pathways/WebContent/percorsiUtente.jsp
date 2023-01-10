@@ -29,44 +29,54 @@
 	<!-- ======= Our Projects Section ======= -->
 	<section id="projects" class="projects">
 		<div class="container" data-aos="fade-up">
-			<%
-			Boolean loggato = (Boolean) session.getAttribute("loggato");
-			%>
-			<%
-			ArrayList<Percorso> percorso2;
-			if (loggato != null && loggato == true) {
+			<div clas="row">
+				<div class="col-md-4 mt-4">
+					<div class="card-body" id="card-body-percorso"
+						style="padding: 40px">
+						<%
+						Boolean loggato = (Boolean) session.getAttribute("loggato");
+						%>
+						<%
+						ArrayList<Percorso> percorso2;
+						if (loggato != null && loggato == true) {
 
-				percorso2 = (ArrayList<Percorso>) session.getAttribute("percorso");
+							percorso2 = (ArrayList<Percorso>) session.getAttribute("percorso");
 
-				if (percorso2 != null && percorso2.size() > 0) {
-					for (int i = 0; i < percorso2.size(); i++) {
-			%>
-			<h1>
-				<%=percorso2.get(i).getNome()%></h1>
-			<%
-			for (AttrazioneNodo nodo : percorso2.get(i).getOrdineNodi()) {
-			%>
-			<div class="portfolio-info">
-				<h4>
-					<%=nodo.getNomeAttrazione()%>
-					<%=nodo.getViaAttrazione()%>
-					<%=nodo.getOrdine()%>
-				</h4>
-				<%
-				}
-				}
-				} else {
-				%>
-				<h1>crea i tuoi percorsi</h1>
-				<%
-				}
+							if (percorso2 != null && percorso2.size() > 0) {
+								for (int i = 0; i < percorso2.size(); i++) {
+						%>
 
-				} else {
-				%>
-				<h1>Devi effettuare l'accesso per vedere questa pagina</h1>
-				<%
-				}
-				%>
+						<h4 class="card-title mb-3"><%=percorso2.get(i).getNome()%></h4>
+						<%
+						for (AttrazioneNodo nodo : percorso2.get(i).getOrdineNodi()) {
+						%>
+
+						<ul>
+							<li><%=nodo.getOrdine()%></li>
+							<li><%=nodo.getNomeAttrazione()%></li>
+							<li><%=nodo.getViaAttrazione()%></li>
+						</ul>
+
+
+
+
+						<%
+						}
+						}
+						} else {
+						%>
+						<h1>crea i tuoi percorsi</h1>
+						<%
+						}
+
+						} else {
+						%>
+						<h1>Devi effettuare l'accesso per vedere questa pagina</h1>
+						<%
+						}
+						%>
+					</div>
+				</div>
 			</div>
 		</div>
 	</section>
