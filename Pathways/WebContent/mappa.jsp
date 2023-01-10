@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
 
@@ -90,7 +90,7 @@
 					</div>
 				</div>
 				<div id="map-container" class="col-10 map-div">
-					<div id="map"></div>
+					<div id="map" style="width: 100%; height: 80vh;"></div>
 				</div>
 			</div>
 		</form>
