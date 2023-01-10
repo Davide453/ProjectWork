@@ -3,6 +3,7 @@ package control;
 import java.io.BufferedReader;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 
 import javax.servlet.ServletConfig;
@@ -12,6 +13,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.google.gson.Gson;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
@@ -80,7 +82,7 @@ public class CalcolaPercorso extends HttpServlet {
 			attrazioni.add(nodo);
 		}
 
-		//System.out.println(attrazioni);
+		// System.out.println(attrazioni);
 
 		ArrayList<Edge> percorso = new ArrayList<Edge>();
 
@@ -115,13 +117,18 @@ public class CalcolaPercorso extends HttpServlet {
 
 		}
 
-		System.out.println(percorso);
-		//Percorso percorso2 = new Percorso("attrazioni", percorso);
-		//System.out.println(percorso2);
-		
-		//User user = new User("pippo", "pippo", 1, 0);
-		//PercorsoDAO.insertPercorso(percorso2, user);
+		//System.out.println(percorso);
+
+		Gson gson = new Gson();
+
+		String percorsoJson = gson.toJson(percorso);
+		//System.out.println(percorsoJson);
+		PrintWriter out = response.getWriter();
 		response.setCharacterEncoding("UTF-8");
+		response.setContentType("application/json");
+		
+		out.write(percorsoJson);
+		out.flush();
 
 	}
 

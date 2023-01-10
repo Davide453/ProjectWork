@@ -14,7 +14,7 @@
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/gson-2.8.2.jar"/>
-	<classpathentry kind="lib" path="/Users/sko/Downloads/javax.servlet-api-3.0.1.jar"/>
-	<classpathentry kind="lib" path="/Users/sko/Downloads/mysql-connector-java-8.0.28.jar"/>
+	<classpathentry kind="lib" path="C:/Users/jinki/Downloads/Generation/javax.servlet-api-3.0.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/jinki/Downloads/Generation/mysql-connector-java-8.0.28.jar"/>
 	<classpathentry kind="output" path="WebContent/WEB-INF/classes"/>
 </classpath>
