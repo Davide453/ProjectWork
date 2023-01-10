@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+<%@ page import="model.User"%>
 <!DOCTYPE html>
 <html>
 
@@ -79,19 +80,24 @@
 								Boolean loggato = false;
 
 								loggato = (Boolean) session.getAttribute("loggato");
+								User user;
+								if (loggato != null && loggato == true) {
+									user = (User) session.getAttribute("user");
+								%> <a class="nav-link" href="#">Benvenuto <%=user.getEmail()%>
+							</a>
+							</li>
+							<li class="nav-item"><a class="nav-link" href="logout">Logout</a>
 
-								if (loggato != null && loggato== true) {
-									String username = (String) session.getAttribute("email");
-								%><a class="nav-link" href="#">Benvenuto <%=username%>
-							</a> <%
- } else {
- %>
-							
+								<%
+								} else {
+								%>
 							<li class="nav-item" data-bs-toggle="modal"
 								data-bs-target="#logindemo"><a class="nav-link" href="#">Login</a>
 								<%
 								}
 								%></li>
+
+
 
 						</ul>
 					</div>
