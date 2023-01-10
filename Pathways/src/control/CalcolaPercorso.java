@@ -11,6 +11,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
@@ -44,7 +45,11 @@ public class CalcolaPercorso extends HttpServlet {
 			throws ServletException, IOException {
 
 		// Legge il corpo della richiesta come stringa
-
+		HttpSession session = request.getSession(true);
+		Boolean loggato = (Boolean) session.getAttribute("loggato");
+		if (loggato != null && loggato == true) {
+			
+		}
 		BufferedReader reader = request.getReader();
 		StringBuilder sb = new StringBuilder();
 		String line;
@@ -80,7 +85,7 @@ public class CalcolaPercorso extends HttpServlet {
 			attrazioni.add(nodo);
 		}
 
-		//System.out.println(attrazioni);
+		// System.out.println(attrazioni);
 
 		ArrayList<Edge> percorso = new ArrayList<Edge>();
 
@@ -115,12 +120,10 @@ public class CalcolaPercorso extends HttpServlet {
 
 		}
 
-		System.out.println(percorso);
-		//Percorso percorso2 = new Percorso("attrazioni", percorso);
-		//System.out.println(percorso2);
-		
-		//User user = new User("pippo", "pippo", 1, 0);
-		//PercorsoDAO.insertPercorso(percorso2, user);
+		User user = (User) session.getAttribute("user");
+		Percorso percorso2 = new Percorso("attrazioni", percorso);
+
+		PercorsoDAO.insertPercorso(percorso2, user);
 		response.setCharacterEncoding("UTF-8");
 
 	}

@@ -2,6 +2,8 @@
 <jsp:include page="header.jsp" />
 <%@ page import="model.Percorso"%>
 <%@ page import="model.AttrazioneNodo"%>
+<%@ page import="java.util.ArrayList"%>
+<%@ page import="model.User"%>
 <!-- SLIDER SECTION -->
 <!-- ======================================================================== -->
 <section class="slider">
@@ -22,242 +24,50 @@
 	</div>
 </section>
 
-
-
 <!-- Main Section-->
 <main id="main">
 	<!-- ======= Our Projects Section ======= -->
 	<section id="projects" class="projects">
 		<div class="container" data-aos="fade-up">
+			<%
+			Boolean loggato = (Boolean) session.getAttribute("loggato");
+			%>
+			<%
+			ArrayList<Percorso> percorso2;
+			if (loggato != null && loggato == true) {
 
-			<div class="portfolio-isotope" data-portfolio-filter="*"
-				data-portfolio-layout="masonry" data-portfolio-sort="original-order">
+				percorso2 = (ArrayList<Percorso>) session.getAttribute("percorso");
 
+				if (percorso2 != null && percorso2.size() > 0) {
+					for (int i = 0; i < percorso2.size(); i++) {
+			%>
+			<h1>
+				<%=percorso2.get(i).getNome()%></h1>
+			<%
+			for (AttrazioneNodo nodo : percorso2.get(i).getOrdineNodi()) {
+			%>
+			<div class="portfolio-info">
+				<h4>
+					<%=nodo.getNomeAttrazione()%>
+					<%=nodo.getViaAttrazione()%>
+					<%=nodo.getOrdine()%>
+				</h4>
+				<%
+				}
+				}
+				} else {
+				%>
+				<h1>crea i tuoi percorsi</h1>
+				<%
+				}
 
-
-				<div class="row gy-4 portfolio-container">
-
-					<div class="col-lg-4 col-md-6 portfolio-item filter-remodeling">
-						<div class="portfolio-content h-100">
-							<img src="./img/attrazione-1.jpg" class="img-fluid" alt="">
-
-
-
-							<%
-							Boolean loggato = (Boolean) session.getAttribute("loggato");
-							%>
-							<%
-							if (loggato) {
-								//Percorso percorso = (Percorso) request.getAttribute("percorso");
-								Percorso percorso = (Percorso) session.getAttribute("percorso");
-								for (AttrazioneNodo nodo : percorso.getOrdineNodi()) {
-							%>
-
-							<div class="portfolio-info">
-								<h4>
-									<%
-									nodo.getNomeAttrazione();
-									%>
-								</h4>
-
-								<%
-								}
-								} else {
-								%>
-								<h1>crea i tuoi percorsi</h1>
-								<%
-								}
-								%>
-								<a href="./img/attrazione-1.jpg" title="Remodeling 1"
-									data-gallery="portfolio-gallery-remodeling"
-									class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-								<a href="project-details.html" title="More Details"
-									class="details-link"><i class="bi bi-link-45deg"></i></a>
-							</div>
-						</div>
-					</div>
-					<!-- End Projects Item -->
-
-					<div class="col-lg-4 col-md-6 portfolio-item filter-construction">
-						<div class="portfolio-content h-100">
-							<img src="./img/attrazione-1.jpg" class="img-fluid" alt="">
-							<div class="portfolio-info">
-								<h4>Percorso 2</h4>
-
-								<a href="./img/attrazione-1.jpg" title="Construction 1"
-									data-gallery="portfolio-gallery-construction"
-									class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-								<a href="project-details.html" title="More Details"
-									class="details-link"><i class="bi bi-link-45deg"></i></a>
-							</div>
-						</div>
-					</div>
-					<!-- End Projects Item -->
-
-					<div class="col-lg-4 col-md-6 portfolio-item filter-repairs">
-						<div class="portfolio-content h-100">
-							<img src="./img/attrazione-1.jpg" class="img-fluid" alt="">
-							<div class="portfolio-info">
-								<h4>Percorso 3</h4>
-
-								<a href="./img/attrazione-1.jpg" title="Repairs 1"
-									data-gallery="portfolio-gallery-repairs"
-									class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-								<a href="project-details.html" title="More Details"
-									class="details-link"><i class="bi bi-link-45deg"></i></a>
-							</div>
-						</div>
-					</div>
-					<!-- End Projects Item -->
-
-					<div class="col-lg-4 col-md-6 portfolio-item filter-design">
-						<div class="portfolio-content h-100">
-							<img src="./img/attrazione-1.jpg" class="img-fluid" alt="">
-							<div class="portfolio-info">
-								<h4>Design 1</h4>
-								<p>Lorem ipsum, dolor sit amet consectetur</p>
-								<a href="./img/attrazione-1.jpg" title="Repairs 1"
-									data-gallery="portfolio-gallery-book"
-									class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-								<a href="project-details.html" title="More Details"
-									class="details-link"><i class="bi bi-link-45deg"></i></a>
-							</div>
-						</div>
-					</div>
-					<!-- End Projects Item -->
-
-					<div class="col-lg-4 col-md-6 portfolio-item filter-remodeling">
-						<div class="portfolio-content h-100">
-							<img src="./img/attrazione-1.jpg" class="img-fluid" alt="">
-							<div class="portfolio-info">
-								<h4>Remodeling 2</h4>
-
-								<a href="./img/attrazione-1.jpg" title="Remodeling 2"
-									data-gallery="portfolio-gallery-remodeling"
-									class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-								<a href="project-details.html" title="More Details"
-									class="details-link"><i class="bi bi-link-45deg"></i></a>
-							</div>
-						</div>
-					</div>
-					<!-- End Projects Item -->
-
-					<div class="col-lg-4 col-md-6 portfolio-item filter-construction">
-						<div class="portfolio-content h-100">
-							<img src="./img/attrazione-1.jpg" class="img-fluid" alt="">
-							<div class="portfolio-info">
-								<h4>Construction 2</h4>
-
-								<a href="./img/attrazione-1.jpg" title="Construction 2"
-									data-gallery="portfolio-gallery-construction"
-									class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-								<a href="project-details.html" title="More Details"
-									class="details-link"><i class="bi bi-link-45deg"></i></a>
-							</div>
-						</div>
-					</div>
-					<!-- End Projects Item -->
-
-					<div class="col-lg-4 col-md-6 portfolio-item filter-repairs">
-						<div class="portfolio-content h-100">
-							<img src="./img/attrazione-1.jpg" class="img-fluid" alt="">
-							<div class="portfolio-info">
-								<h4>Repairs 2</h4>
-
-								<a href="./img/attrazione-1.jpg" title="Repairs 2"
-									data-gallery="portfolio-gallery-repairs"
-									class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-								<a href="project-details.html" title="More Details"
-									class="details-link"><i class="bi bi-link-45deg"></i></a>
-							</div>
-						</div>
-					</div>
-					<!-- End Projects Item -->
-
-					<div class="col-lg-4 col-md-6 portfolio-item filter-design">
-						<div class="portfolio-content h-100">
-							<img src="./img/attrazione-1.jpg" class="img-fluid" alt="">
-							<div class="portfolio-info">
-								<h4>Design 2</h4>
-
-								<a href="./img/attrazione-1.jpg" title="Repairs 2"
-									data-gallery="portfolio-gallery-book"
-									class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-								<a href="project-details.html" title="More Details"
-									class="details-link"><i class="bi bi-link-45deg"></i></a>
-							</div>
-						</div>
-					</div>
-					<!-- End Projects Item -->
-
-					<div class="col-lg-4 col-md-6 portfolio-item filter-remodeling">
-						<div class="portfolio-content h-100">
-							<img src="./img/attrazione-1.jpg" class="img-fluid" alt="">
-							<div class="portfolio-info">
-								<h4>Remodeling 3</h4>
-								> <a href="./img/attrazione-1.jpg" title="Remodeling 3"
-									data-gallery="portfolio-gallery-remodeling"
-									class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-								<a href="project-details.html" title="More Details"
-									class="details-link"><i class="bi bi-link-45deg"></i></a>
-							</div>
-						</div>
-					</div>
-					<!-- End Projects Item -->
-
-					<div class="col-lg-4 col-md-6 portfolio-item filter-construction">
-						<div class="portfolio-content h-100">
-							<img src="./img/attrazione-1.jpg" class="img-fluid" alt="">
-							<div class="portfolio-info">
-								<h4>Construction 3</h4>
-
-								<a href="./img/attrazione-1.jpg" title="Construction 3"
-									data-gallery="portfolio-gallery-construction"
-									class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-								<a href="project-details.html" title="More Details"
-									class="details-link"><i class="bi bi-link-45deg"></i></a>
-							</div>
-						</div>
-					</div>
-					<!-- End Projects Item -->
-
-					<div class="col-lg-4 col-md-6 portfolio-item filter-repairs">
-						<div class="portfolio-content h-100">
-							<img src="./img/attrazione-1.jpg" class="img-fluid" alt="">
-							<div class="portfolio-info">
-								<h4>Repairs 3</h4>
-
-								<a href="./img/attrazione-1.jpg" title="Repairs 2"
-									data-gallery="portfolio-gallery-repairs"
-									class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-								<a href="project-details.html" title="More Details"
-									class="details-link"><i class="bi bi-link-45deg"></i></a>
-							</div>
-						</div>
-					</div>
-					<!-- End Projects Item -->
-
-					<div class="col-lg-4 col-md-6 portfolio-item filter-design">
-						<div class="portfolio-content h-100">
-							<img src="./img/attrazione-1.jpg" class="img-fluid" alt="">
-							<div class="portfolio-info">
-								<h4>Design 3</h4>
-
-								<a href="./img/attrazione-1.jpg" title="Repairs 3"
-									data-gallery="portfolio-gallery-book"
-									class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-								<a href="project-details.html" title="More Details"
-									class="details-link"><i class="bi bi-link-45deg"></i></a>
-							</div>
-						</div>
-					</div>
-					<!-- End Projects Item -->
-
-				</div>
-				<!-- End Projects Container -->
-
+				} else {
+				%>
+				<h1>Devi effettuare l'accesso per vedere questa pagina</h1>
+				<%
+				}
+				%>
 			</div>
-
 		</div>
 	</section>
 	<!-- End Our Projects Section -->
