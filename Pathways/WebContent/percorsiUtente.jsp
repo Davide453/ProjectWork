@@ -29,56 +29,63 @@
 	<!-- ======= Our Projects Section ======= -->
 	<section id="projects" class="projects">
 		<div class="container" data-aos="fade-up">
-			<div clas="row">
+			<div class="row">
+
+
+
+				<%
+				Boolean loggato = (Boolean) session.getAttribute("loggato");
+				%>
+				<%
+				ArrayList<Percorso> percorso2;
+				if (loggato != null && loggato == true) {
+
+					percorso2 = (ArrayList<Percorso>) session.getAttribute("percorso");
+
+					if (percorso2 != null && percorso2.size() > 0) {
+						for (int i = 0; i < percorso2.size(); i++) {
+				%>
 				<div class="col-md-4 mt-4">
-					<div class="card-body" id="card-body-percorso"
-						style="padding: 40px">
-						<%
-						Boolean loggato = (Boolean) session.getAttribute("loggato");
-						%>
-						<%
-						ArrayList<Percorso> percorso2;
-						if (loggato != null && loggato == true) {
+					<div class="card" style="margin: 40px">
+						<div class="card-body" id="card-body-percorso">
+							<h4 class="card-title mb-3"><%=percorso2.get(i).getNome()%></h4>
+							<%
+							for (AttrazioneNodo nodo : percorso2.get(i).getOrdineNodi()) {
+							%>
 
-							percorso2 = (ArrayList<Percorso>) session.getAttribute("percorso");
-
-							if (percorso2 != null && percorso2.size() > 0) {
-								for (int i = 0; i < percorso2.size(); i++) {
-						%>
-
-						<h4 class="card-title mb-3"><%=percorso2.get(i).getNome()%></h4>
-						<%
-						for (AttrazioneNodo nodo : percorso2.get(i).getOrdineNodi()) {
-						%>
-
-						<ul>
-							<li><%=nodo.getOrdine()%></li>
-							<li><%=nodo.getNomeAttrazione()%></li>
-							<li><%=nodo.getViaAttrazione()%></li>
-						</ul>
+							<ul>
+								<li><%=nodo.getOrdine()%></li>
+								<li><%=nodo.getNomeAttrazione()%></li>
+								<li><%=nodo.getViaAttrazione()%></li>
+							</ul>
 
 
 
 
-						<%
-						}
-						}
-						} else {
-						%>
-						<h1>crea i tuoi percorsi</h1>
-						<%
-						}
-
-						} else {
-						%>
-						<h1>Devi effettuare l'accesso per vedere questa pagina</h1>
-						<%
-						}
-						%>
+							<%
+							}
+							%>
+						</div>
 					</div>
 				</div>
+				<%
+				}
+				} else {
+				%>
+				<h1>crea i tuoi percorsi</h1>
+				<%
+				}
+
+				} else {
+				%>
+				<h1>Devi effettuare l'accesso per vedere questa pagina</h1>
+				<%
+				}
+				%>
 			</div>
 		</div>
+
+
 	</section>
 	<!-- End Our Projects Section -->
 
