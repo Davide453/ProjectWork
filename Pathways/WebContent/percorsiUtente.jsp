@@ -46,7 +46,10 @@
 						for (int i = 0; i < percorso2.size(); i++) {
 				%>
 				<div class="col-md-4 mt-4">
-					<div class="card" style="margin: 40px">
+					<div class="card border-0 shadow-sm">
+
+						<img src="img/learn-more1.jpg" class="card-img-top" alt="Image">
+
 						<div class="card-body" id="card-body-percorso">
 							<h4 class="card-title mb-3"><%=percorso2.get(i).getNome()%></h4>
 							<%
@@ -54,7 +57,7 @@
 							%>
 
 							<ul>
-								<li><%=nodo.getOrdine()%></li>
+								<li><span>Ordine: </span><%=nodo.getOrdine()%></li>
 								<li><%=nodo.getNomeAttrazione()%></li>
 								<li><%=nodo.getViaAttrazione()%></li>
 							</ul>

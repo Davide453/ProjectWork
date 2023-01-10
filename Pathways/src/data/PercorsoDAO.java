@@ -35,9 +35,10 @@ public class PercorsoDAO {
 
 				st.executeUpdate();
 			}
-			user.setnPercorsi(user.getnPercorsi() + 1);
+
 			System.out.println(user.getnPercorsi());
 			ConnessioneDB.close();
+			UserDAO.updateUserNPercorsi(user);
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
@@ -75,6 +76,7 @@ public class PercorsoDAO {
 					nodo = new AttrazioneNodo(nome, indirizzo, ordine);
 					ordineNodi.add(nodo);
 				}
+				
 				percorso.setNome(nomePercorso);
 				percorso.setIdPercorso(idPercorso);
 				percorso.setIdUtente(rsIdUtente);

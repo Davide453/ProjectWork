@@ -3,6 +3,9 @@ package data;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+
+import javax.servlet.http.HttpSession;
+
 import model.User;
 
 public class UserDAO {
@@ -54,7 +57,7 @@ public class UserDAO {
 		System.out.println("Query di selezione(id) eseguita correttamente" + user);
 		return user;
 	}
-	
+
 	public static User selectUserFromPassEmail(String email, String password) {
 		User user = null;
 		try {
@@ -84,6 +87,27 @@ public class UserDAO {
 		}
 
 		return user;
+	}
+
+	public static boolean updateUserNPercorsi(User u) {
+		boolean righeAggiornate = false;
+		
+		String UPDATE_USER = "UPDATE utenti SET nPercorsi=? WHERE idUtenti=?;";
+		System.out.println("Update user ");
+		try {
+			ConnessioneDB.connect();
+
+			PreparedStatement st = ConnessioneDB.getCon().prepareStatement(UPDATE_USER);
+
+			st.setInt(1, u.getnPercorsi() + 1);
+			st.setInt(2, u.getId());
+			righeAggiornate = st.executeUpdate() > 0;
+			ConnessioneDB.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return righeAggiornate;
+
 	}
 
 }
