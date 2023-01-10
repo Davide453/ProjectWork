@@ -1,5 +1,7 @@
-<%@ include file="header.jsp"%>
 
+<jsp:include page="header.jsp" />
+<%@ page import="model.Percorso"%>
+<%@ page import="model.AttrazioneNodo"%>
 <!-- SLIDER SECTION -->
 <!-- ======================================================================== -->
 <section class="slider">
@@ -38,10 +40,33 @@
 					<div class="col-lg-4 col-md-6 portfolio-item filter-remodeling">
 						<div class="portfolio-content h-100">
 							<img src="./img/attrazione-1.jpg" class="img-fluid" alt="">
+
+
+
+							<%
+							Boolean loggato = (Boolean) session.getAttribute("loggato");
+							%>
+							<%
+							if (loggato) {
+								//Percorso percorso = (Percorso) request.getAttribute("percorso");
+								Percorso percorso = (Percorso) session.getAttribute("percorso");
+								for (AttrazioneNodo nodo : percorso.getOrdineNodi()) {
+							%>
+
 							<div class="portfolio-info">
-								<h4>Percorso 1</h4>
+								<h4>
+									<%
+									nodo.getNomeAttrazione();
+									%>
+								</h4>
+
 								<%
-								Percorso percorso = request.getAttribute("percorso");
+								}
+								} else {
+								%>
+								<h1>crea i tuoi percorsi</h1>
+								<%
+								}
 								%>
 								<a href="./img/attrazione-1.jpg" title="Remodeling 1"
 									data-gallery="portfolio-gallery-remodeling"
