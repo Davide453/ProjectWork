@@ -4,6 +4,7 @@
 // locate you.
 let map, posizioneAttuale;
 let markerPosizione;
+let markers = [];
 let tuttiMarker = [];
 let percorso = [];
 let myJsonString;
@@ -39,6 +40,9 @@ function initMap() {
 		},
 		mapId: "ecdb3dce61875a18",
 	});
+
+
+
 
 	// ==========================================================================================================
 	/* TROVA LA TUA POSIZIONE AL CARICAMENTO DELLA PAGINA */
@@ -87,7 +91,9 @@ function initMap() {
 					};
 
 					google.maps.event.addListener(markerPosizione, 'dragstart', () => {
-						removeElement(percorso, markerPosizione);
+
+						deleteMarkers();
+						//removeElement(percorso, markerPosizione);
 					});
 
 					google.maps.event.addListener(markerPosizione, 'dragend', () => {
@@ -203,6 +209,20 @@ function initMap() {
 
 }
 
+// Removes the markers from the map, but keeps them in the array.
+function hideMarkers() {
+	//console.log(tuttiMarker);
+	//console.log(markers);
+	//console.log(percorso);
+	for(let i = 0; i < markers.length; i++) {
+		markers[i].setMap(null);
+	}
+}
+
+function deleteMarkers() {
+	hideMarkers();
+}
+
 function removeElement(array, element) {
 	const index = array.indexOf(element);
 	if (index !== -1) {
@@ -244,7 +264,6 @@ function nearbySearch(pos) {
 		if (status == google.maps.places.PlacesServiceStatus.OK) {
 			for (let i = 0; i < results.length; i++) {
 
-
 				creaMarker(results[i]);
 				//console.log(results[i].place_id);
 			}
@@ -252,10 +271,13 @@ function nearbySearch(pos) {
 	}
 }
 
+
+
+
+
+
 // FUNZIONE CREA MARKER CHE PRENDE COME PARAMETRO D'INPUT UN NODO
 function creaMarker(nodo) {
-
-	tuttiMarker.push(nodo); // AGGIUNGE ALL'ARRAY tuttiMarker IL nodo PRESO DA INPUT
 
 	let markerAttrazione = new google.maps.Marker({
 		position: nodo.geometry.location,
@@ -265,8 +287,6 @@ function creaMarker(nodo) {
 
 	//console.log(tuttiMarker);
 	//console.log(nodo.place_id);
-
-	let markerPos = markerAttrazione.position;
 
 	const contentString =
 		'<div id="content">' +
@@ -285,12 +305,15 @@ function creaMarker(nodo) {
 
 
 	markerAttrazione.addListener("click", () => {
-		createInfoWindow(markerPos, contentString, nodo, markerAttrazione, map);
+		createInfoWindow(markerAttrazione.position, contentString, nodo, markerAttrazione, map);
 	});
 
 	google.maps.event.addListener(map, "click", function() {
 		infoWindow.close();
 	});
+	
+	markers.push(markerAttrazione);
+	tuttiMarker.push(nodo); // AGGIUNGE ALL'ARRAY tuttiMarker IL nodo PRESO DA INPUT
 }
 
 
