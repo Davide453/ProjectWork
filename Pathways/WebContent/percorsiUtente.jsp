@@ -56,11 +56,18 @@
 							for (AttrazioneNodo nodo : percorso2.get(i).getOrdineNodi()) {
 							%>
 
-							<ul>
-								<li><span>Ordine: </span><%=nodo.getOrdine()%></li>
-								<li><%=nodo.getNomeAttrazione()%></li>
-								<li><%=nodo.getViaAttrazione()%></li>
-							</ul>
+
+							<p>
+								<i class="fa-solid fa-landmark"></i><%=nodo.getNomeAttrazione()%>
+							</p>
+							
+							<p>
+								<i class="fa-solid fa-location-dot"></i><%=nodo.getViaAttrazione()%></p>
+<hr>
+
+
+
+
 
 
 

@@ -97,11 +97,27 @@ function initMap() {
 						pos = { lat: posLat, lng: posLng };
 						posizioneAttuale = {
 							"geometry": { "location": { "lat": pos.lat, "lng": pos.lng } },
-							"place_id": "posizioneAttuale",
-							"name": "posizioneAttuale",
-							"vicinity": "placeholder" // va fatta la geocodifica
+							"place_id": "La tua posizione",
+							"name": "La tua posizione",
+							"vicinity": "La tua posizione" // va fatta la geocodifica
 						};
-
+						/*
+												let geocoder = new google.maps.Geocoder();
+						
+						
+												console.log(pos);
+						
+												geocoder
+													.geocode({ location: pos })
+													.then((response) => {
+														console.log("results" + response.results[0] + " | response " + response);
+														posizioneAttuale = response.results[0];
+						
+						
+													});
+						
+												console.log("posizione attuale:  " + posizioneAttuale);
+						*/
 						nearbySearch(pos);
 
 						percorso[0] = posizioneAttuale;

@@ -22,7 +22,7 @@
 <link rel="stylesheet" type="text/css" href="./css/styles.css" />
 
 <script
-	src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAXcsTlD8ARR47szaFywPJ18zASD-hIBTE&callback=initMap&libraries=marker,places&v=beta"
+	src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAXcsTlD8ARR47szaFywPJ18zASD-hIBTE&callback=initMap&libraries=marker,places,geocoding&v=beta"
 	defer></script>
 <script
 	src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
