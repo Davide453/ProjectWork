@@ -38,7 +38,7 @@ function initMap() {
 		streetViewControlOptions: {
 			position: google.maps.ControlPosition.LEFT_TOP,
 		},
-		mapId: "ecdb3dce61875a18",
+		mapId: "YOUR_MAP_ID_HERE",
 	});
 
 
@@ -85,9 +85,9 @@ function initMap() {
 
 					posizioneAttuale = {
 						"geometry": { "location": { "lat": pos.lat, "lng": pos.lng } },
-						"place_id": "posizioneAttuale",
-						"name": "posizioneAttuale",
-						"vicinity": "placeholder" // va fatta la geocodifica
+						"place_id": "La tua posizione",
+						"name": "La tua posizione",
+						"vicinity": "La tua posizione" // va fatta la geocodifica
 					};
 
 					google.maps.event.addListener(markerPosizione, 'dragstart', () => {

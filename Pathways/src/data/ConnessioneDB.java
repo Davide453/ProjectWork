@@ -24,7 +24,7 @@ public class ConnessioneDB {
 			dataSource.setPortNumber(3306);
 			dataSource.setServerName("localhost");
 			dataSource.setUser("root");
-			dataSource.setPassword("MySQL921PW");
+			dataSource.setPassword("3465115007dD");
 
 
 			con = dataSource.getConnection();

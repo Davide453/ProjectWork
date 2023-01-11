@@ -55,7 +55,7 @@
 		<div class="row gy-5 mt-4">
 			<div class="col-lg-6 col-md-6 member">
 				<div class="member-img">
-					<img src="./img/team-1.jpg" class="img-fluid" alt="">
+					<img src="./img/PedrazziniDavide.jpg" class="rounded mx-auto d-block " alt="">
 				</div>
 				<div class="member-info text-center">
 					<h4>Davide</h4>
@@ -68,7 +68,7 @@
 
 			<div class="col-lg-6 col-md-6 member">
 				<div class="member-img">
-					<img src="./img/team-3.jpg" class="img-fluid" alt="">
+					<img src="./img/MorettiDaniele.jpg" class="img-fluid" alt="">
 
 				</div>
 				<div class="member-info text-center">
@@ -85,7 +85,7 @@
 
 			<div class="col-lg-6 col-md-6 member">
 				<div class="member-img">
-					<img src="./img/team-4.jpg" class="img-fluid" alt="">
+					<img src="./img/SalvatoreScordi.jpg" class="img-fluid" alt="">
 
 				</div>
 				<div class="member-info text-center">
@@ -98,7 +98,7 @@
 
 			<div class="col-lg-6 col-md-6 member">
 				<div class="member-img">
-					<img src="./img/team-5.jpg" class="img-fluid" alt="">
+					<img src="./img/Wei.jpg" class="img-fluid" alt="">
 
 				</div>
 				<div class="member-info text-center">
