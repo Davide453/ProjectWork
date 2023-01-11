@@ -21,6 +21,7 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 
 import data.PercorsoDAO;
+import data.UserDAO;
 import model.AttrazioneNodo;
 import model.Edge;
 import model.Percorso;
@@ -50,7 +51,7 @@ public class CalcolaPercorso extends HttpServlet {
 		HttpSession session = request.getSession(true);
 		Boolean loggato = (Boolean) session.getAttribute("loggato");
 		if (loggato != null && loggato == true) {
-			
+
 		}
 		BufferedReader reader = request.getReader();
 		StringBuilder sb = new StringBuilder();
@@ -127,14 +128,20 @@ public class CalcolaPercorso extends HttpServlet {
 		
 		User user = (User) session.getAttribute("user");
 		Percorso percorso2 = new Percorso("attrazioni", percorso);
-
+		
+		UserDAO.updateUserNPercorsi(user);
+		
 		PercorsoDAO.insertPercorso(percorso2, user);
-    
+
+		user = UserDAO.selectUserFromId(user.getId());
+		session.setAttribute("user", user);
+
 		Gson gson = new Gson();
 
 		String percorsoJson = gson.toJson(percorso);
 		//System.out.println(percorsoJson);
 		PrintWriter out = response.getWriter();
+
 		response.setCharacterEncoding("UTF-8");
 		response.setContentType("application/json");
 		

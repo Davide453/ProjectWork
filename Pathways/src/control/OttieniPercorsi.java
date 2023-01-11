@@ -39,17 +39,17 @@ public class OttieniPercorsi extends HttpServlet {
 		System.out.println("Ottieni percorsi servlet 2");
 		HttpSession session = request.getSession(true);
 		User user = (User) session.getAttribute("user");
-
-		ArrayList<Percorso> percorso = PercorsoDAO.selectPercorsoFromIdUtente(user);
-		request.setAttribute("percorso", percorso);
-		session.setAttribute("percorso", percorso);
-		ArrayList<Percorso> percorso2 = (ArrayList<Percorso>) request.getAttribute("percorso");
-		ArrayList<Percorso> percorso3 = (ArrayList<Percorso>) session.getAttribute("percorso");
-		session.getAttribute("percorso");
-		System.out.println("test" + percorso);
-		System.out.println("request percorso " + percorso2);
-		System.out.println("session percorso " + percorso3);
-
+		if (user != null) {
+			ArrayList<Percorso> percorso = PercorsoDAO.selectPercorsoFromIdUtente(user);
+			request.setAttribute("percorso", percorso);
+			session.setAttribute("percorso", percorso);
+			ArrayList<Percorso> percorso2 = (ArrayList<Percorso>) request.getAttribute("percorso");
+			ArrayList<Percorso> percorso3 = (ArrayList<Percorso>) session.getAttribute("percorso");
+			session.getAttribute("percorso");
+			System.out.println("test" + percorso);
+			System.out.println("request percorso " + percorso2);
+			System.out.println("session percorso " + percorso3);
+		}
 		response.sendRedirect("percorsiUtente.jsp");
 
 	}

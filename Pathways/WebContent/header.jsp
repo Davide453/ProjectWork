@@ -73,14 +73,13 @@
 								href="/Pathways/OttieniPercorsi">I tuoi percorsi</a></li>
 							<li class="nav-item"><a class="nav-link" href="chiSiamo.jsp">Chi
 									Siamo</a></li>
-
 							<li class="nav-item" data-bs-toggle="modal"
 								data-bs-target="#logindemo">
 								<%
 								Boolean loggato = false;
-
-								loggato = (Boolean) session.getAttribute("loggato");
 								User user;
+								loggato = (Boolean) session.getAttribute("loggato");
+
 								if (loggato != null && loggato == true) {
 									user = (User) session.getAttribute("user");
 								%> <a class="nav-link" href="#">Benvenuto <%=user.getEmail()%>
