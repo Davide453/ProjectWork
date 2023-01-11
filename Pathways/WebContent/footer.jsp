@@ -12,13 +12,13 @@
 				<div class="widget widget_links clearfix">
 					<h4 class="mb-3 mb-sm-4">Link Utili</h4>
 					<ul class="footer-links">
-						<li><a href="https://codex.wordpress.org/">Su Di Noi</a></li>
+						<li><a href="chiSiamo.jsp">Su Di Noi</a></li>
 						<li><a
-							href="https://wordpress.org/support/forum/requests-and-feedback">Feedback</a></li>
-						<li><a href="https://wordpress.org/extend/plugins/">Percorsi</a></li>
-						<li><a href="https://wordpress.org/extend/themes/">Contatti</a></li>
-						<li><a href="https://wordpress.org/news/">Blog</a></li>
-						<li><a href="https://planet.wordpress.org/">Recensioni</a></li>
+							href="#">Feedback</a></li>
+						<li><a href="mappa.jsp">Percorsi</a></li>
+						<li><a href="">Contatti</a></li>
+						<li><a href="#">Blog</a></li>
+						<li><a href="#">Recensioni</a></li>
 					</ul>
 				</div>
 			</div>
@@ -50,9 +50,9 @@
 
 			<div class="row justify-content-center">
 				<div class="col-md-6 align-self-center">
-					Copyrights © 2023 All Rights Reserved by Pathways.<br>
+					Copyrights © 2023 Tutti I Diritti Riservati Da Pathways.<br>
 					<div class="copyright-links">
-						<a href="#">Terms of Use</a> / <a href="#">Privacy Policy</a>
+						<a href="#">Termini di Utilizzo</a> / <a href="#">Privacy Policy</a>
 					</div>
 				</div>
 
