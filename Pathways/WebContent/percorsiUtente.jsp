@@ -4,6 +4,9 @@
 <%@ page import="model.AttrazioneNodo"%>
 <%@ page import="java.util.ArrayList"%>
 <%@ page import="model.User"%>
+<%@ page import="java.util.Random"%>
+
+
 <!-- SLIDER SECTION -->
 <!-- ======================================================================== -->
 <section class="slider">
@@ -35,8 +38,8 @@
 
 				<%
 				Boolean loggato = (Boolean) session.getAttribute("loggato");
-				%>
-				<%
+				Random r = new Random();
+
 				ArrayList<Percorso> percorso2;
 				if (loggato != null && loggato == true) {
 
@@ -44,14 +47,28 @@
 
 					if (percorso2 != null && percorso2.size() > 0) {
 						for (int i = 0; i < percorso2.size(); i++) {
+
+					Integer rInt = r.nextInt(15);
 				%>
 				<div class="col-md-4 mt-4">
 					<div class="card border-0 shadow-sm">
 
-						<img src="img/learn-more1.jpg" class="card-img-top" alt="Image">
+						<img src="img/ImmagineItinerari
+							<%=rInt.toString()%>.jpg"
+							class="card-img-top" alt="Image">
 
 						<div class="card-body" id="card-body-percorso">
-							<h4 class="card-title mb-3"><%=percorso2.get(i).getNome()%></h4>
+							<h4 class="card-title mb-3">
+								<i class="fa-regular fa-flag"></i>&nbsp;<%=percorso2.get(i).getOrdineNodi().get(0).getNomeAttrazione()%>
+
+							</h4>
+							<h4>
+								<i class="fa-solid fa-flag-checkered"></i>
+								<%=percorso2.get(i).getOrdineNodi().get(percorso2.get(i).getOrdineNodi().size() - 1).getNomeAttrazione()%>
+
+							</h4>
+
+
 							<%
 							for (AttrazioneNodo nodo : percorso2.get(i).getOrdineNodi()) {
 							%>
