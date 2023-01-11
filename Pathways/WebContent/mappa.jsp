@@ -94,7 +94,7 @@
 	if (loggato != null && loggato == true) {
 	%>
 	<main id="main">
-		<form id="getPercorso">
+		<form id="getPercorso" method="POST">
 			<div class="row mr-0">
 				<div class="filters col">
 					<div class="col">
@@ -103,15 +103,14 @@
 								<h4>Cosa vuoi visitare?</h4>
 							</div>
 						</div>
-
 						<div class="row m-2 ps-3">
-							<input type="submit" class="btn btn-primary"
+							<input id="submit" type="submit" class="btn btn-primary"
 								value="Calcola il percorso">
 						</div>
 					</div>
 				</div>
 				<div id="map-container" class="col-10 map-div">
-					<div id="map"></div>
+					<div id="map" style="width: 100%; height: 80vh;"></div>
 				</div>
 			</div>
 		</form>

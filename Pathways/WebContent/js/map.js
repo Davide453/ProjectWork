@@ -3,9 +3,18 @@
 // failed.", it means you probably did not give permission for the browser to
 // locate you.
 let map, posizioneAttuale;
+let markerPosizione;
 let tuttiMarker = [];
 let percorso = [];
 let myJsonString;
+
+const directionsService = new google.maps.DirectionsService();
+const directionsRenderer = new google.maps.DirectionsRenderer({
+	suppressInfoWindow: true,
+});
+
+
+//let percorsoCalcolato;
 
 let infoWindow = new google.maps.InfoWindow({});
 
@@ -14,6 +23,7 @@ function initMap() {
 	// The location of start
 
 	const start = { lat: 45.477781673393366, lng: 9.186916132921075 };
+
 	// The map, centered at start
 	map = new google.maps.Map(document.getElementById("map"), {
 		mapTypeControl: false,
@@ -30,7 +40,6 @@ function initMap() {
 		mapId: "ecdb3dce61875a18",
 	});
 
-
 	// ==========================================================================================================
 	/* TROVA LA TUA POSIZIONE AL CARICAMENTO DELLA PAGINA */
 	// ==========================================================================================================
@@ -39,48 +48,77 @@ function initMap() {
 		if (navigator.geolocation) {
 			navigator.geolocation.getCurrentPosition(
 				(position) => {
-					const pos = {
+					let pos = {
 						lat: position.coords.latitude,
 						lng: position.coords.longitude,
 					};
 
-					let nome = "La tua posizione";
 
 					// PERSONALIZZAZIONE MARKER AVANZATO
+
+					const markerImg = document.createElement("img");
+
+					markerImg.src = "img/iosonoqui.svg";
+
 					const pinViewBackground = new google.maps.marker.PinView({
 						background: '#6899C7',
 						borderColor: '#5D89B3',
-						glyphColor: '#415F7D',
-						scale: 1.2,
+						//glyphColor: '#415F7D',
+						scale: 2,
+						glyph: markerImg,
 					});
-	
-					const markerImg = document.createElement("img");
-					
-					markerImg.src = "img/iosonoqui.png";	
-						
+
+
 					// AGGIUNTA MARKER AVANZATO CON PERSONALIZZAZIONE COLORI
-					let markerPosizione = new google.maps.marker.AdvancedMarkerView({
+					markerPosizione = new google.maps.marker.AdvancedMarkerView({
 						position: pos,
-						content: markerImg,
-						//content: pinViewBackground.element,
+						//content: markerImg,
+						content: pinViewBackground.element,
+						draggable: true,
 						map,
 					});
 
-					let posizioneAttuale = {
+
+					posizioneAttuale = {
 						"geometry": { "location": { "lat": pos.lat, "lng": pos.lng } },
 						"place_id": "posizioneAttuale",
 						"name": "posizioneAttuale",
 						"vicinity": "placeholder" // va fatta la geocodifica
 					};
 
+					google.maps.event.addListener(markerPosizione, 'dragstart', () => {
+						removeElement(percorso, markerPosizione);
+					});
+
+					google.maps.event.addListener(markerPosizione, 'dragend', () => {
+						let position = markerPosizione.position;
+						let posLat = position.lat();
+						let posLng = position.lng();
+						pos = { lat: posLat, lng: posLng };
+						posizioneAttuale = {
+							"geometry": { "location": { "lat": pos.lat, "lng": pos.lng } },
+							"place_id": "posizioneAttuale",
+							"name": "posizioneAttuale",
+							"vicinity": "placeholder" // va fatta la geocodifica
+						};
+
+						nearbySearch(pos);
+
+						percorso[0] = posizioneAttuale;
+						//console.log(position.lat(), position.lng());
+					});
+
+					//console.log(posizioneAttuale);
+
 					percorso.push(posizioneAttuale);
 
 					//aggiungere geocodifica di google per convertire coordinate in via per la propria posizione
-
+					let nome = "La tua posizione";
 					let divPercorso = document.getElementById("percorso");
 					let row = document.createElement("div");
 					let label = document.createElement("label");
 					label.innerText = nome;
+					label.className = "col"
 					row.className = "row mt-3 px-4";
 					row.appendChild(label);
 
@@ -90,6 +128,7 @@ function initMap() {
 					nearbySearch(pos);
 
 					map.setCenter(pos);
+
 
 					markerPosizione.addListener("click", () => {
 						infoWindow.setPosition(pos);
@@ -131,29 +170,6 @@ function initMap() {
 				let divPercorso = document.getElementById("percorso");
 				let row = document.createElement("div");
 				let label = document.createElement("label");
-				label.innerText = tuttiMarker[i].name;
-				row.className = "row mt-3 px-4";
-				row.appendChild(label);
-
-
-				divPercorso.appendChild(row);
-			}
-		}
-
-	}
-
-
-	window.addNodo = function(nodoID) {
-
-		for (let i = 0; i < tuttiMarker.length; i++) {
-			//console.log(tuttiMarker[i].place_id);
-			//console.log(nodoID);
-			if (tuttiMarker[i].place_id == nodoID) {
-
-				percorso.push(tuttiMarker[i]);
-				let divPercorso = document.getElementById("percorso");
-				let row = document.createElement("div");
-				let label = document.createElement("label");
 				let deleteBtn = document.createElement("button");
 				label.innerText = tuttiMarker[i].name;
 				label.className = "col";
@@ -182,10 +198,10 @@ function initMap() {
 
 	}
 
+
 	currentLocationButton();
 
 }
-
 
 function removeElement(array, element) {
 	const index = array.indexOf(element);
@@ -300,6 +316,7 @@ function currentLocationButton() {
 					infoWindow.setPosition(pos2);
 					infoWindow.setContent("La tua posizione");
 					infoWindow.open(map);
+
 				},
 				() => {
 					handleLocationError(true, infoWindow, map.getCenter());
@@ -326,7 +343,6 @@ function createInfoWindow(markerPos, contentString, nodo, markerAttrazione, map)
 	});
 }
 
-
 // INVIAMO IL FILE JSON DEI NOSTRI PERCORSI SULLA SERVLET DI JAVA IN MODO TALE DA CALCOLARE L'ALGORITMO DI DIJKSTRA
 $(document).ready(function() {
 
@@ -340,11 +356,68 @@ $(document).ready(function() {
 			dataType: 'json', // TIPO DEI DATI CHE TORNANO
 			contentType: 'application/json', // SETTA IL TIPO DI CONTENT A 'application/json'
 			data: myJsonString, // I DATI DA INVIARE
+			success: function(data) {
+
+				console.log(data);
+
+				let percorsoCalcolato = data;
+
+
+				const waypts = [];
+
+				if (percorsoCalcolato.length >= 1) {
+					for (let i = 0; i < percorsoCalcolato.length - 1; i++) {
+						waypts.push({
+							location: new google.maps.LatLng({ lat: percorsoCalcolato[i].destinazione.lat, lng: percorsoCalcolato[i].destinazione.lng }),
+							stopover: true,
+						})
+						//console.log(percorsoCalcolato[i]);
+					}
+
+					//console.log(waypts);
+				}
+
+
+				directionsRenderer.setMap(map);
+
+				var start = { lat: percorsoCalcolato[0].origine.lat, lng: percorsoCalcolato[0].origine.lng };
+				//console.log(start);
+				var end = { lat: percorsoCalcolato[0].destinazione.lat, lng: percorsoCalcolato[0].destinazione.lng };
+				//console.log(end);
+
+				if (percorsoCalcolato.length >= 1) {
+					end = { lat: percorsoCalcolato[percorsoCalcolato.length - 1].destinazione.lat, lng: percorsoCalcolato[percorsoCalcolato.length - 1].destinazione.lng };
+				}
+
+				directionsService
+					.route({
+						origin: start,
+						destination: end,
+						/*waypoints: [{location: new google.maps.LatLng({ lat: percorsoCalcolato[1].destinazione.lat, lng: percorsoCalcolato[1].destinazione.lng }), stopover: true},
+						{location: new google.maps.LatLng({ lat: percorsoCalcolato[2].destinazione.lat, lng: percorsoCalcolato[2].destinazione.lng }), stopover: true}],*/
+						waypoints: waypts,
+						optimizeWaypoints: true,
+						travelMode: google.maps.TravelMode.WALKING,
+					})
+					.then((response) => {
+
+
+						directionsRenderer.setDirections(response);
+
+
+					})
+					.catch((e) => window.alert("Directions request failed due to " + status));
+
+
+			}
 		});
 
 		return false;
 	});
+
 });
+
+
 
 
 window.initMap = initMap;

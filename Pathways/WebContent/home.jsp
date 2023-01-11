@@ -17,8 +17,8 @@
 					<div class="col-2"></div>
 					<div class="col-8 slider-btn">
 						<a href="percorsiUtente.jsp" role="button">
-							<button type="button" class="btn">Guarda i
-								nostri percorsi</button>
+							<button type="button" class="btn">Guarda i nostri
+								percorsi</button>
 						</a>
 					</div>
 					<div class="col-2"></div>
@@ -51,7 +51,7 @@
 							il tuo viaggio sarà ancora più facile e divertente! Scaricala
 							subito e inizia a esplorare.</p>
 					</div>
-					
+
 					<div class="col-12 mt-5 mb-3">
 						<h3 class="center text-uppercase" style="font-size: 3em;">Scegli
 							La Città</h3>
@@ -62,16 +62,16 @@
 							<div class="col">
 								<div id="image-track" data-mouse-down-at="0"
 									data-prev-percentage="0">
-									<img class="image" src="img/milano.jpg" draggable="false"><a
-										href="" class="image-track-link">Milano</a></img> <img class="image"
-										src="img/bergamo.jpg" draggable="false"><a href=""
-										class="image-track-link">Bergamo</a></img> <img class="image"
-										src="img/firenze.jpg" draggable="false"><a href=""
-										class="image-track-link">Firenze</a></img> <img class="image"
-										src="img/roma.jpg" draggable="false"><a href=""
-										class="image-track-link">Roma</a></img> <img class="image"
-										src="img/bari.jpg" draggable="false"><a href=""
-										class="image-track-link">Bari</a></img>
+									<img class="image" src="img/milano.jpg" draggable="false">
+									<a href="mappa.jsp" id="citta1" class="image-track-link">Milano</a> </img> <img
+										class="image" src="img/bergamo.jpg" draggable="false"> <a
+										href="mappa.jsp" id="citta2" class="image-track-link">Bergamo</a> </img> <img
+										class="image" src="img/firenze.jpg" draggable="false"> <a
+										href="mappa.jsp" id="citta3" class="image-track-link">Firenze</a> </img> <img
+										class="image" src="img/roma.jpg" draggable="false"> <a
+										href="mappa.jsp" id="citta4" class="image-track-link">Roma</a> </img> <img class="image"
+										src="img/bari.jpg" draggable="false"> <a href="mappa.jsp" id="citta5"
+										class="image-track-link">Bari</a> </img>
 								</div>
 
 							</div>
@@ -87,8 +87,7 @@
 
 	<div class="section bg-transparent" style="padding: 100px 0">
 		<div class="container">
-			<h2 class="text-title-light">Attrazione
-				della settimana</h2>
+			<h2 class="text-title-light">Attrazione della settimana</h2>
 			<div class="row">
 
 				<div class="row mt-5">
