@@ -58,18 +58,12 @@
 
 
 							<p>
-								<i class="fa-solid fa-landmark"></i><%=nodo.getNomeAttrazione()%>
+								<i class="fa-solid fa-landmark">&nbsp;</i><%=nodo.getNomeAttrazione()%>
 							</p>
-							
+
 							<p>
-								<i class="fa-solid fa-location-dot"></i><%=nodo.getViaAttrazione()%></p>
-<hr>
-
-
-
-
-
-
+								<i class="fa-solid fa-location-dot">&nbsp;</i><%=nodo.getViaAttrazione()%></p>
+							<hr>
 
 
 							<%
