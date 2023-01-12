@@ -31,88 +31,92 @@
 					<div class="col-md-8 offset-md-2 center">
 						<h2 class="text-title-light text-uppercase mb-2 ">La nostra
 							Storia.</h2>
-						<p>Benvenuti nella nostra pagina "About"! Siamo un gruppo di
-							quattro studenti che sta lavorando a questo progetto come parte
-							del nostro corso di studi. Siamo entusiasti di condividere con
-							voi il nostro lavoro e speriamo che vi piaccia. Ognuno di noi ha
-							portato le proprie competenze e il proprio entusiasmo alla
-							creazione di questo progetto, speriamo che possa risultare utile
-							e interessante per voi. Grazie per averci visitato e speriamo di
-							avere presto vostre notizie!"</p>
+						<p>Siamo lieti di presentarvi Pathways, la nostra nuova web
+							app che vi aiuterà a pianificare il vostro prossimo viaggio. Con
+							Pathways potrete facilmente selezionare le attrazioni che volete
+							visitare e l'app utilizzerà l'algoritmo di Dijkstra per calcolare
+							il percorso ottimale per visitarle. Inoltre, tramite l'utilizzo
+							delle API di Google Maps, potrete avere informazioni su ciascuna
+							attrazione come la posizione esatta. Con Pathways potrete anche
+							salvare i vostri itinerari per visualizzarli in un secondo
+							momento e condividerli con amici e familiari. Non importa se
+							state pianificando una vacanza romantica, una gita scolastica o
+							una gita in famiglia, Pathways vi aiuterà a creare il viaggio
+							perfetto. Provatelo adesso e rendete indimenticabile il vostro
+							prossimo viaggio!</p>
 					</div>
 				</div>
 </section>
 
 
 <!-- ======= Our Team Section ======= -->
-<section id="team" class="team ">
-	<section class="main mt-3">
 
+<section id="team" class="team">
+	<div class="container">
 		<div class="section-header">
-			<h2 class="text-center">Il nostro Team</h2>
+			<h2 class="text-center">Il Team di Pathways</h2>
 		</div>
-
-		<div class="row gy-5 mt-4">
-			<div class="col-lg-6 col-md-6 member">
-				<div class="member-img">
-					<img src="./img/PedrazziniDavide.jpg" class="rounded mx-auto d-block " alt="">
-				</div>
-				<div class="member-info text-center">
-					<h4>Davide</h4>
-					<p>Il backend lo conosce come le sue tasche. La leggenda narra
-						che Java sia nato da una costola di Davide</p>
-				</div>
-			</div>
-			<!-- End Team Member -->
-
-
-			<div class="col-lg-6 col-md-6 member">
-				<div class="member-img">
-					<img src="./img/MorettiDaniele.jpg" class="img-fluid" alt="">
-
-				</div>
-				<div class="member-info text-center">
-					<h4>Daniele</h4>
-					<p>Naviga tra front-end e back-end, apprende ogni giorno nuove
-						nozioni</p>
+		<div class="row">
+			<div class="col-sm-3">
+				<div class="card" style="max-width: 300px;">
+					<img src="./img/PedrazziniDavide.jpg"
+						class="card-img-top mx-auto d-block" alt="">
+					<div class="card-body">
+						<h4 class="card-title">Davide</h4>
+						<p class="card-text">Davide è un appassionato di sviluppo
+							software e ama risolvere problemi complessi con la
+							programmazione. È sempre alla ricerca di nuove sfide e
+							opportunità per imparare e crescere come sviluppatore.</p>
+					</div>
 				</div>
 			</div>
-			<!-- End Team Member -->
-
+			<div class="col-sm-3">
+				<div class="card" style="max-width: 300px;">
+					<img src="./img/MorettiDaniele.jpg"
+						class="card-img-top mx-auto d-block" alt="">
+					<div class="card-body">
+						<h4 class="card-title">Daniele</h4>
+						<p class="card-text">Daniele è un creativo che ama
+							sperimentare con nuove tecnologie e tendenze nel design e nello
+							sviluppo. È sempre alla ricerca di nuovi modi per migliorare
+							l'esperienza utente attraverso l'interfaccia e l'usabilità.</p>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-3">
+				<div class="card" style="max-width: 300px;">
+					<img src="./img/SalvatoreScordi.jpg"
+						class="card-img-top mx-auto d-block" alt="">
+					<div class="card-body">
+						<h4 class="card-title">Salvatore</h4>
+						<p class="card-text">Salvatore è un entusiasta
+							dell'intelligenza artificiale e dell'apprendimento automatico.
+							Ama scoprire come i dati possono essere utilizzati per risolvere
+							problemare questioni complesse e migliorare le decisioni
+							aziendali. Durante il suo tempo libero, si dedica allo studio di
+							nuove tecnologie e librerie nell'ambito dell'IA.</p>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-3">
+				<div class="card" style="max-width: 300px;">
+					<img src="./img/Wei.jpg" class="card-img-top mx-auto d-block"
+						alt="">
+					<div class="card-body">
+						<h4 class="card-title">Wei</h4>
+						<p class="card-text">Wei è un amante della programmazione e
+							della risoluzione dei problemi. Ha una grande curiosità per le
+							nuove tecnologie e una forte attitudine per l'apprendimento
+							continuo. Ama costantemente migliorare le sue abilità e
+							competenze per diventare uno sviluppatore full-stack.</p>
+					</div>
+				</div>
+			</div>
 		</div>
-
-		<div class="row gy-5 mt-4">
-
-			<div class="col-lg-6 col-md-6 member">
-				<div class="member-img">
-					<img src="./img/SalvatoreScordi.jpg" class="img-fluid" alt="">
-
-				</div>
-				<div class="member-info text-center">
-					<h4>Salvatore</h4>
-					<p>Backender puro, innamorato degli algoritmi dell'AI e della
-						vita</p>
-				</div>
-			</div>
-			<!-- End Team Member -->
-
-			<div class="col-lg-6 col-md-6 member">
-				<div class="member-img">
-					<img src="./img/Wei.jpg" class="img-fluid" alt="">
-
-				</div>
-				<div class="member-info text-center">
-					<h4>Wei</h4>
-					<p>Non smette di programmare nemmeno quando dorme, capace in
-						tutti i fronti</p>
-				</div>
-			</div>
-			<!-- End Team Member -->
-
-		</div>
-
-	</section>
+	</div>
 </section>
+
+
 
 
 <%@ include file="footer.jsp"%>
