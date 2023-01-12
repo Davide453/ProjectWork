@@ -70,18 +70,19 @@
 							<li class="nav-item"><a class="nav-link" href="mappa.jsp">Percorsi</a>
 							</li>
 							<li class="nav-item"><a class="nav-link"
-								href="/Pathways/OttieniPercorsi">I tuoi percorsi</a></li>
+								href="OttieniPercorsi">I tuoi percorsi</a></li>
 							<li class="nav-item"><a class="nav-link" href="chiSiamo.jsp">Chi
 									Siamo</a></li>
 							<li class="nav-item" data-bs-toggle="modal"
 								data-bs-target="#logindemo">
 								<%
 								Boolean loggato = false;
-								User user;
-								loggato = (Boolean) session.getAttribute("loggato");
+								User user = null;
 
-								if (loggato != null && loggato == true) {
-									user = (User) session.getAttribute("user");
+								loggato = (Boolean) session.getAttribute("loggato");
+								user = (User) session.getAttribute("user");
+								
+								if (loggato != null && loggato == true && user != null) {
 								%> <a class="nav-link" href="#">Benvenuto <%=user.getEmail()%>
 							</a>
 							</li>

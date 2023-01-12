@@ -38,7 +38,8 @@ function initMap() {
 		streetViewControlOptions: {
 			position: google.maps.ControlPosition.LEFT_TOP,
 		},
-		mapId: "YOUR_MAP_ID_HERE",
+		//mapId: "YOUR_MAP_ID_HERE",
+		mapId: "ecdb3dce61875a18",
 	});
 
 
@@ -230,7 +231,7 @@ function hideMarkers() {
 	//console.log(tuttiMarker);
 	//console.log(markers);
 	//console.log(percorso);
-	for(let i = 0; i < markers.length; i++) {
+	for (let i = 0; i < markers.length; i++) {
 		markers[i].setMap(null);
 	}
 }
@@ -327,7 +328,7 @@ function creaMarker(nodo) {
 	google.maps.event.addListener(map, "click", function() {
 		infoWindow.close();
 	});
-	
+
 	markers.push(markerAttrazione);
 	tuttiMarker.push(nodo); // AGGIUNGE ALL'ARRAY tuttiMarker IL nodo PRESO DA INPUT
 }

@@ -3,6 +3,7 @@
 <%@ page import="model.Percorso"%>
 <%@ page import="model.AttrazioneNodo"%>
 <%@ page import="java.util.ArrayList"%>
+<%@ page import="java.util.List"%>
 <%@ page import="model.User"%>
 <%@ page import="java.util.Random"%>
 
@@ -40,13 +41,12 @@
 				Boolean loggato = (Boolean) session.getAttribute("loggato");
 				Random r = new Random();
 
-				ArrayList<Percorso> percorso2;
 				if (loggato != null && loggato == true) {
+					List<Percorso> percorso1 = new ArrayList<Percorso>();
+					percorso1 = (ArrayList<Percorso>) request.getAttribute("percorso");
 
-					percorso2 = (ArrayList<Percorso>) session.getAttribute("percorso");
-
-					if (percorso2 != null && percorso2.size() > 0) {
-						for (int i = 0; i < percorso2.size(); i++) {
+					if (percorso1 != null && percorso1.size() > 0) {
+						for (int i = 0; i < percorso1.size(); i++) {
 
 					Integer rInt = r.nextInt(15);
 				%>
@@ -59,18 +59,18 @@
 
 						<div class="card-body" id="card-body-percorso">
 							<h4 class="card-title mb-3">
-								<i class="fa-regular fa-flag"></i>&nbsp;<%=percorso2.get(i).getOrdineNodi().get(0).getNomeAttrazione()%>
+								<i class="fa-regular fa-flag"></i>&nbsp;<%=percorso1.get(i).getOrdineNodi().get(0).getNomeAttrazione()%>
 
 							</h4>
 							<h4>
 								<i class="fa-solid fa-flag-checkered"></i>
-								<%=percorso2.get(i).getOrdineNodi().get(percorso2.get(i).getOrdineNodi().size() - 1).getNomeAttrazione()%>
+								<%=percorso1.get(i).getOrdineNodi().get(percorso1.get(i).getOrdineNodi().size() - 1).getNomeAttrazione()%>
 
 							</h4>
 
 
 							<%
-							for (AttrazioneNodo nodo : percorso2.get(i).getOrdineNodi()) {
+							for (AttrazioneNodo nodo : percorso1.get(i).getOrdineNodi()) {
 							%>
 
 
