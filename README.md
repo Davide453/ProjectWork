@@ -19,7 +19,7 @@ Siamo lieti di presentarvi Pathways, la nostra nuova web
 
 Il progetto Pathways è stato creato da un gruppo di giovani sviluppatori appassionati e motivati. Ecco i membri del nostro team:
 
-* **Davide Pedrazzini** - Project Manager e Sviluppatore Full Stack
-* **Daniele Moretti** - Sviluppatore Fullstack
-* **Salvatore Scordi** - Sviluppatore Back-End 
-* **Wei** - Sviluppatore Full Stack
+* **Davide Pedrazzini** - Project Manager e Sviluppatore Full Stack - [LinkedIn](https://www.linkedin.com/in/davide-pedrazzini-b3232b249/) - [GitHub](https://github.com/Davide453)
+* **Daniele Moretti** - Sviluppatore Fullstack - [LinkedIn](https://www.linkedin.com/in/danielemoretti-/) - [GitHub](https://github.com/DanieleMRTT)
+* **Salvatore Scordi** - Sviluppatore Fullstack  - [LinkedIn](https://www.linkedin.com/in/salvatore-scordi-b56481258/) - [GitHub](https://github.com/Salvatoree12)
+* **Wei** - Sviluppatore Full Stack - [LinkedIn](https://www.linkedin.com/in/wei-jin-a32b48209/) - [GitHub](https://github.com/Jinkii)
