@@ -1,0 +1,64 @@
+{
+	"attrazioni": [
+		{
+			"id": 0,
+			"nome": "Duomo di Milano",
+			"latitudine": 45.464569767704525,
+			"longitudine": 9.191864063046127
+		},
+		{
+			"id": 1,
+			"nome": "Pinacoteca di Brera",
+			"latitudine": 45.472635637999176,
+			"longitudine": 9.187872936460687
+		},
+		{
+			"id": 2,
+			"nome": "Castello Sforzesco",
+			"latitudine": 45.471130553905574,
+			"longitudine": 9.17956341435612
+		},
+		{
+			"id": 3,
+			"nome": "Santa Maria delle Grazie",
+			"latitudine": 45.466796681184235,
+			"longitudine": 9.171023262285278
+		},
+		{
+			"id": 4,
+			"nome": "Galleria Vittorio Emanuele II",
+			"latitudine": 45.46715784996818,
+			"longitudine": 9.190163504260978
+		},
+		{
+			"id": 5,
+			"nome": "Basilica di Santa Maria Maggiore",
+			"latitudine": 45.70412264073836,
+			"longitudine": 9.662510754057102
+		},
+		{
+			"id": 6,
+			"nome": "Chiesa del Sacro Cuore",
+			"latitudine": 45.696869303717854,
+			"longitudine": 9.681136013916621
+		},
+		{
+			"id": 7,
+			"nome": "Ralph Lauren",
+			"latitudine": 45.469965545792355,
+			"longitudine": 9.198245105361629
+		},
+		{
+			"id": 8,
+			"nome": "Colonne di San Lorenzo",
+			"latitudine": 45.459551435926464,
+			"longitudine": 9.184168872827916
+		},
+		{
+			"id": 9,
+			"nome": "Cimitero Monumentale",
+			"latitudine": 45.488260823929366,
+			"longitudine": 9.180907306686729
+		}
+	]
+}
