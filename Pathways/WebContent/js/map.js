@@ -38,6 +38,7 @@ function initMap() {
 		streetViewControlOptions: {
 			position: google.maps.ControlPosition.LEFT_TOP,
 		},
+
 		mapId: "YOUR_MAP_ID_HERE",
 
 	});
