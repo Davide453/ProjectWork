@@ -1,3 +1,4 @@
+   ## Project Pathways
 Siamo lieti di presentarvi Pathways, la nostra nuova web
 							app che vi aiuterà a pianificare il vostro prossimo viaggio. Con
 							Pathways potrete facilmente selezionare le attrazioni che volete
@@ -14,7 +15,7 @@ Siamo lieti di presentarvi Pathways, la nostra nuova web
               
               
               
-              ## Il nostro Team
+              ## Team di sviluppo
 
 Il progetto Pathways è stato creato da un gruppo di giovani sviluppatori appassionati e motivati. Ecco i membri del nostro team:
 
