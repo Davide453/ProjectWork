@@ -123,14 +123,13 @@ public class CalcolaPercorso extends HttpServlet {
 
 		}
 
-		//System.out.println(percorso);
+		// System.out.println(percorso);
 
-		
 		User user = (User) session.getAttribute("user");
 		Percorso percorso2 = new Percorso("attrazioni", percorso);
-		
+
 		UserDAO.updateUserNPercorsi(user);
-		
+
 		PercorsoDAO.insertPercorso(percorso2, user);
 
 		user = UserDAO.selectUserFromId(user.getId());
@@ -139,12 +138,12 @@ public class CalcolaPercorso extends HttpServlet {
 		Gson gson = new Gson();
 
 		String percorsoJson = gson.toJson(percorso);
-		//System.out.println(percorsoJson);
+		// System.out.println(percorsoJson);
 		PrintWriter out = response.getWriter();
 
 		response.setCharacterEncoding("UTF-8");
 		response.setContentType("application/json");
-		
+		System.out.println("percorso inserito");
 		out.write(percorsoJson);
 		out.flush();
 

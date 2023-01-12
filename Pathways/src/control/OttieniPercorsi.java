@@ -3,6 +3,8 @@ package control;
 import java.io.IOException;
 import java.util.ArrayList;
 
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -21,37 +23,36 @@ import model.User;
 @WebServlet("/OttieniPercorsi")
 public class OttieniPercorsi extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+	private User user;
+	HttpSession session;
+	ArrayList<Percorso> percorso;
+	RequestDispatcher rd;
 
-	/**
-	 * @see HttpServlet#HttpServlet()
-	 */
 	public OttieniPercorsi() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
-	 *      response)
-	 */
+	public void init(ServletConfig config) throws ServletException {
+	
+
+	}
+
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		System.out.println("Ottieni percorsi servlet 2");
-		HttpSession session = request.getSession(true);
-		User user = (User) session.getAttribute("user");
+		session = request.getSession(true);
+		user = (User) session.getAttribute("user");
 		if (user != null) {
-			ArrayList<Percorso> percorso = PercorsoDAO.selectPercorsoFromIdUtente(user);
+			percorso = PercorsoDAO.selectPercorsoFromIdUtente(user);
 			request.setAttribute("percorso", percorso);
 			session.setAttribute("percorso", percorso);
-			ArrayList<Percorso> percorso2 = (ArrayList<Percorso>) request.getAttribute("percorso");
-			ArrayList<Percorso> percorso3 = (ArrayList<Percorso>) session.getAttribute("percorso");
-			session.getAttribute("percorso");
-			System.out.println("test" + percorso);
-			System.out.println("request percorso " + percorso2);
-			System.out.println("session percorso " + percorso3);
-		}
-		response.sendRedirect("percorsiUtente.jsp");
+			System.out.println("request " + request.getAttribute("percorso"));
+			System.out.println("session  " + session.getAttribute("percorso"));
 
+		}
+		rd = request.getRequestDispatcher("percorsiUtente.jsp");
+		rd.forward(request, response);
 	}
 
 	/**
